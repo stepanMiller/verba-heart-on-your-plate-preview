@@ -7,20 +7,39 @@
  document.body.classList.add('js');
  $('#contents-list').innerHTML=slides.map((s,i)=>`<a href="#${s.id}" data-index="${i}"><span>${String(i+1).padStart(2,'0')}</span><span>${s.dataset.title}</span></a>`).join('');
  function closeContents(){contents.hidden=true;contentsToggle.setAttribute('aria-expanded','false');}
- function showSlide(index,updateHash=true){
+ // The lecture is a continuous document. Navigation scrolls to sections;
+ // it never hides content or takes ownership of vertical wheel gestures.
+ slides.forEach(s=>{s.setAttribute('aria-hidden','false');s.inert=false;});
+ function markCurrent(index,updateHash=true){
   current=Math.max(0,Math.min(slides.length-1,index));
-  slides.forEach((s,i)=>{const active=i===current;s.classList.toggle('active',active);s.setAttribute('aria-hidden',String(!active));s.inert=!active;});
+  slides.forEach((s,i)=>s.classList.toggle('active',i===current));
   document.body.classList.toggle('on-dark',slides[current].classList.contains('dark'));
   count.textContent=`${String(current+1).padStart(2,'0')} / ${slides.length}`;
   $('#scene-chapter').textContent=slides[current].dataset.chapter;
-  progress.style.width=`${(current+1)/slides.length*100}%`;
   prev.disabled=current===0;next.disabled=current===slides.length-1;
   contents.querySelectorAll('a').forEach((a,i)=>a.setAttribute('aria-current',String(i===current)));
-  closeContents();
   if(updateHash&&location.hash!==`#${slides[current].id}`)history.replaceState(null,'',`#${slides[current].id}`);
-  window.scrollTo({top:0,behavior:'instant'});
   const upcoming=slides[current+1];if(upcoming)upcoming.querySelectorAll('img').forEach(img=>{img.loading='eager';});
  }
+ function showSlide(index,updateHash=true){
+  markCurrent(index,updateHash);closeContents();
+  window.scrollTo({top:slides[current].offsetTop,behavior:motion?'smooth':'instant'});
+ }
+ let scrollFrame=0;
+ function readScroll(){
+  scrollFrame=0;const y=window.scrollY,h=window.innerHeight;
+  let index=0;slides.forEach((s,i)=>{if(s.offsetTop<=y+h*.4)index=i;});
+  if(index!==current)markCurrent(index);
+  const extent=Math.max(1,document.documentElement.scrollHeight-h);
+  progress.style.width=`${Math.min(100,Math.max(0,y/extent*100))}%`;
+  slides.forEach(s=>{const r=s.getBoundingClientRect();if(r.top<h&&r.bottom>0){s.style.setProperty('--scene-p',String(Math.min(1,Math.max(0,(h-r.top)/(h+r.height)))));}});
+ }
+ function scheduleScroll(){if(!scrollFrame)scrollFrame=requestAnimationFrame(readScroll);}
+ window.addEventListener('scroll',scheduleScroll,{passive:true});
+ window.addEventListener('resize',scheduleScroll);
+ window.addEventListener('load',scheduleScroll);
+ const observer=new IntersectionObserver(entries=>entries.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in-view');e.target.querySelectorAll('img').forEach(img=>img.loading='eager');}}),{threshold:.08});
+ slides.forEach(s=>observer.observe(s));
  const hashIndex=()=>Math.max(0,slides.findIndex(s=>`#${s.id}`===location.hash));
  prev.addEventListener('click',()=>showSlide(current-1));next.addEventListener('click',()=>showSlide(current+1));
  contentsToggle.addEventListener('click',()=>{contents.hidden=!contents.hidden;contentsToggle.setAttribute('aria-expanded',String(!contents.hidden));});
@@ -80,7 +99,7 @@
   $('#motion-label').textContent=motion?'Анимация':'Без анимации';
  }
  $('#ambient-toggle').addEventListener('click',()=>{userMotion=!userMotion;setMotion();});reduced.addEventListener('change',setMotion);
- setMotion();showSlide(hashIndex());
+ setMotion();showSlide(hashIndex());scheduleScroll();
  const film=$('#film-dialog'), filmToggle=$('#film-toggle'), pause=$('#film-pause'), shots=$$('.film-shot');
  const duration=30;let elapsed=0,playing=false,frame=0,last=0,activeShot=-1;
  function paintFilm(){
@@ -102,8 +121,8 @@
   if(e.key==='Escape'){closeContents();return;}
   if(!contents.hidden||e.target.closest('input,textarea,select,[role=tab]'))return;
   if(e.target.closest('button,a')&&[' ','Enter'].includes(e.key))return;
-  if(['ArrowRight','PageDown',' '].includes(e.key)){e.preventDefault();showSlide(current+1);}
-  if(['ArrowLeft','PageUp'].includes(e.key)){e.preventDefault();showSlide(current-1);}
+  if(e.key==='ArrowRight'){e.preventDefault();showSlide(current+1);}
+  if(e.key==='ArrowLeft'){e.preventDefault();showSlide(current-1);}
   if(e.key==='Home'){e.preventDefault();showSlide(0);}if(e.key==='End'){e.preventDefault();showSlide(slides.length-1);}
  });
  let startX=0,startY=0,startTarget=null;
