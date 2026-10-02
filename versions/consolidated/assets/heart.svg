@@ -1,0 +1,28 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 700" fill="none">
+<title>Условная художественная иллюстрация сердца</title>
+<defs>
+ <linearGradient id="surface" x1="128" y1="180" x2="455" y2="590" gradientUnits="userSpaceOnUse"><stop stop-color="#c8b897"/><stop offset=".34" stop-color="#ab8f72"/><stop offset=".7" stop-color="#6d7960"/><stop offset="1" stop-color="#334f43"/></linearGradient>
+ <linearGradient id="edge" x1="170" y1="110" x2="390" y2="620" gradientUnits="userSpaceOnUse"><stop stop-color="#e3d0ab"/><stop offset="1" stop-color="#829975"/></linearGradient>
+ <radialGradient id="light"><stop stop-color="#ebe2c1" stop-opacity=".35"/><stop offset="1" stop-color="#293e2c" stop-opacity="0"/></radialGradient>
+ <clipPath id="body"><path d="M297 228C270 157 186 143 135 190C81 239 99 332 137 395C174 458 225 495 286 566C305 589 350 646 381 620C423 586 427 516 460 456C496 394 505 323 472 269C441 216 371 180 326 207Z"/></clipPath>
+</defs>
+<g stroke="#758b6c" stroke-width=".6" opacity=".45"><ellipse cx="300" cy="377" rx="255" ry="267"/><ellipse cx="300" cy="377" rx="225" ry="237" stroke-dasharray="2 10"/><path d="M300 48V83M300 671V697M16 377H49M552 377H585"/></g>
+<g opacity=".35" stroke="#c6c4a4" stroke-width="1"><path d="M202 115H110L68 156M463 270H514L550 230M439 549H500L537 582"/><circle cx="202" cy="115" r="3" fill="#c6c4a4"/><circle cx="463" cy="270" r="3" fill="#c6c4a4"/><circle cx="439" cy="549" r="3" fill="#c6c4a4"/></g>
+<g>
+ <path d="M256 259C247 212 241 159 254 129C272 87 348 85 378 124C404 159 399 194 408 226" fill="#877f63" stroke="url(#edge)" stroke-width="2"/>
+ <path d="M259 248C248 213 256 184 278 166C298 150 326 151 345 168C369 190 367 216 371 239" fill="#405849" stroke="url(#edge)" stroke-width="1.5"/>
+ <path d="M280 111L275 69Q279 55 299 58L307 99M316 103L321 55Q330 44 345 53L345 103M355 108L371 73Q388 64 396 79L383 125" fill="#998c6c" stroke="url(#edge)" stroke-width="1.5"/>
+ <path d="M202 224L194 143Q205 120 228 133L242 221" fill="#5e7d6d" stroke="#aab399" stroke-width="1.5"/>
+ <path d="M291 246Q310 199 363 183L451 154Q468 159 472 181L392 216Q350 232 342 267" fill="#748b75" stroke="#b1baa0" stroke-width="1.5"/>
+ <path d="M453 286L502 263Q520 263 525 283L471 318M457 328L507 311Q526 316 525 334L468 359" fill="#7f8265" stroke="url(#edge)" stroke-width="1.2"/>
+ <path d="M297 228C270 157 186 143 135 190C81 239 99 332 137 395C174 458 225 495 286 566C305 589 350 646 381 620C423 586 427 516 460 456C496 394 505 323 472 269C441 216 371 180 326 207Z" fill="url(#surface)" stroke="url(#edge)" stroke-width="2.2"/>
+ <ellipse cx="213" cy="292" rx="220" ry="250" fill="url(#light)" clip-path="url(#body)"/>
+ <g clip-path="url(#body)" stroke="#dbc6a0" stroke-width=".85" opacity=".45">
+ <path d="M84 254Q224 119 302 333Q345 474 433 631M83 272Q218 148 288 348Q330 481 419 638M84 291Q218 174 273 361Q314 486 408 639M87 311Q209 198 259 374Q302 490 397 640M94 333Q207 222 246 387Q289 498 384 642M101 356Q199 249 231 396Q275 506 371 644M107 378Q191 274 218 405Q259 512 358 646M118 399Q184 301 204 414Q244 520 345 647M133 423Q171 326 191 423Q230 530 333 647M146 442Q159 349 180 436Q216 539 318 648M158 462Q153 373 168 446Q201 550 306 648"/>
+ <path d="M326 199Q323 358 490 454M340 199Q335 352 493 436M354 198Q348 346 497 420M368 201Q363 340 500 400M383 207Q378 334 503 380M397 216Q394 326 505 360M412 225Q410 319 507 340M426 237Q426 310 506 320M442 248Q444 300 505 301"/>
+ <path d="M121 217Q294 292 372 635M115 239Q280 313 357 638M111 263Q263 332 341 640M111 289Q248 352 327 642M115 316Q233 371 312 644" opacity=".6"/>
+ </g>
+ <g stroke="#e4cfaa" stroke-linecap="round" stroke-linejoin="round"><path d="M302 238Q310 285 291 324Q272 366 290 412Q316 471 350 548Q365 586 374 614" stroke-width="3"/><path d="M297 285Q227 290 185 319L124 346M289 329Q343 330 410 377L474 413M288 399Q247 418 212 458M320 481Q369 466 421 475M351 548Q327 567 311 592" stroke-width="1.8"/><path d="M216 302L195 270M168 327L161 296M368 349L384 318M427 388L443 360M250 429L242 400M376 470L376 433M350 548L388 559" stroke-width="1"/></g>
+ <path d="M298 244Q288 277 265 285Q207 303 180 307" stroke="#647b61" stroke-width="6" opacity=".7"/>
+</g>
+</svg>
