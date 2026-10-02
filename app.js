@@ -1,32 +1,200 @@
 'use strict';
-(()=>{
-const slides=[...document.querySelectorAll('.slide')], count=document.querySelector('#slide-count'), progress=document.querySelector('#progress-bar'), prev=document.querySelector('#prev'), next=document.querySelector('#next'), contents=document.querySelector('#contents'), contentsToggle=document.querySelector('#contents-toggle');
-let current=0; document.body.classList.add('js');
-contents.innerHTML=slides.map((s,i)=>`<a href="#${s.id}" data-index="${i}">${String(i+1).padStart(2,'0')} · ${s.dataset.title}</a>`).join('');
-function showSlide(index,updateHash=true){current=Math.max(0,Math.min(slides.length-1,index));slides.forEach((s,i)=>{s.classList.toggle('active',i===current);s.setAttribute('aria-hidden',String(i!==current));});count.textContent=`${String(current+1).padStart(2,'0')} / ${slides.length}`;progress.style.width=`${(current+1)/slides.length*100}%`;prev.disabled=current===0;next.disabled=current===slides.length-1;contents.querySelectorAll('a').forEach((a,i)=>a.setAttribute('aria-current',String(i===current)));contents.hidden=true;contentsToggle.setAttribute('aria-expanded','false');if(updateHash&&location.hash!==`#${slides[current].id}`)history.replaceState(null,'',`#${slides[current].id}`);window.scrollTo({top:0,behavior:'instant'});}
-const hashIndex=()=>Math.max(0,slides.findIndex(s=>`#${s.id}`===location.hash));
-showSlide(hashIndex(),false); prev.addEventListener('click',()=>showSlide(current-1));next.addEventListener('click',()=>showSlide(current+1));contentsToggle.addEventListener('click',()=>{contents.hidden=!contents.hidden;contentsToggle.setAttribute('aria-expanded',String(!contents.hidden));});contents.addEventListener('click',e=>{const a=e.target.closest('a');if(a){e.preventDefault();showSlide(Number(a.dataset.index));}});window.addEventListener('hashchange',()=>showSlide(hashIndex(),false));document.querySelector('.brand').addEventListener('click',e=>{e.preventDefault();showSlide(0);});
-document.addEventListener('click',e=>{if(!contents.hidden&&!contents.contains(e.target)&&e.target!==contentsToggle){contents.hidden=true;contentsToggle.setAttribute('aria-expanded','false');}});
-document.querySelectorAll('.reveal-row').forEach(b=>b.addEventListener('click',()=>{const open=b.getAttribute('aria-expanded')==='true';b.setAttribute('aria-expanded',String(!open));b.querySelector('b').textContent=open?'+':'−';b.nextElementSibling.hidden=open;}));
-const swaps=[['Часть сливочного масла','Жидкое растительное масло','Подходящее масло и количество зависят от блюда'],['Привычный сладкий перекус','Несолёные орехи или фрукт','Вариант и порцию подбирают с учётом вашего рациона и переносимости'],['Часть мясных блюд','Блюда с фасолью, нутом или чечевицей','Попробуйте привычный рецепт с другим источником белка']];
-function selectSwap(n){document.querySelectorAll('[data-swap]').forEach((b,i)=>{b.setAttribute('aria-selected',String(i===n));b.tabIndex=i===n?0:-1;});document.querySelector('#swap-from').textContent=swaps[n][0];document.querySelector('#swap-to').textContent=swaps[n][1];document.querySelector('#swap-explain').textContent=swaps[n][2];document.querySelector('#swap-panel').setAttribute('aria-labelledby',`swap-tab-${n}`);}
-document.querySelectorAll('[data-swap]').forEach(b=>{b.addEventListener('click',()=>selectSwap(Number(b.dataset.swap)));b.addEventListener('keydown',e=>{if(['ArrowLeft','ArrowRight','Home','End'].includes(e.key)){e.preventDefault();e.stopPropagation();let n=Number(b.dataset.swap);n=e.key==='Home'?0:e.key==='End'?2:(n+(e.key==='ArrowRight'?1:2))%3;selectSwap(n);document.querySelector(`[data-swap="${n}"]`).focus();}});});
-const labelDetails=['Сравните содержание в одинаковом количестве продукта, если оно указано','Посмотрите содержание соли или натрия. Сравнивайте одинаковые единицы','Проверьте состав: сахар и сиропы могут входить в продукт под разными названиями','Сопоставляйте похожие продукты и обращайте внимание на размер вашей порции'];
-document.querySelectorAll('[data-label]').forEach(b=>b.addEventListener('click',()=>{document.querySelectorAll('[data-label]').forEach(x=>x.setAttribute('aria-pressed',String(x===b)));document.querySelector('#label-detail').textContent=labelDetails[Number(b.dataset.label)];}));
-const riskDetails=['Были ли ранние сердечно-сосудистые события у близких родственников?','Каково давление при корректных повторных измерениях?','Есть ли курение сейчас или в прошлом?','Как возраст меняет оценку общего риска?'];
-document.querySelectorAll('[data-risk]').forEach(b=>b.addEventListener('click',()=>{document.querySelectorAll('[data-risk]').forEach(x=>x.setAttribute('aria-pressed',String(x===b)));document.querySelector('#risk-detail').textContent=riskDetails[Number(b.dataset.risk)];}));
-document.querySelectorAll('[data-habit]').forEach(b=>b.addEventListener('click',()=>{document.querySelectorAll('[data-habit]').forEach(x=>{x.classList.toggle('selected',x===b);x.setAttribute('aria-pressed',String(x===b));});document.querySelector('#habit-result').textContent=`Мой первый шаг: ${b.dataset.habit.toLowerCase()}`;}));
-const sourcesToggle=document.querySelector('#sources-toggle');sourcesToggle.addEventListener('click',()=>{const source=document.querySelector('#sources');source.hidden=!source.hidden;sourcesToggle.setAttribute('aria-expanded',String(!source.hidden));});
-const reduceMotion=window.matchMedia('(prefers-reduced-motion: reduce)'), ambient=document.querySelector('#ambient-toggle');let motion=false;
-function setMotion(value){motion=value&&!reduceMotion.matches;document.body.classList.toggle('motion',motion);ambient.setAttribute('aria-pressed',String(motion));ambient.textContent=motion?'Движение ON':'Движение OFF';ambient.disabled=reduceMotion.matches;ambient.title=reduceMotion.matches?'Движение выключено настройкой уменьшения анимации':'';}
-ambient.addEventListener('click',()=>setMotion(!motion));reduceMotion.addEventListener('change',()=>setMotion(motion));setMotion(false);
-const film=document.querySelector('#film-dialog'), filmToggle=document.querySelector('#film-toggle'), pause=document.querySelector('#film-pause'), shots=[...document.querySelectorAll('.film-shot')], time=document.querySelector('#film-time'), filmProgress=document.querySelector('#film-progress');let elapsed=0,playing=false,frame=0,last=0;
-function paintFilm(){const shot=elapsed<4?0:elapsed<8?1:elapsed<12?2:elapsed<16?3:elapsed<19?4:5;shots.forEach((s,i)=>s.classList.toggle('visible',i===shot));time.textContent=`0:${String(Math.floor(elapsed)).padStart(2,'0')} / 0:22`;filmProgress.value=elapsed;film.classList.toggle('film-paused',!playing);pause.textContent=playing?'Пауза':elapsed>=22?'Повторить':'Продолжить';}
-function tick(now){if(!playing)return;elapsed=Math.min(22,elapsed+(now-last)/1000);last=now;if(elapsed>=22){playing=false;paintFilm();return;}paintFilm();frame=requestAnimationFrame(tick);}
-function play(){if(elapsed>=22)elapsed=0;playing=true;last=performance.now();cancelAnimationFrame(frame);paintFilm();frame=requestAnimationFrame(tick);}
-function stopFilm(){playing=false;cancelAnimationFrame(frame);paintFilm();filmToggle.textContent='Видео OFF';filmToggle.setAttribute('aria-pressed','false');}
-filmToggle.addEventListener('click',()=>{elapsed=0;film.showModal();filmToggle.textContent='Видео ON';filmToggle.setAttribute('aria-pressed','true');play();document.querySelector('#film-close').focus();});document.querySelector('#film-close').addEventListener('click',()=>film.close());film.addEventListener('close',()=>{stopFilm();filmToggle.focus();});film.addEventListener('click',e=>{if(e.target===film){const r=film.getBoundingClientRect();if(e.clientX<r.left||e.clientX>r.right||e.clientY<r.top||e.clientY>r.bottom)film.close();}});pause.addEventListener('click',()=>{if(playing){playing=false;cancelAnimationFrame(frame);paintFilm();}else play();});document.querySelector('#film-restart').addEventListener('click',()=>{elapsed=0;play();});
-document.addEventListener('visibilitychange',()=>{if(document.hidden&&playing){playing=false;cancelAnimationFrame(frame);paintFilm();}});
-document.addEventListener('keydown',e=>{if(film.open)return;if(e.key==='Escape'){contents.hidden=true;contentsToggle.setAttribute('aria-expanded','false');return;}if(!contents.hidden)return;if(e.target.closest('input,textarea,select,[role=tab]'))return;if(e.target.closest('button')&&e.key===' ')return;if(['ArrowRight','PageDown',' '].includes(e.key)){e.preventDefault();showSlide(current+1);}if(['ArrowLeft','PageUp'].includes(e.key)){e.preventDefault();showSlide(current-1);}if(e.key==='Home'){e.preventDefault();showSlide(0);}if(e.key==='End'){e.preventDefault();showSlide(slides.length-1);}});
-let startX=0,startY=0;document.querySelector('main').addEventListener('touchstart',e=>{startX=e.changedTouches[0].screenX;startY=e.changedTouches[0].screenY;},{passive:true});document.querySelector('main').addEventListener('touchend',e=>{const dx=e.changedTouches[0].screenX-startX,dy=e.changedTouches[0].screenY-startY;if(!e.target.closest('button,a')&&Math.abs(dx)>90&&Math.abs(dx)>Math.abs(dy)*1.7)showSlide(current+(dx<0?1:-1));},{passive:true});
+
+(() => {
+  const root = document.documentElement;
+  const body = document.body;
+  const header = document.querySelector('#masthead');
+  const progress = document.querySelector('#progress-bar');
+  const menuButton = document.querySelector('#contents-toggle');
+  const menu = document.querySelector('#contents');
+  const motionButton = document.querySelector('#motion-toggle');
+  const motionLabel = motionButton.querySelector('.motion-label');
+  const chapters = Array.from(document.querySelectorAll('[data-chapter]'));
+  const videos = Array.from(document.querySelectorAll('[data-video-src]'));
+  const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)');
+  const desktop = window.matchMedia('(min-width: 761px)');
+  const connection = navigator.connection;
+  const visibleVideos = new Set();
+  let paused = reducedMotion.matches || Boolean(connection && connection.saveData);
+  let frameRequested = false;
+  let currentChapter = '';
+  let currentFood = -1;
+
+  function closeMenu(restoreFocus) {
+    menu.hidden = true;
+    menuButton.setAttribute('aria-expanded', 'false');
+    if (restoreFocus) menuButton.focus();
+  }
+  menuButton.hidden = false;
+  menuButton.addEventListener('click', () => {
+    const opening = menu.hidden;
+    menu.hidden = !opening;
+    menuButton.setAttribute('aria-expanded', String(opening));
+    if (opening) menu.querySelector('a').focus();
+  });
+  menu.addEventListener('click', event => {
+    if (event.target.closest('a')) closeMenu(false);
+  });
+  document.addEventListener('click', event => {
+    if (!menu.hidden && !menu.contains(event.target) && !menuButton.contains(event.target)) closeMenu(false);
+  });
+  document.addEventListener('keydown', event => {
+    if (event.key === 'Escape' && !menu.hidden) {
+      event.preventDefault();
+      closeMenu(true);
+    }
+  });
+
+  function playVideo(video) {
+    if (paused || document.hidden || !visibleVideos.has(video) || video.dataset.failed === 'true') return;
+    if (!video.getAttribute('src')) {
+      video.src = video.dataset.videoSrc;
+      video.load();
+    }
+    const playing = video.play();
+    if (playing && playing.then) {
+      playing.then(() => {
+        if (paused || document.hidden || !visibleVideos.has(video)) video.pause();
+      }).catch(() => {
+        // A poster stays visible if the browser restricts autoplay.
+      });
+    }
+  }
+  function applyMotion() {
+    if (reducedMotion.matches) paused = true;
+    body.classList.toggle('is-paused', paused);
+    motionButton.setAttribute('aria-pressed', String(paused));
+    motionButton.disabled = reducedMotion.matches;
+    motionLabel.textContent = reducedMotion.matches ? 'Без движения' : paused ? 'Движение' : 'Пауза';
+    motionButton.setAttribute('aria-label', reducedMotion.matches ? 'Движение отключено настройкой устройства' : paused ? 'Включить движение' : 'Остановить движение');
+    videos.forEach(video => paused ? video.pause() : playVideo(video));
+    scheduleFrame();
+  }
+  motionButton.hidden = false;
+  motionButton.addEventListener('click', () => {
+    paused = !paused;
+    applyMotion();
+  });
+  reducedMotion.addEventListener('change', () => {
+    paused = reducedMotion.matches;
+    applyMotion();
+    if (!paused) initReveals();
+  });
+  videos.forEach(video => {
+    video.addEventListener('error', () => { video.dataset.failed = 'true'; });
+  });
+  if ('IntersectionObserver' in window) {
+    const videoObserver = new IntersectionObserver(entries => {
+      entries.forEach(entry => {
+        const video = entry.target;
+        if (entry.isIntersecting) {
+          visibleVideos.add(video);
+          playVideo(video);
+        } else {
+          visibleVideos.delete(video);
+          video.pause();
+        }
+      });
+    }, { threshold: 0.12 });
+    videos.forEach(video => videoObserver.observe(video));
+  }
+  document.addEventListener('visibilitychange', () => {
+    videos.forEach(video => document.hidden ? video.pause() : playVideo(video));
+  });
+
+  let revealObserver;
+  function initReveals() {
+    if (paused || !('IntersectionObserver' in window)) return;
+    if (!revealObserver) {
+      revealObserver = new IntersectionObserver(entries => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('is-visible');
+            revealObserver.unobserve(entry.target);
+          }
+        });
+      }, { threshold: 0.05, rootMargin: '0px 0px -20px 0px' });
+    }
+    document.querySelectorAll('[data-reveal]:not(.will-reveal)').forEach(element => {
+      element.classList.add('will-reveal');
+      revealObserver.observe(element);
+    });
+  }
+
+  const foodSteps = Array.from(document.querySelectorAll('[data-food]'));
+  const foodVisual = document.querySelector('.food-visual');
+  const foodImage = document.querySelector('.food-image');
+  const foodNumber = document.querySelector('#food-number');
+  const foodCaption = document.querySelector('#food-caption');
+  const captions = [
+    ['Больше ', 'разнообразия'],
+    ['Клетчатка в ', 'обычных блюдах'],
+    ['Разные ', 'источники белка'],
+    ['Меняем ', 'качество жиров']
+  ];
+  const positions = ['72% center', '94% center', '65% center', '80% center'];
+
+  function paintFrame() {
+    frameRequested = false;
+    const viewport = window.innerHeight;
+    const travel = root.scrollHeight - viewport;
+    progress.style.transform = 'scaleX(' + (travel > 0 ? Math.min(1, Math.max(0, window.scrollY / travel)) : 1) + ')';
+    const headerHeight = header.offsetHeight;
+    let active = chapters[0];
+    chapters.forEach(chapter => {
+      if (chapter.getBoundingClientRect().top <= headerHeight + viewport * 0.25) active = chapter;
+    });
+    header.classList.toggle('is-dark', active.hasAttribute('data-dark') || (!desktop.matches && active.id === 's01'));
+    if (active.id !== currentChapter) {
+      currentChapter = active.id;
+      menu.querySelectorAll('a').forEach(link => {
+        if (link.getAttribute('href') === '#' + currentChapter) link.setAttribute('aria-current', 'true');
+        else link.removeAttribute('aria-current');
+      });
+    }
+    if (!desktop.matches) return;
+    const visualRect = foodVisual.getBoundingClientRect();
+    if (visualRect.bottom < 0 || visualRect.top > viewport) return;
+    let activeStep = 0;
+    foodSteps.forEach((step, index) => {
+      if (step.getBoundingClientRect().top <= viewport * 0.56) activeStep = index;
+    });
+    if (activeStep !== currentFood) {
+      currentFood = activeStep;
+      foodSteps.forEach((step, index) => step.classList.toggle('is-active', index === activeStep));
+      foodNumber.textContent = String(activeStep + 1).padStart(2, '0') + ' / 04';
+      foodCaption.replaceChildren(document.createTextNode(captions[activeStep][0]));
+      const emphasis = document.createElement('em');
+      emphasis.textContent = captions[activeStep][1];
+      foodCaption.append(emphasis);
+      if (!paused) {
+        foodImage.style.objectPosition = positions[activeStep];
+        foodImage.style.setProperty('--food-scale', String(1 + activeStep * 0.025));
+      }
+    }
+  }
+  function scheduleFrame() {
+    if (!frameRequested) {
+      frameRequested = true;
+      requestAnimationFrame(paintFrame);
+    }
+  }
+  window.addEventListener('scroll', scheduleFrame, { passive: true });
+  window.addEventListener('resize', scheduleFrame, { passive: true });
+  window.addEventListener('load', scheduleFrame);
+  document.querySelectorAll('details').forEach(detail => detail.addEventListener('toggle', scheduleFrame));
+  document.querySelectorAll('input[name="habit"]').forEach(input => {
+    input.addEventListener('change', () => {
+      document.querySelector('#habit-result').textContent = 'Мой первый шаг: ' + input.value.toLowerCase() + '.';
+    });
+  });
+
+  // Existing links to the end of the 14-screen draft keep a useful destination.
+  const legacyAnchors = { '#s11': '#s08', '#s12': '#s09', '#s13': '#s09', '#s14': '#s10' };
+  if (legacyAnchors[location.hash]) {
+    location.replace(legacyAnchors[location.hash]);
+  }
+  applyMotion();
+  initReveals();
+  scheduleFrame();
 })();
