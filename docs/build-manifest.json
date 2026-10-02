@@ -1,0 +1,119 @@
+{
+  "version": "Codex V1",
+  "date": "2026-10-02",
+  "repository": "stepanMiller/verba-heart-on-your-plate-preview",
+  "branch": "codex/scroll-story-2026-10-02",
+  "format": "static native-scroll HTML",
+  "sections": 14,
+  "dependencies": [],
+  "qa": "passed automated Chromium checks; Safari device check pending",
+  "medical_approval": "pending",
+  "media_notes": "fictional people; animated photographs; silent MP4",
+  "files": [
+    {
+      "path": "index.html",
+      "bytes": 25808,
+      "sha256": "05fecd7c48483fdb770a7b72413b23f3a146e8d6a1cfb01fe04e330217cb0457"
+    },
+    {
+      "path": "styles.css",
+      "bytes": 35586,
+      "sha256": "61b5fa37a65743daa5fd29f7f993d5fd824140f64abdc1aa24b14f97ad9f291f"
+    },
+    {
+      "path": "app.js",
+      "bytes": 14864,
+      "sha256": "f3c5c63a19e1aef4203fb623fb2eb84c58f82bab41d416da00bb0c379ef73d01"
+    },
+    {
+      "path": "README.md",
+      "bytes": 3044,
+      "sha256": "aee09bc40dde07f82d0ea3533830dc5b9057f27cfdf208dadfe17837a1b04cc0"
+    },
+    {
+      "path": "assets/life-kitchen.webp",
+      "bytes": 120018,
+      "sha256": "e9dd7a1185d8794010e6d3cb593ef1963013ac8970612268587985e6cb5eabde"
+    },
+    {
+      "path": "assets/food.webp",
+      "bytes": 189420,
+      "sha256": "bb181d95f8fddec818d04a718e2876cfddca18868fbce81f5878e05d19a876a6"
+    },
+    {
+      "path": "assets/people.webp",
+      "bytes": 121076,
+      "sha256": "36cca7bfb4c632916c3ce1bdae502822dc908e36561269eabec0d14e80873021"
+    },
+    {
+      "path": "assets/swap.webp",
+      "bytes": 104694,
+      "sha256": "3d3b764e646d579b4949d519beb01125158567a8a451fe89d8d3bee7d8f7e714"
+    },
+    {
+      "path": "assets/hero-motion.mp4",
+      "bytes": 268702,
+      "sha256": "2a26a1ba2714457835a164d57cd259b729f800f98c864b3450b251b041e11adb"
+    },
+    {
+      "path": "assets/intro-film.mp4",
+      "bytes": 554687,
+      "sha256": "16cf1238fbe8dfc8da1839ad25b95694de0bbda5b69ed3715ddf4eb268001cd1"
+    },
+    {
+      "path": "docs/presentation-blueprint.md",
+      "bytes": 6618,
+      "sha256": "356bcf3b363598e267be906c66575c5c9b73a796499fd0715c257914b3b642c6"
+    },
+    {
+      "path": "docs/visual-style-brief.md",
+      "bytes": 4758,
+      "sha256": "87623e09e1b6b9f42512d0f82204342b43e3967a86b852b7b2e9a3e583d57a6a"
+    },
+    {
+      "path": "docs/sources.md",
+      "bytes": 3289,
+      "sha256": "f30dbc8a8fd94a8580ff17f348e8209d76468aa48fac7055350082b9b98f7f56"
+    },
+    {
+      "path": "docs/format-fallbacks.md",
+      "bytes": 1376,
+      "sha256": "993bc9e7b32d5d9e71126db511822ef1d029e13e66c70bdf2d462c3d2069bf58"
+    },
+    {
+      "path": "docs/qa-report.md",
+      "bytes": 3135,
+      "sha256": "fa38661c236baa03f41047b3f42344172075241790890943eb283f4c75037abe"
+    },
+    {
+      "path": "docs/qa-results.json",
+      "bytes": 14106,
+      "sha256": "c93e284e5e6b86ec2bc720e00ae2f51d3d5b809af23019cbc3dae16bc7019e78"
+    },
+    {
+      "path": "docs/renders/hero-390.webp",
+      "bytes": 31418,
+      "sha256": "47eaf894ce8d2a293b4c59a7a135380179c959e5934663f581a0c55590db8495"
+    },
+    {
+      "path": "docs/renders/hero-1440.webp",
+      "bytes": 82848,
+      "sha256": "aabdf9fd69c8bf2ee7c8ef4a7ded16e523e08ad8baf7cf6958ccb639113ba4a2"
+    },
+    {
+      "path": "docs/renders/s03-1440.webp",
+      "bytes": 39134,
+      "sha256": "1d9728e79502eef2e35a34af52097e17fe6b35e54d77172ce325cbc7e6cdd659"
+    },
+    {
+      "path": "docs/renders/s09-1440.webp",
+      "bytes": 47382,
+      "sha256": "ad491f06a04180ed6d0afed3755fe4c47c4a61046cdbd0afda713b9f07fd882c"
+    },
+    {
+      "path": "docs/renders/s14-1440.webp",
+      "bytes": 39422,
+      "sha256": "e297d4c9a5f9f5fa7f9bc5b2fd98722f27f5f1e38e38daf5e9d0850adc3e5d8c"
+    }
+  ]
+}
