@@ -1,27 +1,17 @@
-# Verification · 2 October 2026
-
-Version: `codex/verba-scroll-film-20261002`.
-
-## Verified
+# Verification · version 2 · 2 October 2026
 
 - `node --check app.js` passed.
-- Static HTML inspection: ten continuous sections, one H1, no missing referenced local media. The reading flow does not require JavaScript.
-- Chrome cloud browser: visual inspection of desktop hero, heart scene and mobile people section. Widths 320, 390, 430, 768, 1024 and 1280 were exercised with an iframe harness; document width matched available viewport width without horizontal overflow. The narrow frame has a desktop scrollbar, reducing its usable width by 15 px.
-- At 430 px, increasing the root font size from 16 to 32 px did not create horizontal overflow after correcting title wrapping. This was a layout check, not a complete accessibility certification or a physical device zoom test.
-- Both silent MP4 clips decoded and played in the browser (`readyState: 4`, `paused: false`, advancing current time). Both are 5.583 seconds. The initial incomplete human clip was replaced and retested before release.
-- Global pause stopped both videos and set the paused page state. Resuming restored motion. Videos outside the viewport pause.
-- Chapter menu opened and a chapter link navigated to `#s09`, closing the menu. Essential content remains in the accessibility tree as a continuous document.
-- Selecting the native radio option “Чаще выбирать бобовые” updated the local first-step message. There is no form submission or remote persistence.
-- Source disclosure opened and contained the five expected AHA, ESC/EAS and NHLBI links.
-- Reduced-motion CSS and JavaScript were inspected: transitions/reveals are disabled, posters retained, and motion controls respect the device preference. Real OS preference switching was not exercised.
-- Static preview source passed the same JavaScript syntax check, was packaged and published successfully as a separate private review page.
+- HTML inspection found six main sections, one H1 and no missing linked local assets.
+- Cloud Chrome: desktop opening and cooking scene inspected visually. Narrow mobile hero and ingredient layout inspected.
+- Widths 320, 390, 430, 768 and 1024 were exercised in the responsive iframe. Document width matched the viewport. Desktop width 1348 also matched. Transformed decorative hero media remains clipped inside its container.
+- At 430 px, root font size increased from 16 to 32 px without horizontal overflow. This is a root-font layout check, not a complete accessibility certification or physical-device zoom test.
+- Cooking MP4 duration 12.5 seconds; decoded and played (`readyState: 4`, advancing current time, `paused: false`). ffprobe also validated duration and container. Poster exists.
+- Global pause stopped the video and set the page's paused state.
+- The chapter menu navigated to the food section. Scrolling to the vegetables/legumes step updated the ingredient caption correctly.
+- Selecting “Чаще выбирать бобовые” updated the local first-step message.
+- No slide pagination or intercepted wheel/touch scrolling. Essential reading remains available without JavaScript; only additional medical explanation and sources use native disclosures.
+- Reduced-motion behavior inspected in source. Real OS preference changes were not tested.
 
-## Limits
+Physical iPhone/iPad Safari checks were not performed. Autoplay and data-saving restrictions intentionally retain posters. The lecture still requires final medical review.
 
-Physical iPhone/iPad Safari testing has not been performed. Autoplay restrictions and data-saving modes intentionally fall back to poster images. Video loops are reused conceptual footage, not diagnostic images. The lecture still requires final medical review.
-
-## Release isolation
-
-The new commit uses the original main commit `7003095a18f456e4de7f53e3185cdfc09fbd2775` as parent. Only `codex/verba-scroll-film-20261002` is updated. No main merge, GitHub Pages configuration change or other agent branch change is part of this version.
-
-Review URL: https://verba-scroll-film-20261002.spartak19876.chatgpt.site
+Source branch: `codex/verba-scroll-film-20261002`. Source commits are uploaded through GitHub's Git API with fast-forward-only updates to that branch. Review hosting is separate; GitHub Pages settings and main are not changed by this agent.
