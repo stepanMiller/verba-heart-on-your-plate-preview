@@ -1,0 +1,24 @@
+# Источники и происхождение
+
+Проверено 02.10.2026:
+
+1. AHA, Dietary and Lifestyle Recommendations, last reviewed March 31, 2026: https://www.heart.org/en/healthy-living/healthy-eating/eat-smart/nutrition-basics/aha-diet-and-lifestyle-recommendations
+2. WHO, July 17, 2023, fats and carbohydrates: https://www.who.int/news/item/17-07-2023-who-updates-guidelines-on-fats-and-carbohydrates
+3. ESC/EAS, 2025 Focused Update: https://www.escardio.org/Guidelines/Clinical-Practice-Guidelines/All-ESC-Practice-Guidelines/Dyslipidaemias
+4. NHLBI, Blood Cholesterol Causes and Risk Factors, April 19, 2024: https://www.nhlbi.nih.gov/health/blood-cholesterol/causes
+
+Прямые ссылки находятся в конце истории. Самостоятельные назначения, целевые числа и прогнозы не добавлялись. Материал остаётся дизайн-версией, медицинское согласование не завершено.
+
+## Ассеты
+
+- `verba-wordmark.png`, `hero-clean.png`, `swap-clean.png`, `people-clean.png`: предоставлены в исходном репозитории. Согласно исходному README, фотографии созданы ИИ, персонажи вымышлены; wordmark взят из ранее утверждённой презентации пользователя.
+- `assets/life-kitchen.webp`: новая иллюстрация, созданная встроенным imagegen 02.10.2026. Вымышленная пара 45–55 лет готовит салат в домашней кухне; это не люди или интерьер VERBA.
+- `assets/food.webp`, `assets/swap.webp`, `assets/people.webp`: сжатые WebP-копии исходных иллюстраций.
+- `assets/hero-motion.mp4`: плавное приближение/отдаление новой фотографии, 8 секунд, без звука, зациклено.
+- `assets/intro-film.mp4`: 18-секундный монтаж трёх фотографий с приближением и растворением, без звука.
+- Canvas и SVG написаны для проекта. Сфера частиц концептуальная, не анатомическая модель и не измерение.
+- Новых внешних фотографий, платного видео и внешних JS/CSS-библиотек нет.
+
+## Prompt новой фотографии
+
+Use case: photorealistic-natural. Asset type: full-bleed desktop and mobile hero photograph for an editorial medical web story about food and heart health. A fictional couple aged about 45–55 quietly prepares a fresh vegetable and chickpea salad in a lived-in home kitchen, ivory linen and olive cotton clothing, relaxed connection, not looking at camera. Warm evening window light, dark muted forest-green cabinetry, cream stone worktop. Wide 16:9, subjects and food on right two thirds, darker defocused negative space on far left. Realistic natural faces and hands, magazine editorial photography, gentle grain, shallow depth of field. No medical uniform, logo, text or watermark. Avoid advertising smiles, oversaturation and plastic skin.
