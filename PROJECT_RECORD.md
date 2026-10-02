@@ -1,4 +1,4 @@
-# VERBA · Heart on your plate · Version 2
+# VERBA · Heart on your plate · Version 3
 
 ## Scope
 
@@ -13,7 +13,7 @@ Canonical GitHub branch: `codex/verba-scroll-film-20261002`. Review URL: https:/
 | 01 · Opening | Recognize the lecture about nutrition | Original food photograph, speaker and large title |
 | 02 · Plate | Four usable dietary principles | Scroll-led food composition: fats, whole grains, vegetables/legumes, varied protein |
 | 03 · Replacements | Apply principles to ordinary situations | Original butter/oil photograph and three visible substitutions |
-| 04 · Routine | Make the food pattern repeatable | Real people preparing salad at home; Mediterranean pattern adapted to ordinary products |
+| 04 · Routine | Make the food pattern repeatable | Ingredient and preparation montage; Mediterranean pattern adapted to ordinary products |
 | 05 · Shop | Compare like-for-like products | Four visible label-reading prompts, without invented nutrition values |
 | 06 · First step | Choose an achievable habit | Local native radio options, practice interval, short medical context and doctor questions |
 
@@ -28,7 +28,7 @@ Motion consists of image movement during scrolling, gentle reveals and a muted c
 ## Media register
 
 - Food and butter/oil images: supplied AI illustrations from the original draft. Original PNGs retained; WebP derivatives used for performance. They are educational examples, not a resort menu.
-- Cooking video: Mixkit, “Couple preparing salad at home”, contributor Ruben Velázquez. Source: https://mixkit.co/free-stock-video/couple-preparing-salad-at-home-40519/ . The item page explicitly offers commercial/personal reuse under Stock Video Free License: https://mixkit.co/license/ . Retrieved 2 October 2026 through the page's visible video. Re-encoded to 960 px width, 24 fps, silent H.264, duration 12.5 seconds. The depicted people are not patients or VERBA staff. No health condition is inferred from appearance.
+- Food montage: three Mixkit Stock Video Free License clips. Vegetables on a board (10420): https://mixkit.co/free-stock-video/fresh-vegetables-on-a-wooden-board-close-up-view-10420/ . Overhead vegetable slicing (40524): https://mixkit.co/free-stock-video/top-view-of-a-woman-slicing-vegetables-40524/ . Olive oil onto salad (52473): https://mixkit.co/free-stock-video/a-stream-of-olive-oil-falling-in-slow-motion-over-52473/ . Each item page explicitly permits commercial/personal reuse under https://mixkit.co/license/ . Retrieved 2 October 2026 through the visible page videos. Edited into an 11.625-second, silent H.264 montage, 960 × 720, 24 fps, 734190 bytes. Close crops show food and hands without faces. Stock footage is not filming at VERBA.
 - Logo: supplied wordmark, retained.
 - Fonts: existing studio font files, self-hosted; OFL texts included in `assets/fonts`.
 

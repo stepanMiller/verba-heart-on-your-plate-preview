@@ -1,11 +1,11 @@
-# Verification · version 2 · 2 October 2026
+# Verification · version 3 · 2 October 2026
 
 - `node --check app.js` passed.
 - HTML inspection found six main sections, one H1 and no missing linked local assets.
-- Cloud Chrome: desktop opening and cooking scene inspected visually. Narrow mobile hero and ingredient layout inspected.
+- Layout and interaction checks below were completed for version 2. Version 3 changes only the routine video, poster, centered crop and media provenance.
 - Widths 320, 390, 430, 768 and 1024 were exercised in the responsive iframe. Document width matched the viewport. Desktop width 1348 also matched. Transformed decorative hero media remains clipped inside its container.
 - At 430 px, root font size increased from 16 to 32 px without horizontal overflow. This is a root-font layout check, not a complete accessibility certification or physical-device zoom test.
-- Cooking MP4 duration 12.5 seconds; decoded and played (`readyState: 4`, advancing current time, `paused: false`). ffprobe also validated duration and container. Poster exists.
+- Version 3 montage: silent H.264, 960 × 720, 24 fps, duration 11.625 seconds, 734190 bytes. ffprobe and full ffmpeg decode passed. New poster exists. Cloud Chrome desktop and a 390 px responsive iframe both played the montage (`readyState: 4`, advancing current time, `paused: false`); the new crop was inspected visually. Mobile document width matched its available viewport, 375 px with scrollbar.
 - Global pause stopped the video and set the page's paused state.
 - The chapter menu navigated to the food section. Scrolling to the vegetables/legumes step updated the ingredient caption correctly.
 - Selecting “Чаще выбирать бобовые” updated the local first-step message.
