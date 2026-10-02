@@ -71,3 +71,5 @@
 @media(max-width:900px){.meal-comparison .swap-states{top:auto;bottom:14px;left:14px;right:14px;display:flex;justify-content:center;flex-wrap:nowrap}.meal-comparison .swap-states button{flex:1;max-width:230px;min-height:44px}.meal-image-caption{display:none}}
 
 .risk-person{display:flex;flex-direction:column}.risk-person-photo,.equal-lipid,.context-line{flex-shrink:0}.case-context{flex:1}
+
+.person-a{background-position:left top}.person-b{background-position:right top}
