@@ -1,3 +1,6 @@
 assets/*-source.png
 node_modules/
 .DS_Store
+
+docs/renders/**/*.png
+docs/renders/*.png

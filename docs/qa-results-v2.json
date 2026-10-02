@@ -1,0 +1,801 @@
+{
+  "version": "Codex V2",
+  "viewports": [
+    {
+      "width": 320,
+      "height": 780,
+      "video": {
+        "src": "http://127.0.0.1:41421/assets/hero-live-mobile.mp4",
+        "duration": 10,
+        "readyState": 4,
+        "playing": true,
+        "currentTime": 1.345948
+      },
+      "preview": {
+        "readyState": 4,
+        "playing": true,
+        "currentTime": 0.471159
+      },
+      "checks": [
+        {
+          "id": "#s01",
+          "shown": true,
+          "overflow": false,
+          "textOverflow": []
+        },
+        {
+          "id": "#s02",
+          "shown": true,
+          "overflow": false,
+          "textOverflow": []
+        },
+        {
+          "id": "#s03",
+          "shown": true,
+          "overflow": false,
+          "textOverflow": []
+        },
+        {
+          "id": "#s04",
+          "shown": true,
+          "overflow": false,
+          "textOverflow": []
+        },
+        {
+          "id": "#s05",
+          "shown": true,
+          "overflow": false,
+          "textOverflow": []
+        },
+        {
+          "id": "#s06",
+          "shown": true,
+          "overflow": false,
+          "textOverflow": []
+        },
+        {
+          "id": "#s07",
+          "shown": true,
+          "overflow": false,
+          "textOverflow": []
+        },
+        {
+          "id": "#s08",
+          "shown": true,
+          "overflow": false,
+          "textOverflow": []
+        },
+        {
+          "id": "#s09",
+          "shown": true,
+          "overflow": false,
+          "textOverflow": []
+        },
+        {
+          "id": "#s10",
+          "shown": true,
+          "overflow": false,
+          "textOverflow": []
+        },
+        {
+          "id": "#s11",
+          "shown": true,
+          "overflow": false,
+          "textOverflow": []
+        },
+        {
+          "id": "#s12",
+          "shown": true,
+          "overflow": false,
+          "textOverflow": []
+        },
+        {
+          "id": "#s13",
+          "shown": true,
+          "overflow": false,
+          "textOverflow": []
+        },
+        {
+          "id": "#s14",
+          "shown": true,
+          "overflow": false,
+          "textOverflow": []
+        }
+      ]
+    },
+    {
+      "width": 390,
+      "height": 844,
+      "video": {
+        "src": "http://127.0.0.1:41421/assets/hero-live-mobile.mp4",
+        "duration": 10,
+        "readyState": 4,
+        "playing": true,
+        "currentTime": 1.367624
+      },
+      "preview": {
+        "readyState": 4,
+        "playing": true,
+        "currentTime": 0.475658
+      },
+      "checks": [
+        {
+          "id": "#s01",
+          "shown": true,
+          "overflow": false,
+          "textOverflow": []
+        },
+        {
+          "id": "#s02",
+          "shown": true,
+          "overflow": false,
+          "textOverflow": []
+        },
+        {
+          "id": "#s03",
+          "shown": true,
+          "overflow": false,
+          "textOverflow": []
+        },
+        {
+          "id": "#s04",
+          "shown": true,
+          "overflow": false,
+          "textOverflow": []
+        },
+        {
+          "id": "#s05",
+          "shown": true,
+          "overflow": false,
+          "textOverflow": []
+        },
+        {
+          "id": "#s06",
+          "shown": true,
+          "overflow": false,
+          "textOverflow": []
+        },
+        {
+          "id": "#s07",
+          "shown": true,
+          "overflow": false,
+          "textOverflow": []
+        },
+        {
+          "id": "#s08",
+          "shown": true,
+          "overflow": false,
+          "textOverflow": []
+        },
+        {
+          "id": "#s09",
+          "shown": true,
+          "overflow": false,
+          "textOverflow": []
+        },
+        {
+          "id": "#s10",
+          "shown": true,
+          "overflow": false,
+          "textOverflow": []
+        },
+        {
+          "id": "#s11",
+          "shown": true,
+          "overflow": false,
+          "textOverflow": []
+        },
+        {
+          "id": "#s12",
+          "shown": true,
+          "overflow": false,
+          "textOverflow": []
+        },
+        {
+          "id": "#s13",
+          "shown": true,
+          "overflow": false,
+          "textOverflow": []
+        },
+        {
+          "id": "#s14",
+          "shown": true,
+          "overflow": false,
+          "textOverflow": []
+        }
+      ]
+    },
+    {
+      "width": 760,
+      "height": 1024,
+      "video": {
+        "src": "http://127.0.0.1:41421/assets/hero-live-mobile.mp4",
+        "duration": 10,
+        "readyState": 4,
+        "playing": true,
+        "currentTime": 1.347255
+      },
+      "preview": {
+        "readyState": 4,
+        "playing": true,
+        "currentTime": 0.466493
+      },
+      "checks": [
+        {
+          "id": "#s01",
+          "shown": true,
+          "overflow": false,
+          "textOverflow": []
+        },
+        {
+          "id": "#s02",
+          "shown": true,
+          "overflow": false,
+          "textOverflow": []
+        },
+        {
+          "id": "#s03",
+          "shown": true,
+          "overflow": false,
+          "textOverflow": []
+        },
+        {
+          "id": "#s04",
+          "shown": true,
+          "overflow": false,
+          "textOverflow": []
+        },
+        {
+          "id": "#s05",
+          "shown": true,
+          "overflow": false,
+          "textOverflow": []
+        },
+        {
+          "id": "#s06",
+          "shown": true,
+          "overflow": false,
+          "textOverflow": []
+        },
+        {
+          "id": "#s07",
+          "shown": true,
+          "overflow": false,
+          "textOverflow": []
+        },
+        {
+          "id": "#s08",
+          "shown": true,
+          "overflow": false,
+          "textOverflow": []
+        },
+        {
+          "id": "#s09",
+          "shown": true,
+          "overflow": false,
+          "textOverflow": []
+        },
+        {
+          "id": "#s10",
+          "shown": true,
+          "overflow": false,
+          "textOverflow": []
+        },
+        {
+          "id": "#s11",
+          "shown": true,
+          "overflow": false,
+          "textOverflow": []
+        },
+        {
+          "id": "#s12",
+          "shown": true,
+          "overflow": false,
+          "textOverflow": []
+        },
+        {
+          "id": "#s13",
+          "shown": true,
+          "overflow": false,
+          "textOverflow": []
+        },
+        {
+          "id": "#s14",
+          "shown": true,
+          "overflow": false,
+          "textOverflow": []
+        }
+      ]
+    },
+    {
+      "width": 768,
+      "height": 1024,
+      "video": {
+        "src": "http://127.0.0.1:41421/assets/hero-live.mp4",
+        "duration": 10,
+        "readyState": 4,
+        "playing": true,
+        "currentTime": 1.340676
+      },
+      "preview": {
+        "readyState": 4,
+        "playing": true,
+        "currentTime": 0.624724
+      },
+      "checks": [
+        {
+          "id": "#s01",
+          "shown": true,
+          "overflow": false,
+          "textOverflow": []
+        },
+        {
+          "id": "#s02",
+          "shown": true,
+          "overflow": false,
+          "textOverflow": []
+        },
+        {
+          "id": "#s03",
+          "shown": true,
+          "overflow": false,
+          "textOverflow": []
+        },
+        {
+          "id": "#s04",
+          "shown": true,
+          "overflow": false,
+          "textOverflow": []
+        },
+        {
+          "id": "#s05",
+          "shown": true,
+          "overflow": false,
+          "textOverflow": []
+        },
+        {
+          "id": "#s06",
+          "shown": true,
+          "overflow": false,
+          "textOverflow": []
+        },
+        {
+          "id": "#s07",
+          "shown": true,
+          "overflow": false,
+          "textOverflow": []
+        },
+        {
+          "id": "#s08",
+          "shown": true,
+          "overflow": false,
+          "textOverflow": []
+        },
+        {
+          "id": "#s09",
+          "shown": true,
+          "overflow": false,
+          "textOverflow": []
+        },
+        {
+          "id": "#s10",
+          "shown": true,
+          "overflow": false,
+          "textOverflow": []
+        },
+        {
+          "id": "#s11",
+          "shown": true,
+          "overflow": false,
+          "textOverflow": []
+        },
+        {
+          "id": "#s12",
+          "shown": true,
+          "overflow": false,
+          "textOverflow": []
+        },
+        {
+          "id": "#s13",
+          "shown": true,
+          "overflow": false,
+          "textOverflow": []
+        },
+        {
+          "id": "#s14",
+          "shown": true,
+          "overflow": false,
+          "textOverflow": []
+        }
+      ]
+    },
+    {
+      "width": 1024,
+      "height": 768,
+      "video": {
+        "src": "http://127.0.0.1:41421/assets/hero-live.mp4",
+        "duration": 10,
+        "readyState": 4,
+        "playing": true,
+        "currentTime": 1.366182
+      },
+      "preview": {
+        "readyState": 4,
+        "playing": true,
+        "currentTime": 0.462685
+      },
+      "checks": [
+        {
+          "id": "#s01",
+          "shown": true,
+          "overflow": false,
+          "textOverflow": []
+        },
+        {
+          "id": "#s02",
+          "shown": true,
+          "overflow": false,
+          "textOverflow": []
+        },
+        {
+          "id": "#s03",
+          "shown": true,
+          "overflow": false,
+          "textOverflow": []
+        },
+        {
+          "id": "#s04",
+          "shown": true,
+          "overflow": false,
+          "textOverflow": []
+        },
+        {
+          "id": "#s05",
+          "shown": true,
+          "overflow": false,
+          "textOverflow": []
+        },
+        {
+          "id": "#s06",
+          "shown": true,
+          "overflow": false,
+          "textOverflow": []
+        },
+        {
+          "id": "#s07",
+          "shown": true,
+          "overflow": false,
+          "textOverflow": []
+        },
+        {
+          "id": "#s08",
+          "shown": true,
+          "overflow": false,
+          "textOverflow": []
+        },
+        {
+          "id": "#s09",
+          "shown": true,
+          "overflow": false,
+          "textOverflow": []
+        },
+        {
+          "id": "#s10",
+          "shown": true,
+          "overflow": false,
+          "textOverflow": []
+        },
+        {
+          "id": "#s11",
+          "shown": true,
+          "overflow": false,
+          "textOverflow": []
+        },
+        {
+          "id": "#s12",
+          "shown": true,
+          "overflow": false,
+          "textOverflow": []
+        },
+        {
+          "id": "#s13",
+          "shown": true,
+          "overflow": false,
+          "textOverflow": []
+        },
+        {
+          "id": "#s14",
+          "shown": true,
+          "overflow": false,
+          "textOverflow": []
+        }
+      ]
+    },
+    {
+      "width": 1440,
+      "height": 1000,
+      "video": {
+        "src": "http://127.0.0.1:41421/assets/hero-live.mp4",
+        "duration": 10,
+        "readyState": 4,
+        "playing": true,
+        "currentTime": 3.025089
+      },
+      "preview": {
+        "readyState": 4,
+        "playing": true,
+        "currentTime": 0.446336
+      },
+      "checks": [
+        {
+          "id": "#s01",
+          "shown": true,
+          "overflow": false,
+          "textOverflow": []
+        },
+        {
+          "id": "#s02",
+          "shown": true,
+          "overflow": false,
+          "textOverflow": []
+        },
+        {
+          "id": "#s03",
+          "shown": true,
+          "overflow": false,
+          "textOverflow": []
+        },
+        {
+          "id": "#s04",
+          "shown": true,
+          "overflow": false,
+          "textOverflow": []
+        },
+        {
+          "id": "#s05",
+          "shown": true,
+          "overflow": false,
+          "textOverflow": []
+        },
+        {
+          "id": "#s06",
+          "shown": true,
+          "overflow": false,
+          "textOverflow": []
+        },
+        {
+          "id": "#s07",
+          "shown": true,
+          "overflow": false,
+          "textOverflow": []
+        },
+        {
+          "id": "#s08",
+          "shown": true,
+          "overflow": false,
+          "textOverflow": []
+        },
+        {
+          "id": "#s09",
+          "shown": true,
+          "overflow": false,
+          "textOverflow": []
+        },
+        {
+          "id": "#s10",
+          "shown": true,
+          "overflow": false,
+          "textOverflow": []
+        },
+        {
+          "id": "#s11",
+          "shown": true,
+          "overflow": false,
+          "textOverflow": []
+        },
+        {
+          "id": "#s12",
+          "shown": true,
+          "overflow": false,
+          "textOverflow": []
+        },
+        {
+          "id": "#s13",
+          "shown": true,
+          "overflow": false,
+          "textOverflow": []
+        },
+        {
+          "id": "#s14",
+          "shown": true,
+          "overflow": false,
+          "textOverflow": []
+        }
+      ]
+    },
+    {
+      "width": 1920,
+      "height": 1080,
+      "video": {
+        "src": "http://127.0.0.1:41421/assets/hero-live.mp4",
+        "duration": 10,
+        "readyState": 4,
+        "playing": true,
+        "currentTime": 1.781518
+      },
+      "preview": {
+        "readyState": 4,
+        "playing": true,
+        "currentTime": 0.446667
+      },
+      "checks": [
+        {
+          "id": "#s01",
+          "shown": true,
+          "overflow": false,
+          "textOverflow": []
+        },
+        {
+          "id": "#s02",
+          "shown": true,
+          "overflow": false,
+          "textOverflow": []
+        },
+        {
+          "id": "#s03",
+          "shown": true,
+          "overflow": false,
+          "textOverflow": []
+        },
+        {
+          "id": "#s04",
+          "shown": true,
+          "overflow": false,
+          "textOverflow": []
+        },
+        {
+          "id": "#s05",
+          "shown": true,
+          "overflow": false,
+          "textOverflow": []
+        },
+        {
+          "id": "#s06",
+          "shown": true,
+          "overflow": false,
+          "textOverflow": []
+        },
+        {
+          "id": "#s07",
+          "shown": true,
+          "overflow": false,
+          "textOverflow": []
+        },
+        {
+          "id": "#s08",
+          "shown": true,
+          "overflow": false,
+          "textOverflow": []
+        },
+        {
+          "id": "#s09",
+          "shown": true,
+          "overflow": false,
+          "textOverflow": []
+        },
+        {
+          "id": "#s10",
+          "shown": true,
+          "overflow": false,
+          "textOverflow": []
+        },
+        {
+          "id": "#s11",
+          "shown": true,
+          "overflow": false,
+          "textOverflow": []
+        },
+        {
+          "id": "#s12",
+          "shown": true,
+          "overflow": false,
+          "textOverflow": []
+        },
+        {
+          "id": "#s13",
+          "shown": true,
+          "overflow": false,
+          "textOverflow": []
+        },
+        {
+          "id": "#s14",
+          "shown": true,
+          "overflow": false,
+          "textOverflow": []
+        }
+      ]
+    }
+  ],
+  "interactions": [
+    {
+      "test": "showreel-from-#film-toggle",
+      "pass": true,
+      "state": {
+        "duration": 28,
+        "playing": true,
+        "currentTime": 1.480561
+      }
+    },
+    {
+      "test": "close-film-#film-toggle",
+      "pass": true
+    },
+    {
+      "test": "showreel-from-.hero-reel-button",
+      "pass": true,
+      "state": {
+        "duration": 28,
+        "playing": true,
+        "currentTime": 0.717399
+      }
+    },
+    {
+      "test": "close-film-.hero-reel-button",
+      "pass": true
+    },
+    {
+      "test": "showreel-from-.reel-card",
+      "pass": true,
+      "state": {
+        "duration": 28,
+        "playing": true,
+        "currentTime": 0.76102
+      }
+    },
+    {
+      "test": "close-film-.reel-card",
+      "pass": true
+    },
+    {
+      "test": "swap",
+      "pass": true
+    },
+    {
+      "test": "label",
+      "pass": true
+    },
+    {
+      "test": "risk",
+      "pass": true
+    },
+    {
+      "test": "habit",
+      "pass": true
+    },
+    {
+      "test": "contents",
+      "pass": true
+    },
+    {
+      "test": "contents-escape",
+      "pass": true
+    },
+    {
+      "test": "pause-all",
+      "pass": true
+    },
+    {
+      "test": "reduced-motion",
+      "pass": true
+    },
+    {
+      "test": "s04-anchor",
+      "pass": true
+    },
+    {
+      "test": "no-javascript",
+      "pass": true
+    }
+  ],
+  "errors": []
+}
