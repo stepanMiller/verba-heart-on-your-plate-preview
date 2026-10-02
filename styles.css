@@ -7,3 +7,8 @@
 @media print{.masthead,.deck-nav,#contents,dialog,.skip{display:none!important}.js .slide,.slide{display:flex!important;min-height:0;height:190mm;padding:14mm 15mm 20mm;page-break-after:always;break-after:page;overflow:hidden!important;animation:none!important}.slide .content{margin:auto}.scene-note{position:absolute;bottom:9mm;left:15mm;right:15mm;font-size:9px}h1{font-size:75px}h2{font-size:56px}.eyebrow{font-size:10px}.lead{font-size:22px}.hero .scene-note{margin:0}.reveal-copy[hidden]{display:block!important;font-size:14px}.answer-stack .lead{font-size:24px}.reveal-row{padding:10px 0}.reveal-row span{font-size:22px}.risk-controls button{padding:9px;font-size:13px}#risk-detail{font-size:12px}.same-ldl{font-size:16px;bottom:0}.finale #sources{display:flex!important}.finale .end-brand{margin:20px auto}.finale .end-brand img{width:150px}.dark{print-color-adjust:exact;-webkit-print-color-adjust:exact}@page{size:A4 landscape;margin:0}}
 
 .review-badge{position:fixed;z-index:35;left:50%;bottom:62px;transform:translateX(-50%);width:max-content;max-width:calc(100% - 32px);padding:5px 12px;border-radius:20px;background:rgba(244,241,233,.93);color:#283126;border:1px solid rgba(40,49,38,.16);font:11px/1.35 Arial,sans-serif;text-align:center;pointer-events:none} @media(max-width:620px){.review-badge{bottom:70px;font-size:10px;max-width:calc(100% - 20px)}}
+
+/* Live-preview QA fixes: keep review notice and film controls clear. */
+.review-badge{top:84px;bottom:auto;margin:0;padding:4px 12px}
+dialog{width:min(1140px,96vw,calc((100dvh - 200px)*1.77778));max-height:calc(100dvh - 24px)}
+@media(max-width:620px){.review-badge{top:calc(102px + env(safe-area-inset-top));bottom:auto}.slide{padding-top:calc(145px + env(safe-area-inset-top))}}
