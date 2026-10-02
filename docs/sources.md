@@ -22,3 +22,16 @@
 ## Prompt новой фотографии
 
 Use case: photorealistic-natural. Asset type: full-bleed desktop and mobile hero photograph for an editorial medical web story about food and heart health. A fictional couple aged about 45–55 quietly prepares a fresh vegetable and chickpea salad in a lived-in home kitchen, ivory linen and olive cotton clothing, relaxed connection, not looking at camera. Warm evening window light, dark muted forest-green cabinetry, cream stone worktop. Wide 16:9, subjects and food on right two thirds, darker defocused negative space on far left. Realistic natural faces and hands, magazine editorial photography, gentle grain, shallow depth of field. No medical uniform, logo, text or watermark. Avoid advertising smiles, oversaturation and plastic skin.
+
+## Видео Codex V2
+
+Скачано 02.10.2026. При подготовке проверены страницы конкретных клипов: они помечены Mixkit Stock Video Free License, с разрешением коммерческого и личного использования. Это иллюстрация повседневного питания, не съёмка гостей или кухни курорта. Не заявляется участие людей в рекламе VERBA.
+
+| Исходник | Использование | Лицензия / происхождение |
+|---|---|---|
+| [Couple preparing salad at home, 40519](https://mixkit.co/free-stock-video/couple-preparing-salad-at-home-40519/) | Главный экран, вертикальный mobile crop, глава s08 и шоурил | Mixkit Stock Video Free License |
+| [Woman pouring olive oil over salad, 40528](https://mixkit.co/free-stock-video/woman-pouring-olive-oil-over-salad-40528/) | Крупная видеокарточка, шоурил | Mixkit Stock Video Free License |
+| [Couple preparing salad in kitchen, 40530](https://mixkit.co/free-stock-video/couple-preparing-salad-in-kitchen-40530/) | Шоурил, крупные планы подготовки еды | Mixkit Stock Video Free License |
+| [VERBA Heart, v05](https://verba-heart.website.yandexcloud.net/media/VERBA-Heart-Review-v05.mp4?v=20260913-2) | Фрагмент 8,5–16,5 секунды, crop для удаления исходных субтитров, шоурил | Собственный проект пользователя, указанный им как референс |
+
+[Лицензии Mixkit](https://mixkit.co/license/). Исходники стоковой съёмки получены в Full HD. Для web изготовлены локальные MP4 H.264: desktop 1280 × 720, mobile hero 540 × 960, mobile карточка 854 × 480. Цвет, тайминг, склейки и титры собраны отдельно. Звука в шоуриле нет. Платные генерации и кредиты Runway не использовались.

@@ -67,11 +67,16 @@
 
   function loadVideo(video) {
     const source = $('source', video);
-    if (!source.src && source.dataset.src) { source.src = source.dataset.src; video.load(); }
+    const selected = narrow.matches && source.dataset.mobileSrc ? source.dataset.mobileSrc : source.dataset.src;
+    if (source.getAttribute('src') !== selected) {
+      source.src = selected;
+      if (narrow.matches && video.dataset.mobilePoster) video.poster = video.dataset.mobilePoster;
+      video.muted = video !== introVideo; video.load();
+    }
   }
   function syncHeroVideo() {
     // Keep mobile data use small; CSS still animates the poster on narrow screens.
-    const shouldPlay = motion && !narrow.matches && activeSection === 0 && !document.hidden;
+    const shouldPlay = motion && activeSection === 0 && !document.hidden && !film.open && !navigator.connection?.saveData;
     if (shouldPlay) {
       loadVideo(heroVideo);
       heroVideo.play().then(() => heroVideo.classList.add('ready')).catch(() => { heroVideo.classList.remove('ready'); });
@@ -90,6 +95,7 @@
     syncHeroVideo();
     syncCanvas();
     requestUpdate();
+    document.dispatchEvent(new Event('verba:motion'));
   }
   motionButton.addEventListener('click', () => { userPaused = !userPaused; applyMotion(); });
   reduce.addEventListener('change', applyMotion);
@@ -144,20 +150,25 @@
     $('#habit-result').textContent = `Мой шаг на две недели: ${button.dataset.habit.toLowerCase()}.`;
   }));
 
-  $('#film-toggle').addEventListener('click', () => {
+  let filmOpener = $('#film-toggle');
+  $$('[data-open-film]').forEach(button => button.addEventListener('click', () => {
+    filmOpener = button;
     setMenu(false);
     film.showModal();
+    syncHeroVideo(); document.dispatchEvent(new Event('verba:motion'));
     loadVideo(introVideo);
     introVideo.currentTime = 0;
     introVideo.play().catch(() => {});
     $('#film-close').focus();
-  });
-  $('#film-close').addEventListener('click', () => film.close());
-  film.addEventListener('close', () => { introVideo.pause(); $('#film-toggle').focus({ preventScroll: true }); });
+  }));
+  function closeFilm() { introVideo.pause(); film.close(); }
+  $('#film-close').addEventListener('click', closeFilm);
+  film.addEventListener('cancel', () => introVideo.pause());
+  film.addEventListener('close', () => { if (film.open) return; introVideo.pause(); filmOpener.focus({ preventScroll: true }); syncHeroVideo(); document.dispatchEvent(new Event('verba:motion')); });
   film.addEventListener('click', e => {
     if (e.target !== film) return;
     const r = film.getBoundingClientRect();
-    if (e.clientX < r.left || e.clientX > r.right || e.clientY < r.top || e.clientY > r.bottom) film.close();
+    if (e.clientX < r.left || e.clientX > r.right || e.clientY < r.top || e.clientY > r.bottom) closeFilm();
   });
   document.addEventListener('visibilitychange', () => {
     if (document.hidden) introVideo.pause();
