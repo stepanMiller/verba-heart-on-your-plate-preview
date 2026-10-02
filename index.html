@@ -27,15 +27,15 @@
         <div class="vl-lab-head"><span>Липидограмма</span><span>Без личных значений</span></div>
         <div class="vl-selectors" role="group" aria-label="Выберите показатель липидограммы">
           <button class="vl-choice" type="button" data-vl-select="ldl" aria-pressed="true" aria-controls="vl-visual">
-            <span class="vl-choice-top"><span class="vl-choice-code">ХС-ЛПНП</span><span class="vl-choice-latin">LDL-C</span><span class="vl-choice-arrow" aria-hidden="true">↗</span></span>
+            <span class="vl-choice-top"><span class="vl-choice-code">ХС-ЛПНП</span><span class="vl-choice-latin">LDL-C</span><span class="vl-choice-arrow" aria-hidden="true">→</span></span>
             <span class="vl-choice-copy">Концентрация холестерина,<br>переносимого ЛПНП</span>
           </button>
           <button class="vl-choice" type="button" data-vl-select="hdl" aria-pressed="false" aria-controls="vl-visual">
-            <span class="vl-choice-top"><span class="vl-choice-code">ХС-ЛПВП</span><span class="vl-choice-latin">HDL-C</span><span class="vl-choice-arrow" aria-hidden="true">↗</span></span>
+            <span class="vl-choice-top"><span class="vl-choice-code">ХС-ЛПВП</span><span class="vl-choice-latin">HDL-C</span><span class="vl-choice-arrow" aria-hidden="true">→</span></span>
             <span class="vl-choice-copy">Концентрация холестерина,<br>переносимого ЛПВП</span>
           </button>
           <button class="vl-choice" type="button" data-vl-select="tg" aria-pressed="false" aria-controls="vl-visual">
-            <span class="vl-choice-top"><span class="vl-choice-code">ТГ</span><span class="vl-choice-latin">Триглицериды</span><span class="vl-choice-arrow" aria-hidden="true">↗</span></span>
+            <span class="vl-choice-top"><span class="vl-choice-code">ТГ</span><span class="vl-choice-latin">Триглицериды</span><span class="vl-choice-arrow" aria-hidden="true">→</span></span>
             <span class="vl-choice-copy">Концентрация триглицеридов,<br>другого вида липидов</span>
           </button>
         </div>
@@ -94,7 +94,7 @@
         <p class="vl-schematic-note" id="vl-schematic-note">Показан выбранный вид липидов, не полный состав частицы. Размеры и число символов условны.</p>
       </figure>
     </div>
-    <div class="vl-takeaway"><span class="vl-takeaway-mark" aria-hidden="true">↳</span><p>Это показатели содержания липидов в крови, <em>а не числа частиц.</em><span>Обычная липидограмма не показывает число или размер частиц.</span></p></div>
+    <div class="vl-takeaway"><span class="vl-takeaway-mark" aria-hidden="true">—</span><p>Это показатели содержания липидов в крови, <em>а не числа частиц.</em><span>Обычная липидограмма не показывает число или размер частиц.</span></p></div>
     <p class="vl-sr-only" id="vl-live" role="status" aria-live="polite" aria-atomic="true"></p>
   </div>
 </section>
@@ -104,13 +104,14 @@
   <div class="swap-story-head"><div><p class="eyebrow">04 · Одно изменение в привычном блюде</p><h2 id="h05">Меняем часть.<br><em>Сохраняем любимое.</em></h2></div><p class="lead">Тот же хлеб. Те же овощи.<br>Другой источник жира.</p></div>
   <figure class="meal-comparison" id="meal-comparison" style="--replacement:0%">
    <img class="meal-before" src="assets/swap-toast-before.png" alt="Учебный пример: цельнозерновой тост со сливочным маслом и овощами на светлой тарелке" loading="lazy" width="1672" height="941">
-   <div class="meal-after"><img src="assets/swap-toast-after.png" alt="Тот же учебный пример: вместо сливочного масла на тосте немного оливкового масла" loading="lazy" width="1672" height="941"></div>
+   <div class="meal-after"><img src="assets/swap-toast-after.png" alt="Тот же учебный пример: вместо сливочного масла на тосте немного оливкового масла" loading="eager" width="1672" height="941"></div>
    <div class="meal-stamp"><span>Один и тот же завтрак</span><strong id="meal-state">Исходный вариант</strong></div>
    <div class="meal-divider" aria-hidden="true"><span>↔</span></div>
+   <div class="swap-states" role="group" aria-label="Показать вариант блюда"><button type="button" data-meal-state="0" aria-pressed="true">Исходный вариант</button><button type="button" data-meal-state="100" aria-pressed="false">Показать замену <span aria-hidden="true">→</span></button></div>
    <div class="meal-image-caption"><span>Сливочное масло</span><span>Оливковое масло</span></div>
   </figure>
   <div class="swap-console">
-   <div class="swap-states" role="group" aria-label="Показать вариант блюда"><button type="button" data-meal-state="0" aria-pressed="true">Исходный вариант</button><button type="button" data-meal-state="100" aria-pressed="false">Показать замену <span aria-hidden="true">→</span></button></div>
+   
    <label class="meal-slider-label" for="meal-range"><span>Или проведите по шкале для сравнения</span><input id="meal-range" type="range" min="0" max="100" value="0" aria-label="Сравнение исходного блюда и варианта замены" aria-valuetext="Исходный вариант со сливочным маслом"></label>
   </div>
   <div class="swap-conclusion"><p class="lead">Часть сливочного масла<br><em>можно заменить оливковым.</em></p><p>Заменяем источник жира, а не добавляем масло поверх прежней порции. Количество зависит от блюда.</p></div>
