@@ -128,3 +128,23 @@ body.motion-off .fibre-workbench *,body.motion-off .label-workbench *{transition
 @media(max-width:760px){.fats-cinematic{min-height:870px}.fat-cinematic-media>img,.fat-cinematic-media>video{object-position:63% center}.fat-cinematic-scrim{background:linear-gradient(180deg,#f4f1e9ee,#f4f1e9cd 33%,transparent 55%,#f4f1e9c7)}.fat-cinematic-copy{max-width:100%}.fat-cinematic-copy h2{font-size:49px}.fat-cinematic-copy .lead{font-size:22px}.fat-cinematic-labels{left:24px;right:24px;bottom:120px;gap:18px}.fat-cinematic-labels>div{width:48%}.fat-cinematic-labels h3{font-size:25px}.fat-cinematic-labels .overline{font-size:9px}.scene-media-toggle{top:auto;bottom:225px;right:24px;font-size:11px}.fats-cinematic .scene-note{bottom:77px}.semantic-swap.slide{min-height:960px}.semantic-swap .swap-story-head{max-width:100%}.semantic-swap .swap-story-head h2{font-size:43px}.semantic-swap .swap-story-head>.lead{font-size:22px}.semantic-swap .meal-comparison{margin:0;inset:27% 0 0;height:73%;width:100%}.semantic-swap .meal-comparison:after{background:linear-gradient(180deg,#f4f1e9ee,transparent 43%,#f4f1e93d 70%,#f4f1e9bd)}.semantic-swap .meal-before,.semantic-swap .meal-after img{object-position:62% center}.semantic-swap .swap-states{bottom:182px;left:24px;right:24px;max-width:none}.semantic-swap .swap-console{left:24px;right:24px;width:auto;bottom:116px}.semantic-swap .semantic-note{left:24px;right:24px;bottom:74px;font-size:10px}.semantic-swap .meal-image-caption{display:none}}
 .consolidated-hero .hero-photo video{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:72% center;opacity:0;transition:opacity .6s}.consolidated-hero .hero-photo video.ready{opacity:1}.film-brand-label{font:13px/1.4 var(--sans)!important;text-transform:uppercase;letter-spacing:.1em;margin-top:14px!important}.consolidated-hero .hero-media-note{cursor:pointer;border:1px solid #ffffff38;border-radius:24px}
 @media(max-width:760px){.consolidated-hero .hero-photo video{object-position:66% center}}
+
+/* QA: preserve both people and the changed toast in narrow viewports. */
+.fibre-choice-mark,.package-field-arrow{font-family:Arial,sans-serif}
+@media(max-width:760px){
+ .consolidated-hero{min-height:900px}
+ .consolidated-hero .hero-photo{inset:42% 0 0}
+ .consolidated-hero .hero-photo img,.consolidated-hero .hero-photo video{object-position:77% center}
+ .semantic-swap .meal-before,.semantic-swap .meal-after img{object-position:30% center}
+ .semantic-swap .swap-states{bottom:205px}
+ .vo-layout{display:flex;flex-direction:column}
+ .vo-copy{display:contents}
+ .vo-copy>.vo-eyebrow{order:0;margin-bottom:0}
+ .vo-copy>h2{order:1}
+ .vo-figure{order:2;margin:4px 0 18px;width:100%}
+ .vo-copy>.vo-intro{order:3}
+ .vo-copy>.vo-choices{order:4;width:100%}
+ .vo-copy>.vo-reading{order:5;width:100%}
+ .vo-copy>.vo-caveat{order:6}
+ .version-mark{font-size:8px;padding:4px 5px}
+}
