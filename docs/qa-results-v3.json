@@ -1,0 +1,1362 @@
+{
+  "version": "Codex V3",
+  "date": "2026-10-03",
+  "sizes": [
+    {
+      "width": 320,
+      "height": 780,
+      "scenes": [
+        {
+          "id": "s01",
+          "height": 780,
+          "hasHero": true
+        },
+        {
+          "id": "s02",
+          "height": 804,
+          "hasHero": true
+        },
+        {
+          "id": "s03",
+          "height": 794,
+          "hasHero": true
+        },
+        {
+          "id": "s04",
+          "height": 780,
+          "hasHero": true
+        },
+        {
+          "id": "s05",
+          "height": 780,
+          "hasHero": true
+        },
+        {
+          "id": "s06",
+          "height": 780,
+          "hasHero": true
+        },
+        {
+          "id": "s07",
+          "height": 780,
+          "hasHero": true
+        },
+        {
+          "id": "s08",
+          "height": 780,
+          "hasHero": true
+        },
+        {
+          "id": "s09",
+          "height": 811,
+          "hasHero": true
+        },
+        {
+          "id": "s10",
+          "height": 780,
+          "hasHero": true
+        },
+        {
+          "id": "s11",
+          "height": 782,
+          "hasHero": true
+        },
+        {
+          "id": "s12",
+          "height": 780,
+          "hasHero": true
+        },
+        {
+          "id": "s13",
+          "height": 801,
+          "hasHero": true
+        },
+        {
+          "id": "s14",
+          "height": 786,
+          "hasHero": true
+        }
+      ],
+      "overflow": [],
+      "copyWords": [
+        {
+          "id": "s01",
+          "words": 20
+        },
+        {
+          "id": "s02",
+          "words": 17
+        },
+        {
+          "id": "s03",
+          "words": 16
+        },
+        {
+          "id": "s04",
+          "words": 16
+        },
+        {
+          "id": "s05",
+          "words": 15
+        },
+        {
+          "id": "s06",
+          "words": 16
+        },
+        {
+          "id": "s07",
+          "words": 10
+        },
+        {
+          "id": "s08",
+          "words": 19
+        },
+        {
+          "id": "s09",
+          "words": 14
+        },
+        {
+          "id": "s10",
+          "words": 16
+        },
+        {
+          "id": "s11",
+          "words": 15
+        },
+        {
+          "id": "s12",
+          "words": 15
+        },
+        {
+          "id": "s13",
+          "words": 16
+        },
+        {
+          "id": "s14",
+          "words": 22
+        }
+      ],
+      "video": [
+        {
+          "id": "s08",
+          "media": [
+            {
+              "currentTime": 0.21201,
+              "ready": 4,
+              "paused": false,
+              "error": null
+            }
+          ]
+        },
+        {
+          "id": "s11",
+          "media": [
+            {
+              "currentTime": 0.210343,
+              "ready": 4,
+              "paused": false,
+              "error": null
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "width": 390,
+      "height": 844,
+      "scenes": [
+        {
+          "id": "s01",
+          "height": 844,
+          "hasHero": true
+        },
+        {
+          "id": "s02",
+          "height": 844,
+          "hasHero": true
+        },
+        {
+          "id": "s03",
+          "height": 844,
+          "hasHero": true
+        },
+        {
+          "id": "s04",
+          "height": 844,
+          "hasHero": true
+        },
+        {
+          "id": "s05",
+          "height": 844,
+          "hasHero": true
+        },
+        {
+          "id": "s06",
+          "height": 844,
+          "hasHero": true
+        },
+        {
+          "id": "s07",
+          "height": 844,
+          "hasHero": true
+        },
+        {
+          "id": "s08",
+          "height": 844,
+          "hasHero": true
+        },
+        {
+          "id": "s09",
+          "height": 844,
+          "hasHero": true
+        },
+        {
+          "id": "s10",
+          "height": 844,
+          "hasHero": true
+        },
+        {
+          "id": "s11",
+          "height": 844,
+          "hasHero": true
+        },
+        {
+          "id": "s12",
+          "height": 844,
+          "hasHero": true
+        },
+        {
+          "id": "s13",
+          "height": 844,
+          "hasHero": true
+        },
+        {
+          "id": "s14",
+          "height": 844,
+          "hasHero": true
+        }
+      ],
+      "overflow": [],
+      "copyWords": [
+        {
+          "id": "s01",
+          "words": 20
+        },
+        {
+          "id": "s02",
+          "words": 17
+        },
+        {
+          "id": "s03",
+          "words": 16
+        },
+        {
+          "id": "s04",
+          "words": 16
+        },
+        {
+          "id": "s05",
+          "words": 15
+        },
+        {
+          "id": "s06",
+          "words": 16
+        },
+        {
+          "id": "s07",
+          "words": 10
+        },
+        {
+          "id": "s08",
+          "words": 19
+        },
+        {
+          "id": "s09",
+          "words": 14
+        },
+        {
+          "id": "s10",
+          "words": 16
+        },
+        {
+          "id": "s11",
+          "words": 15
+        },
+        {
+          "id": "s12",
+          "words": 15
+        },
+        {
+          "id": "s13",
+          "words": 16
+        },
+        {
+          "id": "s14",
+          "words": 22
+        }
+      ],
+      "video": [
+        {
+          "id": "s08",
+          "media": [
+            {
+              "currentTime": 0.202764,
+              "ready": 4,
+              "paused": false,
+              "error": null
+            }
+          ]
+        },
+        {
+          "id": "s11",
+          "media": [
+            {
+              "currentTime": 0.202815,
+              "ready": 4,
+              "paused": false,
+              "error": null
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "width": 720,
+      "height": 1024,
+      "scenes": [
+        {
+          "id": "s01",
+          "height": 1024,
+          "hasHero": true
+        },
+        {
+          "id": "s02",
+          "height": 1024,
+          "hasHero": true
+        },
+        {
+          "id": "s03",
+          "height": 1024,
+          "hasHero": true
+        },
+        {
+          "id": "s04",
+          "height": 1024,
+          "hasHero": true
+        },
+        {
+          "id": "s05",
+          "height": 1024,
+          "hasHero": true
+        },
+        {
+          "id": "s06",
+          "height": 1024,
+          "hasHero": true
+        },
+        {
+          "id": "s07",
+          "height": 1024,
+          "hasHero": true
+        },
+        {
+          "id": "s08",
+          "height": 1024,
+          "hasHero": true
+        },
+        {
+          "id": "s09",
+          "height": 1024,
+          "hasHero": true
+        },
+        {
+          "id": "s10",
+          "height": 1024,
+          "hasHero": true
+        },
+        {
+          "id": "s11",
+          "height": 1024,
+          "hasHero": true
+        },
+        {
+          "id": "s12",
+          "height": 1024,
+          "hasHero": true
+        },
+        {
+          "id": "s13",
+          "height": 1024,
+          "hasHero": true
+        },
+        {
+          "id": "s14",
+          "height": 1024,
+          "hasHero": true
+        }
+      ],
+      "overflow": [],
+      "copyWords": [
+        {
+          "id": "s01",
+          "words": 20
+        },
+        {
+          "id": "s02",
+          "words": 17
+        },
+        {
+          "id": "s03",
+          "words": 16
+        },
+        {
+          "id": "s04",
+          "words": 16
+        },
+        {
+          "id": "s05",
+          "words": 15
+        },
+        {
+          "id": "s06",
+          "words": 16
+        },
+        {
+          "id": "s07",
+          "words": 10
+        },
+        {
+          "id": "s08",
+          "words": 19
+        },
+        {
+          "id": "s09",
+          "words": 14
+        },
+        {
+          "id": "s10",
+          "words": 16
+        },
+        {
+          "id": "s11",
+          "words": 15
+        },
+        {
+          "id": "s12",
+          "words": 15
+        },
+        {
+          "id": "s13",
+          "words": 16
+        },
+        {
+          "id": "s14",
+          "words": 22
+        }
+      ],
+      "video": [
+        {
+          "id": "s08",
+          "media": [
+            {
+              "currentTime": 0.214161,
+              "ready": 4,
+              "paused": false,
+              "error": null
+            }
+          ]
+        },
+        {
+          "id": "s11",
+          "media": [
+            {
+              "currentTime": 0.208026,
+              "ready": 4,
+              "paused": false,
+              "error": null
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "width": 768,
+      "height": 1024,
+      "scenes": [
+        {
+          "id": "s01",
+          "height": 1024,
+          "hasHero": true
+        },
+        {
+          "id": "s02",
+          "height": 1024,
+          "hasHero": true
+        },
+        {
+          "id": "s03",
+          "height": 1024,
+          "hasHero": true
+        },
+        {
+          "id": "s04",
+          "height": 1024,
+          "hasHero": true
+        },
+        {
+          "id": "s05",
+          "height": 1024,
+          "hasHero": true
+        },
+        {
+          "id": "s06",
+          "height": 1024,
+          "hasHero": true
+        },
+        {
+          "id": "s07",
+          "height": 1024,
+          "hasHero": true
+        },
+        {
+          "id": "s08",
+          "height": 1024,
+          "hasHero": true
+        },
+        {
+          "id": "s09",
+          "height": 1024,
+          "hasHero": true
+        },
+        {
+          "id": "s10",
+          "height": 1024,
+          "hasHero": true
+        },
+        {
+          "id": "s11",
+          "height": 1024,
+          "hasHero": true
+        },
+        {
+          "id": "s12",
+          "height": 1024,
+          "hasHero": true
+        },
+        {
+          "id": "s13",
+          "height": 1024,
+          "hasHero": true
+        },
+        {
+          "id": "s14",
+          "height": 1024,
+          "hasHero": true
+        }
+      ],
+      "overflow": [],
+      "copyWords": [
+        {
+          "id": "s01",
+          "words": 20
+        },
+        {
+          "id": "s02",
+          "words": 17
+        },
+        {
+          "id": "s03",
+          "words": 16
+        },
+        {
+          "id": "s04",
+          "words": 16
+        },
+        {
+          "id": "s05",
+          "words": 15
+        },
+        {
+          "id": "s06",
+          "words": 16
+        },
+        {
+          "id": "s07",
+          "words": 10
+        },
+        {
+          "id": "s08",
+          "words": 19
+        },
+        {
+          "id": "s09",
+          "words": 14
+        },
+        {
+          "id": "s10",
+          "words": 16
+        },
+        {
+          "id": "s11",
+          "words": 15
+        },
+        {
+          "id": "s12",
+          "words": 15
+        },
+        {
+          "id": "s13",
+          "words": 16
+        },
+        {
+          "id": "s14",
+          "words": 22
+        }
+      ],
+      "video": [
+        {
+          "id": "s08",
+          "media": [
+            {
+              "currentTime": 0.187782,
+              "ready": 4,
+              "paused": false,
+              "error": null
+            }
+          ]
+        },
+        {
+          "id": "s11",
+          "media": [
+            {
+              "currentTime": 0.20484,
+              "ready": 4,
+              "paused": false,
+              "error": null
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "width": 1024,
+      "height": 768,
+      "scenes": [
+        {
+          "id": "s01",
+          "height": 768,
+          "hasHero": true
+        },
+        {
+          "id": "s02",
+          "height": 768,
+          "hasHero": true
+        },
+        {
+          "id": "s03",
+          "height": 768,
+          "hasHero": true
+        },
+        {
+          "id": "s04",
+          "height": 768,
+          "hasHero": true
+        },
+        {
+          "id": "s05",
+          "height": 768,
+          "hasHero": true
+        },
+        {
+          "id": "s06",
+          "height": 768,
+          "hasHero": true
+        },
+        {
+          "id": "s07",
+          "height": 768,
+          "hasHero": true
+        },
+        {
+          "id": "s08",
+          "height": 768,
+          "hasHero": true
+        },
+        {
+          "id": "s09",
+          "height": 768,
+          "hasHero": true
+        },
+        {
+          "id": "s10",
+          "height": 768,
+          "hasHero": true
+        },
+        {
+          "id": "s11",
+          "height": 768,
+          "hasHero": true
+        },
+        {
+          "id": "s12",
+          "height": 768,
+          "hasHero": true
+        },
+        {
+          "id": "s13",
+          "height": 768,
+          "hasHero": true
+        },
+        {
+          "id": "s14",
+          "height": 768,
+          "hasHero": true
+        }
+      ],
+      "overflow": [],
+      "copyWords": [
+        {
+          "id": "s01",
+          "words": 20
+        },
+        {
+          "id": "s02",
+          "words": 17
+        },
+        {
+          "id": "s03",
+          "words": 16
+        },
+        {
+          "id": "s04",
+          "words": 16
+        },
+        {
+          "id": "s05",
+          "words": 15
+        },
+        {
+          "id": "s06",
+          "words": 16
+        },
+        {
+          "id": "s07",
+          "words": 10
+        },
+        {
+          "id": "s08",
+          "words": 19
+        },
+        {
+          "id": "s09",
+          "words": 14
+        },
+        {
+          "id": "s10",
+          "words": 16
+        },
+        {
+          "id": "s11",
+          "words": 15
+        },
+        {
+          "id": "s12",
+          "words": 15
+        },
+        {
+          "id": "s13",
+          "words": 16
+        },
+        {
+          "id": "s14",
+          "words": 22
+        }
+      ],
+      "video": [
+        {
+          "id": "s08",
+          "media": [
+            {
+              "currentTime": 0.193761,
+              "ready": 4,
+              "paused": false,
+              "error": null
+            }
+          ]
+        },
+        {
+          "id": "s11",
+          "media": [
+            {
+              "currentTime": 0.20456,
+              "ready": 4,
+              "paused": false,
+              "error": null
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "width": 1440,
+      "height": 936,
+      "scenes": [
+        {
+          "id": "s01",
+          "height": 936,
+          "hasHero": true
+        },
+        {
+          "id": "s02",
+          "height": 936,
+          "hasHero": true
+        },
+        {
+          "id": "s03",
+          "height": 936,
+          "hasHero": true
+        },
+        {
+          "id": "s04",
+          "height": 936,
+          "hasHero": true
+        },
+        {
+          "id": "s05",
+          "height": 936,
+          "hasHero": true
+        },
+        {
+          "id": "s06",
+          "height": 936,
+          "hasHero": true
+        },
+        {
+          "id": "s07",
+          "height": 936,
+          "hasHero": true
+        },
+        {
+          "id": "s08",
+          "height": 936,
+          "hasHero": true
+        },
+        {
+          "id": "s09",
+          "height": 936,
+          "hasHero": true
+        },
+        {
+          "id": "s10",
+          "height": 936,
+          "hasHero": true
+        },
+        {
+          "id": "s11",
+          "height": 936,
+          "hasHero": true
+        },
+        {
+          "id": "s12",
+          "height": 936,
+          "hasHero": true
+        },
+        {
+          "id": "s13",
+          "height": 936,
+          "hasHero": true
+        },
+        {
+          "id": "s14",
+          "height": 936,
+          "hasHero": true
+        }
+      ],
+      "overflow": [],
+      "copyWords": [
+        {
+          "id": "s01",
+          "words": 20
+        },
+        {
+          "id": "s02",
+          "words": 17
+        },
+        {
+          "id": "s03",
+          "words": 16
+        },
+        {
+          "id": "s04",
+          "words": 16
+        },
+        {
+          "id": "s05",
+          "words": 15
+        },
+        {
+          "id": "s06",
+          "words": 16
+        },
+        {
+          "id": "s07",
+          "words": 10
+        },
+        {
+          "id": "s08",
+          "words": 19
+        },
+        {
+          "id": "s09",
+          "words": 14
+        },
+        {
+          "id": "s10",
+          "words": 16
+        },
+        {
+          "id": "s11",
+          "words": 15
+        },
+        {
+          "id": "s12",
+          "words": 15
+        },
+        {
+          "id": "s13",
+          "words": 16
+        },
+        {
+          "id": "s14",
+          "words": 22
+        }
+      ],
+      "video": [
+        {
+          "id": "s08",
+          "media": [
+            {
+              "currentTime": 0.176225,
+              "ready": 4,
+              "paused": false,
+              "error": null
+            }
+          ]
+        },
+        {
+          "id": "s11",
+          "media": [
+            {
+              "currentTime": 0.200995,
+              "ready": 4,
+              "paused": false,
+              "error": null
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "width": 1920,
+      "height": 1080,
+      "scenes": [
+        {
+          "id": "s01",
+          "height": 1080,
+          "hasHero": true
+        },
+        {
+          "id": "s02",
+          "height": 1080,
+          "hasHero": true
+        },
+        {
+          "id": "s03",
+          "height": 1080,
+          "hasHero": true
+        },
+        {
+          "id": "s04",
+          "height": 1080,
+          "hasHero": true
+        },
+        {
+          "id": "s05",
+          "height": 1080,
+          "hasHero": true
+        },
+        {
+          "id": "s06",
+          "height": 1080,
+          "hasHero": true
+        },
+        {
+          "id": "s07",
+          "height": 1080,
+          "hasHero": true
+        },
+        {
+          "id": "s08",
+          "height": 1080,
+          "hasHero": true
+        },
+        {
+          "id": "s09",
+          "height": 1080,
+          "hasHero": true
+        },
+        {
+          "id": "s10",
+          "height": 1080,
+          "hasHero": true
+        },
+        {
+          "id": "s11",
+          "height": 1080,
+          "hasHero": true
+        },
+        {
+          "id": "s12",
+          "height": 1080,
+          "hasHero": true
+        },
+        {
+          "id": "s13",
+          "height": 1080,
+          "hasHero": true
+        },
+        {
+          "id": "s14",
+          "height": 1080,
+          "hasHero": true
+        }
+      ],
+      "overflow": [],
+      "copyWords": [
+        {
+          "id": "s01",
+          "words": 20
+        },
+        {
+          "id": "s02",
+          "words": 17
+        },
+        {
+          "id": "s03",
+          "words": 16
+        },
+        {
+          "id": "s04",
+          "words": 16
+        },
+        {
+          "id": "s05",
+          "words": 15
+        },
+        {
+          "id": "s06",
+          "words": 16
+        },
+        {
+          "id": "s07",
+          "words": 10
+        },
+        {
+          "id": "s08",
+          "words": 19
+        },
+        {
+          "id": "s09",
+          "words": 14
+        },
+        {
+          "id": "s10",
+          "words": 16
+        },
+        {
+          "id": "s11",
+          "words": 15
+        },
+        {
+          "id": "s12",
+          "words": 15
+        },
+        {
+          "id": "s13",
+          "words": 16
+        },
+        {
+          "id": "s14",
+          "words": 22
+        }
+      ],
+      "video": [
+        {
+          "id": "s08",
+          "media": [
+            {
+              "currentTime": 0.19592,
+              "ready": 4,
+              "paused": false,
+              "error": null
+            }
+          ]
+        },
+        {
+          "id": "s11",
+          "media": [
+            {
+              "currentTime": 0.199058,
+              "ready": 4,
+              "paused": false,
+              "error": null
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "width": 1440,
+      "height": 600,
+      "scenes": [
+        {
+          "id": "s01",
+          "height": 686,
+          "hasHero": true
+        },
+        {
+          "id": "s02",
+          "height": 678,
+          "hasHero": true
+        },
+        {
+          "id": "s03",
+          "height": 620,
+          "hasHero": true
+        },
+        {
+          "id": "s04",
+          "height": 603,
+          "hasHero": true
+        },
+        {
+          "id": "s05",
+          "height": 600,
+          "hasHero": true
+        },
+        {
+          "id": "s06",
+          "height": 600,
+          "hasHero": true
+        },
+        {
+          "id": "s07",
+          "height": 638,
+          "hasHero": true
+        },
+        {
+          "id": "s08",
+          "height": 600,
+          "hasHero": true
+        },
+        {
+          "id": "s09",
+          "height": 620,
+          "hasHero": true
+        },
+        {
+          "id": "s10",
+          "height": 632,
+          "hasHero": true
+        },
+        {
+          "id": "s11",
+          "height": 638,
+          "hasHero": true
+        },
+        {
+          "id": "s12",
+          "height": 600,
+          "hasHero": true
+        },
+        {
+          "id": "s13",
+          "height": 600,
+          "hasHero": true
+        },
+        {
+          "id": "s14",
+          "height": 642,
+          "hasHero": true
+        }
+      ],
+      "overflow": [],
+      "copyWords": [
+        {
+          "id": "s01",
+          "words": 20
+        },
+        {
+          "id": "s02",
+          "words": 17
+        },
+        {
+          "id": "s03",
+          "words": 16
+        },
+        {
+          "id": "s04",
+          "words": 16
+        },
+        {
+          "id": "s05",
+          "words": 15
+        },
+        {
+          "id": "s06",
+          "words": 16
+        },
+        {
+          "id": "s07",
+          "words": 10
+        },
+        {
+          "id": "s08",
+          "words": 19
+        },
+        {
+          "id": "s09",
+          "words": 14
+        },
+        {
+          "id": "s10",
+          "words": 16
+        },
+        {
+          "id": "s11",
+          "words": 15
+        },
+        {
+          "id": "s12",
+          "words": 15
+        },
+        {
+          "id": "s13",
+          "words": 16
+        },
+        {
+          "id": "s14",
+          "words": 22
+        }
+      ],
+      "video": [
+        {
+          "id": "s08",
+          "media": [
+            {
+              "currentTime": 0.193532,
+              "ready": 4,
+              "paused": false,
+              "error": null
+            }
+          ]
+        },
+        {
+          "id": "s11",
+          "media": [
+            {
+              "currentTime": 0.207605,
+              "ready": 4,
+              "paused": false,
+              "error": null
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "flows": [
+    {
+      "name": "native wheel scroll",
+      "passed": true
+    },
+    {
+      "name": "contents modal",
+      "passed": true
+    },
+    {
+      "name": "contents to s04",
+      "passed": true
+    },
+    {
+      "name": "note on request",
+      "passed": true
+    },
+    {
+      "name": "Escape and focus restored",
+      "passed": true
+    },
+    {
+      "name": "switch [data-lipid=\"1\"]",
+      "passed": true
+    },
+    {
+      "name": "switch [data-swap=\"1\"]",
+      "passed": true
+    },
+    {
+      "name": "switch [data-fibre=\"2\"]",
+      "passed": true
+    },
+    {
+      "name": "switch [data-question=\"2\"]",
+      "passed": true
+    },
+    {
+      "name": "switch [data-habit=\"1\"]",
+      "passed": true
+    },
+    {
+      "name": "label highlight",
+      "passed": true
+    },
+    {
+      "name": "actual food video plays",
+      "passed": true
+    },
+    {
+      "name": "motion pauses video",
+      "passed": true
+    },
+    {
+      "name": "28 second film plays",
+      "passed": true
+    },
+    {
+      "name": "ambient paused in film",
+      "passed": true
+    },
+    {
+      "name": "film closes and stops",
+      "passed": true
+    },
+    {
+      "name": "actual medical video plays",
+      "passed": true
+    },
+    {
+      "name": "reduced motion",
+      "passed": true
+    },
+    {
+      "name": "no-JS 14 readable scenes",
+      "passed": true
+    },
+    {
+      "name": "no-JS notes available",
+      "passed": true
+    }
+  ],
+  "errors": [],
+  "requestsFailed": []
+}
