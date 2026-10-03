@@ -1,0 +1,30 @@
+{
+  "builderVersion": "Codex V3 Hero Scenes",
+  "createdAt": "2026-10-03",
+  "branch": "codex/v3-hero-scenes-2026-10-03",
+  "parentCommit": "eb16b80e1b242ce0a3c3e3d5f3401450607788d1",
+  "inputs": ["docs/presentation-blueprint.md", "docs/visual-style-brief.md", "docs/v3-hero-direction.md", "docs/sources.md", "https://verba-heart.website.yandexcloud.net/", "presentation-skills-public-pack.zip"],
+  "target": "HTML web presentation, native vertical scrolling",
+  "reusableDNA": false,
+  "roles": {
+    "background": "#f3f1eb",
+    "text": "#232b23",
+    "muted": "#6f756b",
+    "accent": "#737f68",
+    "inverse": "#18372e",
+    "border": "#cdd1c4"
+  },
+  "fonts": ["Georgia with Times New Roman fallback", "Arial with Helvetica fallback", "system monospace"],
+  "syntheticVisuals": ["Original AI food/swap/portrait photographs", "V1 fictional home-kitchen photograph", "Conceptual Canvas/SVG diagrams"],
+  "realFootage": ["Existing Mixkit licensed food scene and V2 showreel"],
+  "userOwnedCGI": ["6-second excerpt of VERBA Heart v05"],
+  "newPaidGeneration": false,
+  "outputs": ["index.html", "scenes.css", "scenes.js", "assets/heart-loop.mp4", "assets/heart-poster.webp", "docs/renders/v3", "docs/format-fallbacks-v3.md"],
+  "qa": {
+    "semantic": "passed, medical sign-off still required",
+    "visual": "reviewed desktop/mobile key scenes",
+    "technical": "8 viewport sizes, 20 interaction scenarios",
+    "physicalIOS": "not tested"
+  },
+  "versionNote": "Older assets and JS/CSS remain in tree for provenance but are not loaded by V3."
+}
