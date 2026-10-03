@@ -5,12 +5,12 @@
  const motion=()=>userMotion&&!reduced.matches&&!document.hidden;
  function syncMotion(){document.body.classList.toggle('motion-off',!motion());$('#motion').setAttribute('aria-pressed',String(motion()));$('#motion').setAttribute('aria-label',motion()?'Выключить движение':'Включить движение');$('#motion').disabled=reduced.matches;if(!motion())$('#oil-video').pause();}
  $('#motion').addEventListener('click',()=>{userMotion=!userMotion;syncMotion()});reduced.addEventListener('change',syncMotion);document.addEventListener('visibilitychange',()=>{syncMotion();if(document.hidden)pauseFilm()});syncMotion();
- function mark(i){current=Math.max(0,Math.min(13,i));$('#counter').innerHTML=String(current+1).padStart(2,'0')+' <i>—</i> 14';$('#prev').disabled=current===0;$('#next').disabled=current===13;scenes.forEach((s,j)=>s.classList.toggle('active',j===current));const hash='#'+scenes[current].id;if(location.hash!==hash)history.replaceState(null,'',hash);}
- function go(i){mark(i);scenes[current].scrollIntoView({behavior:motion()?'smooth':'instant',block:'start'});}
+ function mark(i){current=Math.max(0,Math.min(13,i));$('#counter').innerHTML=String(current+1).padStart(2,'0')+' <i>—</i> 14';$('#prev').disabled=current===0;$('#next').disabled=current===13;scenes.forEach((s,j)=>s.classList.toggle('active',j===current));[scenes[current],scenes[current+1]].filter(Boolean).forEach(s=>s.querySelectorAll('img').forEach(im=>im.loading='eager'));const hash='#'+scenes[current].id;if(location.hash!==hash)history.replaceState(null,'',hash);}
+ function go(i){mark(i);scrollTo({top:scenes[current].offsetTop,behavior:motion()?'smooth':'instant'});}
  $('#prev').addEventListener('click',()=>go(current-1));$('#next').addEventListener('click',()=>go(current+1));$('.brand').addEventListener('click',e=>{e.preventDefault();go(0)});
  function read(){raf=0;let i=0;scenes.forEach((s,j)=>{if(s.getBoundingClientRect().top<=innerHeight*.42)i=j});if(i!==current)mark(i)}
  addEventListener('scroll',()=>{if(!raf)raf=requestAnimationFrame(read)},{passive:true});addEventListener('resize',read);addEventListener('hashchange',()=>go(Math.max(0,scenes.findIndex(s=>'#'+s.id===location.hash))));
- const index=Math.max(0,scenes.findIndex(s=>'#'+s.id===location.hash));mark(index);addEventListener('load',()=>{scenes[index].scrollIntoView({behavior:'instant'});read()});
+ const index=Math.max(0,scenes.findIndex(s=>'#'+s.id===location.hash));mark(index);addEventListener('load',()=>{scrollTo({top:scenes[index].offsetTop,behavior:'instant'});read()});
  const detail=$('#detail-dialog'),contents=$('#contents-dialog');
  function showDetail(title,html){$('#detail-title').textContent=title;$('#detail-body').innerHTML=html;detail.showModal();}
  $$('.note-link').forEach(b=>b.addEventListener('click',()=>showDetail(b.closest('.scene').querySelector('h1,h2').innerText.replaceAll('\n',' '),$('#'+b.dataset.note).innerHTML)));
