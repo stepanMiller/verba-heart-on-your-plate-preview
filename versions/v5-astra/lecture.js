@@ -1,0 +1,346 @@
+'use strict';
+(() => {
+  const $ = (selector, root = document) => root.querySelector(selector);
+  const $$ = (selector, root = document) => [...root.querySelectorAll(selector)];
+  const scenes = $$('#lecture > .scene');
+  const reduced = matchMedia('(prefers-reduced-motion: reduce)');
+  const connection = navigator.connection;
+  const motionButton = $('#motion-toggle');
+  const ambient = $$('video[data-ambient]');
+  const film = $('#film-dialog');
+  const reel = $('#showreel');
+  const notes = $('#note-dialog');
+  const contents = $('#contents-dialog');
+  const origins = new Map();
+  const visibleVideos = new Set();
+  const reducedData = () => reduced.matches || !!connection?.saveData;
+  let motion = false;
+  let userPaused = false;
+  let activeIndex = 0;
+  let scrollFrame = 0;
+  let turned = false;
+  let labelIndex = 0;
+  let labelTimers = [];
+  const completedDays = new Set();
+  const renderMode = new URLSearchParams(location.search).has('render');
+  document.documentElement.classList.add('js');
+  $$('.context-term,.fibre-path>div').forEach((el, i) => el.style.setProperty('--index', i));
+  const hasDialog = () => !!$('dialog[open]');
+
+  function loadVideo(video) {
+    const source = $('source', video);
+    if (source && !source.getAttribute('src')) {
+      source.src = source.dataset.src;
+      video.load();
+    }
+  }
+  function allowedToPlay(video) {
+    return motion && visibleVideos.has(video) && !document.hidden && !hasDialog() && !renderMode;
+  }
+  function syncVideos() {
+    ambient.forEach(video => {
+      if (!allowedToPlay(video)) { video.pause(); return; }
+      loadVideo(video);
+      if (!video.paused) return;
+      video.play().then(() => {
+        if (!allowedToPlay(video)) { video.pause(); return; }
+        video.classList.add('ready');
+      }).catch(() => video.classList.remove('ready'));
+    });
+  }
+  ambient.forEach(video => {
+    const failed = () => video.classList.remove('ready');
+    video.addEventListener('error', failed);
+    $('source', video)?.addEventListener('error', failed);
+  });
+  const mediaObserver = new IntersectionObserver(entries => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) visibleVideos.add(entry.target);
+      else visibleVideos.delete(entry.target);
+    });
+    syncVideos();
+  }, { threshold: .1 });
+  ambient.forEach(video => mediaObserver.observe(video));
+  const sceneObserver = new IntersectionObserver(entries => {
+    entries.forEach(entry => entry.target.classList.toggle('in-view', entry.isIntersecting));
+  }, { threshold: .05 });
+  scenes.forEach(scene => sceneObserver.observe(scene));
+
+  function applyMotion() {
+    motion = !userPaused && !reducedData() && !renderMode;
+    document.documentElement.classList.toggle('motion-on', motion);
+    document.body.classList.toggle('motion-paused', !motion || document.hidden);
+    motionButton.setAttribute('aria-pressed', String(motion));
+    motionButton.setAttribute('aria-label', motion ? 'Остановить анимацию' : 'Включить анимацию');
+    motionButton.disabled = reducedData();
+    motionButton.title = motionButton.disabled ? 'Движение отключено системной настройкой' : '';
+    $('path', motionButton).setAttribute('d', motion ? 'M9 6v12M15 6v12' : 'm9 6 9 6-9 6Z');
+    if (reducedData()) ambient.forEach(video => {
+      const source = $('source', video);
+      if (source?.hasAttribute('src')) {
+        video.pause(); source.removeAttribute('src'); video.load(); video.classList.remove('ready');
+      }
+    });
+    if (!motion) stopLabelSequence();
+    syncVideos();
+  }
+  motionButton.addEventListener('click', () => { userPaused = !userPaused; applyMotion(); });
+  reduced.addEventListener('change', applyMotion);
+  connection?.addEventListener('change', applyMotion);
+  document.addEventListener('visibilitychange', () => {
+    if (document.hidden) { reel.pause(); stopLabelSequence(); }
+    applyMotion();
+  });
+
+  function openDialog(dialog, invoker) {
+    if (dialog.open) return;
+    origins.set(dialog, invoker);
+    dialog.showModal();
+    document.body.classList.add('dialog-open');
+    stopLabelSequence(); syncVideos();
+  }
+  function closeDialog(dialog) {
+    if (!dialog.open) return;
+    if (dialog === film) reel.pause();
+    dialog.close();
+  }
+  $$('[data-close-dialog]').forEach(button => button.addEventListener('click', () => closeDialog(button.closest('dialog'))));
+  $$('dialog').forEach(dialog => {
+    dialog.addEventListener('cancel', () => { if (dialog === film) reel.pause(); });
+    dialog.addEventListener('close', () => {
+      if (dialog === film) reel.pause();
+      if (!hasDialog()) document.body.classList.remove('dialog-open');
+      origins.get(dialog)?.focus({ preventScroll: true });
+      syncVideos();
+    });
+    dialog.addEventListener('click', event => {
+      if (event.target !== dialog) return;
+      const rect = dialog.getBoundingClientRect();
+      if (event.clientX < rect.left || event.clientX > rect.right || event.clientY < rect.top || event.clientY > rect.bottom) closeDialog(dialog);
+    });
+  });
+  $('#menu-toggle').addEventListener('click', event => openDialog(contents, event.currentTarget));
+  const contentsLinks = scenes.map((scene, index) => {
+    const link = document.createElement('a');
+    const number = document.createElement('span');
+    link.href = '#' + scene.id; number.textContent = String(index + 1).padStart(2, '0');
+    link.append(number, scene.dataset.title);
+    link.addEventListener('click', () => {
+      closeDialog(contents);
+      setTimeout(() => { scene.tabIndex = -1; scene.focus({ preventScroll: true }); }, 0);
+    });
+    return link;
+  });
+  $('#contents-list').replaceChildren(...contentsLinks);
+  $$('[data-note]').forEach(link => link.addEventListener('click', event => {
+    const source = $('#note-' + link.dataset.note);
+    if (!source) return;
+    event.preventDefault();
+    $('#note-title').textContent = $('summary', source).textContent;
+    $('#note-content').replaceChildren(...[...source.children].filter(child => child.tagName !== 'SUMMARY').map(child => child.cloneNode(true)));
+    openDialog(notes, link);
+  }));
+  const films = {
+    animatic: {
+      src: 'assets/animatic.mp4', poster: 'assets/s01-master-casting.webp',
+      title: 'Внутри обычного дня',
+      label: 'Аниматик VERBA: Внутри обычного дня, 26 секунд',
+      caption: 'Аниматик · 00:26 · Без звука · Монтажный замысел, не финальный фильм'
+    },
+    s03: {
+      src: 'assets/s03-motion-study.mp4', poster: 'assets/s03-lipoprotein-cutaway.webp',
+      title: 'S03 · оптический motion study',
+      label: 'S03: оптический motion study, 5 секунд',
+      caption: '00:05 · 2D-композиция по контрольному кадру; не 3D-реконструкция'
+    }
+  };
+  $$('[data-open-film]').forEach(button => button.addEventListener('click', () => {
+    // No film receives a src until an explicit request, including Save-Data mode.
+    const selected = films[button.dataset.film] || films.animatic;
+    const source = $('source', reel);
+    reel.pause();
+    if (reel.readyState >= 1) reel.currentTime = 0;
+    source.removeAttribute('src');
+    source.dataset.src = selected.src;
+    reel.poster = selected.poster;
+    reel.setAttribute('aria-label', selected.label);
+    $('#film-title').textContent = selected.title;
+    $('.film-caption', film).textContent = selected.caption;
+    $('#film-error').hidden = true;
+    loadVideo(reel); openDialog(film, button);
+    reel.play().catch(() => { /* Native controls remain available. */ });
+  }));
+  const filmError = () => { $('#film-error').hidden = false; };
+  reel.addEventListener('error', filmError);
+  $('source', reel).addEventListener('error', filmError);
+
+  function selectGroup(attribute, index) {
+    $$('[' + attribute + ']').forEach(button => button.setAttribute('aria-pressed', String(Number(button.getAttribute(attribute)) === index)));
+  }
+  function beat(scene) {
+    scene.classList.remove('change-beat');
+    requestAnimationFrame(() => scene.classList.add('change-beat'));
+  }
+  const lipidStates = [
+    ['carrier', 'Ему нужен переносчик.\nЛПНП и ЛПВП — классы липопротеинов.'],
+    ['cargo', 'ХС-ЛПНП и ХС-ЛПВП показывают\nхолестерин в соответствующих переносчиках.'],
+    ['apob', 'Холестерин и число переносчиков —\nразные вопросы. ApoB помогает увидеть второй.']
+  ];
+  $$('[data-lipid]').forEach(button => button.addEventListener('click', () => {
+    const index = Number(button.dataset.lipid);
+    selectGroup('data-lipid', index);
+    $('#s03').dataset.beat = lipidStates[index][0];
+    $('#lipid-message').textContent = lipidStates[index][1];
+    $('#apob-beat').hidden = index !== 2;
+    // The picture remains an LDL cutaway, never relabelled as an HDL particle.
+    beat($('#s03'));
+  }));
+  $('#swap-toggle').addEventListener('click', () => {
+    const active = $('#swap-toggle').getAttribute('aria-pressed') !== 'true';
+    $('#swap-toggle').setAttribute('aria-pressed', String(active));
+    $('#swap-toggle').textContent = active ? 'Вернуться к общей картине ↙' : 'Показать принцип замены ↗';
+    $('#swap-note').hidden = !active;
+    $('#s04').classList.toggle('swap-active', active);
+  });
+  const proteinMessages = ['Рыба сегодня.\nБобовые в другой день.', 'Бобовые сегодня.\nРыба в другой день.'];
+  $$('[data-protein]').forEach(button => button.addEventListener('click', () => {
+    const index = Number(button.dataset.protein); selectGroup('data-protein', index);
+    $('#protein-message').textContent = proteinMessages[index]; beat($('#s07'));
+  }));
+
+  const labelMessages = [
+    'Насыщенные жиры — отдельно\nот общего количества жира.',
+    'Соль сравнивайте с солью,\nнатрий — с натрием.',
+    'Добавленные сахара: если строки нет,\nпроверьте сахар и сиропы в составе.',
+    'Сравнивайте одинаковое количество.\nУчитывайте свою реальную порцию.'
+  ];
+  function stopLabelSequence() { labelTimers.forEach(clearTimeout); labelTimers = []; }
+  function setLabel(index) {
+    labelIndex = index;
+    selectGroup('data-label', index); selectGroup('data-label-step', index);
+    if (turned) $('#label-message').textContent = labelMessages[index];
+  }
+  function setTurn(value, guided = false) {
+    stopLabelSequence(); turned = value;
+    $('#package').classList.toggle('turned', value);
+    $('#package-turn').setAttribute('aria-pressed', String(value));
+    $('#package-turn').textContent = value ? 'Вернуть лицевую сторону ↻' : 'Повернуть упаковку ↻';
+    $('.package-front').inert = value; $('.package-back').inert = !value;
+    $('.package-front').setAttribute('aria-hidden', String(value));
+    $('.package-back').setAttribute('aria-hidden', String(!value));
+    $('#label-message').textContent = value ? labelMessages[labelIndex] : 'Обещание — спереди.\nИнформация — на обороте.';
+    if (value && guided && motion && !document.hidden) {
+      setLabel(0);
+      for (let index = 1; index < 4; index++) labelTimers.push(setTimeout(() => {
+        if (turned && $('#s09').classList.contains('in-view') && !hasDialog() && !document.hidden) setLabel(index);
+      }, 950 + index * 1600));
+    }
+  }
+  $('#package-turn').addEventListener('click', () => setTurn(!turned, true));
+  $$('[data-label],[data-label-step]').forEach(button => button.addEventListener('click', () => {
+    const index = Number(button.dataset.label ?? button.dataset.labelStep);
+    stopLabelSequence(); if (!turned) setTurn(true); setLabel(index);
+  }));
+  // A keyboard user can inspect each row without an automatic sequence changing it.
+  $('.label-fields').addEventListener('focusin', stopLabelSequence);
+  $('.label-index').addEventListener('focusin', stopLabelSequence);
+
+  const riskStates = [
+    ['Клинический контекст / курение', 'Без курения', 'Курение', 'Наличие курения меняет оценку общего риска.'],
+    ['Клинический контекст / давление', 'Давление в цели', 'Повышенное давление', 'Артериальное давление учитывают вместе с остальными факторами.'],
+    ['Клинический контекст / наследственность', 'Без ранних событий', 'Ранние семейные события', 'Ранняя семейная история сердечно-сосудистых событий важна для оценки.']
+  ];
+  $$('[data-risk]').forEach(button => button.addEventListener('click', () => {
+    const index = Number(button.dataset.risk); selectGroup('data-risk', index);
+    ['risk-factor', 'risk-a', 'risk-b', 'risk-message'].forEach((id, i) => $('#' + id).textContent = riskStates[index][i]);
+    beat($('#s10'));
+  }));
+  const questions = [
+    'Каков мой общий сердечно-сосудистый риск?',
+    'Какая цель по ХС-ЛПНП подходит мне?',
+    'Что изменить и когда оценить результат?'
+  ];
+  $$('[data-question]').forEach(button => button.addEventListener('click', () => {
+    const index = Number(button.dataset.question); selectGroup('data-question', index);
+    $('#question-number').textContent = String(index + 1).padStart(2, '0');
+    $('#question-text').textContent = questions[index]; beat($('#s12'));
+  }));
+  const habits = [
+    ['Заменять часть сливочного масла\nрастительным в привычном блюде.', 'Меняю источник жира'],
+    ['Добавлять овёс или бобовые\nв привычный рацион с учётом переносимости.', 'Выбираю овёс или бобовые'],
+    ['Выбирать воду или несладкий напиток\nвместо привычного сладкого.', 'Выбираю несладкий напиток']
+  ];
+  $$('[data-habit]').forEach(button => button.addEventListener('click', () => {
+    const index = Number(button.dataset.habit); selectGroup('data-habit', index);
+    $('#habit-message').textContent = habits[index][0]; $('#habit-title').textContent = habits[index][1];
+    beat($('#s13'));
+  }));
+  $$('[data-day]').forEach(button => button.addEventListener('click', () => {
+    const day = Number(button.dataset.day);
+    if (completedDays.has(day)) completedDays.delete(day); else completedDays.add(day);
+    const checked = completedDays.has(day);
+    button.setAttribute('aria-pressed', String(checked));
+    button.setAttribute('aria-label', (checked ? 'Убрать отметку за день ' : 'Отметить день ') + day);
+    $('#practice-status').textContent = completedDays.size ? 'Отметок практики: ' + completedDays.size + ' из 14. Это не показатель изменения анализов.' : 'Период практики, не срок изменения анализов.';
+  }));
+
+  const previous = $('#previous-scene'); const next = $('#next-scene');
+  function updateScroll() {
+    scrollFrame = 0;
+    const target = innerHeight * .46;
+    let distance = Infinity;
+    scenes.forEach((scene, index) => {
+      if (getComputedStyle(scene).display === 'none') return;
+      const rect = scene.getBoundingClientRect();
+      const gap = rect.top <= target && rect.bottom >= target ? 0 : Math.min(Math.abs(rect.top - target), Math.abs(rect.bottom - target));
+      if (gap < distance) { distance = gap; activeIndex = index; }
+    });
+    $('#scene-number').textContent = String(activeIndex + 1).padStart(2, '0');
+    previous.href = '#' + scenes[Math.max(0, activeIndex - 1)].id;
+    next.href = '#' + scenes[Math.min(scenes.length - 1, activeIndex + 1)].id;
+    previous.setAttribute('aria-disabled', String(activeIndex === 0));
+    next.setAttribute('aria-disabled', String(activeIndex === scenes.length - 1));
+    previous.tabIndex = activeIndex === 0 ? -1 : 0; next.tabIndex = activeIndex === scenes.length - 1 ? -1 : 0;
+    contentsLinks.forEach((link, index) => {
+      if (index === activeIndex) link.setAttribute('aria-current', 'step'); else link.removeAttribute('aria-current');
+    });
+    const appendix = $('#sources').getBoundingClientRect().top < innerHeight * .35;
+    document.body.classList.toggle('dark-ui', !appendix && scenes[activeIndex].classList.contains('dark'));
+    const total = document.documentElement.scrollHeight - innerHeight;
+    $('#page-progress').style.transform = 'scaleX(' + Math.min(1, Math.max(0, scrollY / Math.max(1, total))) + ')';
+    if (activeIndex !== 8) stopLabelSequence();
+  }
+  function requestScroll() { if (!scrollFrame) scrollFrame = requestAnimationFrame(updateScroll); }
+  addEventListener('scroll', requestScroll, { passive: true });
+  addEventListener('resize', requestScroll);
+  addEventListener('hashchange', requestScroll);
+  // Fit unusually enlarged text without clipping the outer scene.
+  const textObserver = new ResizeObserver(entries => {
+    entries.forEach(({ target }) => {
+      const scene = target.closest('.scene');
+      if (!scene || renderMode || document.body.classList.contains('render-mode')) return;
+      const available = scene.clientHeight - parseFloat(getComputedStyle(scene).paddingTop) - 115;
+      if (target.scrollHeight > available) scene.style.minHeight = (target.scrollHeight + parseFloat(getComputedStyle(scene).paddingTop) + 140) + 'px';
+    });
+  });
+  $$('.scene-copy,.question-paper').forEach(copy => textObserver.observe(copy));
+  applyMotion(); updateScroll();
+
+  // Deterministic still capture only. The separate animatic is not a screen recording.
+  window.verbaFrame = async (id, time = 0) => {
+    const scene = $('#' + id);
+    if (!scene || !scenes.includes(scene)) throw new Error('Unknown scene: ' + id);
+    document.body.classList.add('render-mode');
+    scenes.forEach(item => item.classList.toggle('render-active', item === scene));
+    scene.classList.add('in-view');
+    scene.scrollIntoView({ behavior: 'instant', block: 'start' });
+    await Promise.all($$('img', scene).map(img => img.decode().catch(() => {})));
+    scene.getAnimations({ subtree: true }).forEach(animation => { animation.pause(); animation.currentTime = time * 1000; });
+    updateScroll();
+  };
+  if (renderMode) {
+    const requested = new URLSearchParams(location.search).get('render');
+    const id = /^s\d\d$/.test(requested || '') ? requested : (location.hash.slice(1) || 's01');
+    window.verbaFrame(id).catch(() => window.verbaFrame('s01'));
+  }
+})();

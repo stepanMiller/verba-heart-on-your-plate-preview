@@ -1,0 +1,11 @@
+{
+  "name": "verba-v5-human-cinematic-prototype",
+  "version": "5.0.0",
+  "private": true,
+  "scripts": {
+    "dev": "python3 -m http.server 4173 --directory ../..",
+    "check": "node --check lecture.js && node --check tools/qa.cjs",
+    "qa": "node tools/qa.cjs"
+  },
+  "devDependencies": { "playwright": "1.62.1" }
+}

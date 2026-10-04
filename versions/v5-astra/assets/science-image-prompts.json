@@ -1,0 +1,36 @@
+{
+  "project": "VERBA V5 Astra",
+  "generated_at_utc": "2026-10-04T13:06:00Z",
+  "generator": "Built-in image_gen",
+  "status": "selected and visually inspected",
+  "scientific_context": "Nonquantitative editorial metaphors. Use the HTML labels and caveats from docs/ASTRA_V5_SCIENCE_ADDENDUM.md; assets are not anatomical or molecular reconstructions.",
+  "assets": [
+    {
+      "scene": "S05",
+      "destination": "versions/v5-astra/assets/s05-fibre.webp",
+      "source_output": "/workspace/scratch/8bb07085c6c5/generated_images/exec-3eb96624-286b-40b2-9cd5-7056b776859e.png",
+      "prompt": "Use case: scientific-educational. Create a premium tactile science-editorial macro image, wide 16:9 composition. Extreme macro optical photograph of hydrated oat beta-glucan-like translucent pale ivory viscous gel, forming one broad softly folding ribbon and slow thick fluid folds. Clearly wet and viscous, not a dry fabric ribbon, with tiny trapped air bubbles and natural refraction. A few authentic oat grains at the lower-right edge are small secondary context. Subject occupies right 60%; left 35% stays calm almost-empty warm cream negative space for later typography. Pale cream, ivory, faint sage shadows, restrained honey highlights. Soft natural window light, shallow macro depth of field, exquisitely tactile and quiet, microscope-meets-editorial photography. This is a nonquantitative conceptual material study, not literal anatomy. No text, labels, charts, numbers, particles being trapped, mesh, nets, cholesterol balls, blood vessels, organs, jewellery, dark sci-fi or dashboard graphics. Wide 16:9 landscape image.",
+      "dimensions": [
+        1672,
+        941
+      ],
+      "format": "WebP",
+      "conversion": "Format conversion only, quality 95, no compositional edit",
+      "visual_qa": "Inspected generated pixels: visible viscosity, translucent wet folding gel, oat-grain context, cream left negative space, no mesh, blood vessel, cholesterol capture or quantitative claim."
+    },
+    {
+      "scene": "S06",
+      "destination": "versions/v5-astra/assets/s06-hepatic.webp",
+      "source_output": "/workspace/scratch/8bb07085c6c5/generated_images/exec-7fbf0adf-fb21-4efd-bfbc-c98c8a0d1e79.png",
+      "prompt": "Use case: scientific-educational. Wide 16:9 premium science-editorial still, a quiet conceptual sculpture showing liver energy handling. A single recognizably liver-shaped warm-taupe sculptural form occupies the right 60% of a pale cream field, suspended just above a warm ivory surface. Soft matte wax-clay texture, broad right lobe and smaller tapering left lobe, one coherent simple silhouette. Subtle honey-colored branching light glows through shallow translucent areas inside the form, suggesting distributed metabolic activity, deliberately abstract and sparse, no exact anatomical reconstruction. Very faint soft sage translucent transport trails beyond its right edge, no individual lipid balls or outgoing quantified particles. Natural side-window lighting, beautiful soft contact shadow, restrained optical depth, tactile premium medical editorial, calm and sophisticated. Left 35% completely calm cream negative space for later typography. No beverage is necessary. Nonquantitative conceptual metaphor. No text, labels, graphs, numbers, arrows, sugar cubes, diseased organ, neon, dark sci-fi, gold jewellery or dashboard. Wide 16:9 landscape.",
+      "dimensions": [
+        1672,
+        941
+      ],
+      "format": "WebP",
+      "conversion": "Format conversion only, quality 95, no compositional edit",
+      "visual_qa": "Inspected generated pixels: recognizable liver silhouette as tactile pale taupe sculpture, honey branching light and faint sage transport trails, cream left negative space, no sugar-to-TG equivalence, particle counts, efficacy numbers or diseased anatomy.",
+      "display_constraint": "Retain conceptual-image wording and modal may/can language in HTML and film; glowing branches are artistic activity cues, not an anatomical pathway model."
+    }
+  ]
+}
