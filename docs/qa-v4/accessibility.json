@@ -1,0 +1,104 @@
+{
+  "axeVersion": "4.12.1",
+  "counts": {
+    "inapplicable": 50,
+    "incomplete": 1,
+    "passes": 39,
+    "violations": 0
+  },
+  "violations": [],
+  "incomplete": [
+    {
+      "help": "Elements must meet minimum color contrast ratio thresholds",
+      "helpUrl": "https://dequeuniversity.com/rules/axe/4.12/color-contrast?application=axeAPI",
+      "id": "color-contrast",
+      "impact": "serious",
+      "nodeCount": 41,
+      "nodes": [
+        {
+          "failureSummary": "Fix any of the following:\n  Element content contains only non-text characters",
+          "html": "<button class=\"film-link enhanced\" data-open-film=\"\" aria-haspopup=\"dialog\">▷ <span>Шоурил</span></button>",
+          "target": [
+            ".film-link"
+          ]
+        },
+        {
+          "failureSummary": "Fix any of the following:\n  Element's background color could not be determined due to a background gradient",
+          "html": "<span>Шоурил</span>",
+          "target": [
+            ".film-link > span"
+          ]
+        },
+        {
+          "failureSummary": "Fix any of the following:\n  Element content contains only non-text characters",
+          "html": "<a id=\"next-scene\" href=\"#s02\" aria-label=\"Следующая сцена\" aria-disabled=\"false\" tabindex=\"0\">→</a>",
+          "target": [
+            "#next-scene"
+          ]
+        },
+        {
+          "failureSummary": "Fix any of the following:\n  Element content contains only non-text characters",
+          "html": "<span class=\"play-circle\" aria-hidden=\"true\">▷</span>",
+          "target": [
+            ".play-circle"
+          ]
+        },
+        {
+          "failureSummary": "Fix any of the following:\n  Element's background color could not be determined because element contains an image node",
+          "html": "<text x=\"130\" y=\"145\">Рацион</text>",
+          "target": [
+            "text[x=\"130\"]"
+          ]
+        },
+        {
+          "failureSummary": "Fix any of the following:\n  Element's background color could not be determined because it is overlapped by another element",
+          "html": "<text x=\"570\" y=\"145\">Генетика</text>",
+          "target": [
+            "text[x=\"570\"]"
+          ]
+        },
+        {
+          "failureSummary": "Fix any of the following:\n  Element's background color could not be determined because element contains an image node",
+          "html": "<text x=\"360\" y=\"578\">Медицинский контекст</text>",
+          "target": [
+            "text[y=\"578\"]"
+          ]
+        },
+        {
+          "failureSummary": "Fix any of the following:\n  Element's background color could not be determined because it is overlapped by another element",
+          "html": "<text class=\"svg-major\" x=\"360\" y=\"337\">ЛПНП</text>",
+          "target": [
+            "text[y=\"337\"]"
+          ]
+        },
+        {
+          "failureSummary": "Fix any of the following:\n  Element's background color could not be determined because element contains an image node",
+          "html": "<span id=\"particle-name\">Холестерин</span>",
+          "target": [
+            "#particle-name"
+          ]
+        },
+        {
+          "failureSummary": "Fix any of the following:\n  Element's background color could not be determined because element contains an image node",
+          "html": "<small id=\"particle-carrier\">в составе ЛПНП</small>",
+          "target": [
+            "#particle-carrier"
+          ]
+        }
+      ],
+      "tags": [
+        "cat.color",
+        "wcag2aa",
+        "wcag143",
+        "TTv5",
+        "TT13.c",
+        "EN-301-549",
+        "EN-9.1.4.3",
+        "ACT",
+        "RGAAv4",
+        "RGAA-3.2.1"
+      ]
+    }
+  ],
+  "url": "http://127.0.0.1:4173/versions/v4/"
+}

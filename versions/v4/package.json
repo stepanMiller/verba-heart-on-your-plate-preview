@@ -1,0 +1,14 @@
+{
+  "name": "verba-v4-science-hero",
+  "version": "4.0.0",
+  "private": true,
+  "scripts": {
+    "dev": "python3 -m http.server 4173 --directory ../..",
+    "check": "node --check lecture.js",
+    "qa": "node tools/qa.cjs",
+    "render:film": "node tools/render-film.cjs"
+  },
+  "devDependencies": {
+    "playwright": "1.62.1"
+  }
+}
