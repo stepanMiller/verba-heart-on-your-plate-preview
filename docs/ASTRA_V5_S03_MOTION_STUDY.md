@@ -18,14 +18,14 @@ QA: `versions/v5-astra/renders/s03-motion-qc/QA.json`. Измерены 5.000 с
 
 ## Актуальная оценка Runway, только read-only
 
-Никакая платная генерация, загрузка или расход credits не выполнялись. В connected workspace доступны Gen-4.5 и Gen-4 Turbo.
+Историческая read-only оценка на момент изготовления бесплатной optical-пробы. Последующий фактический статус описан ниже: approved S03 попытка была выполнена, но FAILED при загрузке source URL; net decrease после трёх таких ошибок отсутствовал. В connected workspace доступны Gen-4.5 и Gen-4 Turbo.
 
 | Вариант | Актуальный официальный rate | Одна проба 5 с | Две пробы, максимальный предлагаемый лимит |
 |---|---:|---:|---:|
 | Рекомендуемый Gen-4.5, standard 720p | 12 credits/s | **60 credits** | **120 credits** |
 | Бюджетный Gen-4 Turbo | 5 credits/s | **25 credits** | **50 credits** |
 
-Предпочтительно сначала согласовать и выполнить одну 5-секундную пробу Gen-4.5, посмотреть результат и использовать вторую только в рамках явно одобренного суммарного лимита. Текущий approval на эти credits отсутствует.
+Предпочтительно сначала согласовать и выполнить одну 5-секундную пробу Gen-4.5, посмотреть результат и использовать вторую только в рамках явно одобренного суммарного лимита. Эта прежняя самостоятельная оценка заменена позднее одобренным four-shot package; S03 входит в его 240 credits, а не добавляется сверху. Первая S03 попытка FAILED; retry пока не разрешён.
 
 Официальные источники проверены 04.10.2026:
 
@@ -53,3 +53,9 @@ QA: `versions/v5-astra/renders/s03-motion-qc/QA.json`. Измерены 5.000 с
 - Отсутствие новых расходов при неудаче вне заранее одобренного лимита
 
 Модель может нарушить ограничения даже при точном prompt. Поэтому генерация не заменяет покадровый и научный просмотр; неудовлетворительный результат не используется как окончательный медицинский материал.
+
+## Execution update, 04.10.2026 14:29 UTC
+
+S03 was submitted once within the explicitly approved four-shot 240-credit package. Task `b4ca5c76-5e03-4add-91a4-daf59bba5a0b` reached FAILED: “URL hostname is not in allowed hostnames”. The same error affected S01/S06. The before/after balance for all three failed submissions was 6,491/6,491; no net decrease was observed. The exact S03 image is now on official Runway storage and its bytes match the approved source. **No S03 retry has been submitted; explicit recovery permission is pending because the user limited attempts.**
+
+The unrelated successful first S14 serving attempt used 60 credits, bringing the observed balance to 6,431 and leaving 180 of the approved 240 ceiling. It does not replace permission for an S03 retry. The separate free `s03-motion-study.mp4` remains the unchanged optical concept, not a successful Runway output.

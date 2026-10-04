@@ -30,3 +30,11 @@ V4 is only a donor for `heart-loop.mp4`, `heart-poster.webp`, `olive-motion.mp4`
 - [V5 motion storyboard](../../docs/ASTRA_V5_MOTION_STORYBOARD.md)
 - [V5 animatic board](../../docs/ASTRA_V5_SHOWREEL_BOARD.md)
 - [Scientific source audit](../../docs/V4_SCIENCE_AUDIT.md)
+
+## One-shot scene motion
+
+S14 uses the approved five-second Runway shot `assets/s14-salad-motion-web.mp4`, with `assets/s14-salad-serving.webp` as its no-JS / static poster. It plays once when visible, then holds the decoded last frame. It never loops the bowl placement, reverses playback, or restarts on re-entry. A labelled SVG replay button appears after completion (or failed autoplay). Replay respects reduced motion, Save-Data and the manual motion switch.
+
+The generic `data-ambient data-playback="once"` lifecycle is reusable for later approved clips: give the video an ID, omit `loop`, and associate an optional button using `data-ambient-replay="VIDEO_ID"`. Completed clips stay complete across scrolling, dialog opening and manual pause. If a system preference changes to static mode, the source is unloaded and the poster is shown; completion is preserved so lifting the restriction cannot silently replay it. Existing oil and vessel loops remain unchanged.
+
+This is an AI-generated fictional life scene, not documentary footage of VERBA. No other new clip is wired until its actual filename and acceptance are confirmed.

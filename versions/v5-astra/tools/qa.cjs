@@ -5,7 +5,7 @@ const assert = require('node:assert/strict');
 const url = process.env.VERBA_URL || 'http://127.0.0.1:4173/versions/v5-astra/';
 const output = process.env.VERBA_QA_OUTPUT || path.resolve(__dirname, '../renders/qa');
 fs.mkdirSync(output, { recursive: true });
-const sizes = [[320,780],[390,844],[768,1024],[1024,768],[1440,936],[1920,1080]];
+const sizes = [[320,780],[390,844],[844,390],[768,1024],[1024,768],[1440,936],[1920,1080]];
 const report = { date: '2026-10-04', url, viewportResults: [], checks: [], errors: [], failedAssets: [], browserResults: [] };
 async function check(name, fn) { try { await fn(); report.checks.push({ name, passed: true }); } catch (e) { report.checks.push({ name, passed: false, error: e.message }); } }
 async function jump(page, id) { await page.evaluate(id => document.getElementById(id).scrollIntoView({ behavior: 'instant', block: 'start' }), id); await page.waitForTimeout(80); }
@@ -90,6 +90,44 @@ async function inspect(browser, label, screenshots = true) {
     assert.equal(await page.locator('#showreel').evaluate(v => Math.round(v.duration)), 26); await page.keyboard.press('Escape');
     assert.equal(await page.locator('#showreel').evaluate(v => v.paused), true); assert.equal(await page.evaluate(() => document.activeElement.hasAttribute('data-open-film')), true);
   });
+  await check(label + ': separate S03 study and animatic switch cleanly', async () => {
+    await jump(page, 's03');
+    await page.locator('[data-open-film][data-film="s03"]').last().click();
+    await page.waitForFunction(() => Math.round(document.querySelector('#showreel').duration) === 5);
+    assert.match(await page.locator('#showreel source').getAttribute('src'), /s03-motion-study\.mp4$/);
+    assert.match(await page.locator('.film-caption').innerText(), /2D/);
+    await page.keyboard.press('Escape');
+    assert.equal(await page.locator('#showreel').evaluate(v => v.paused), true);
+    assert.equal(await page.evaluate(() => document.activeElement.dataset.film), 's03');
+    await page.locator('[data-open-film]').first().click();
+    await page.waitForFunction(() => Math.round(document.querySelector('#showreel').duration) === 26);
+    assert.match(await page.locator('#showreel source').getAttribute('src'), /animatic\.mp4$/);
+    await page.keyboard.press('Escape');
+  });
+  await check(label + ': mobile touch targets, readable science and native anchor offset', async () => {
+    for (const [width, height] of [[320,780],[390,844],[844,390]]) {
+      await page.setViewportSize({ width, height });
+      for (let i = 1; i <= 14; i++) {
+        const id = 's' + String(i).padStart(2, '0'); await jump(page, id);
+        const small = await page.locator('#' + id).evaluate(scene => [...scene.querySelectorAll('button')].filter(el => {
+          const r = el.getBoundingClientRect();
+          return r.width > 0 && r.height > 0 && !el.closest('[inert],[aria-hidden="true"]') && (r.width < 43.5 || r.height < 43.5);
+        }).map(el => el.id || el.textContent.trim()));
+        assert.deepEqual(small, [], width + 'px / ' + id + ': small touch targets');
+      }
+      await jump(page, 's03');
+      for (const selector of ['.science-caption','.carrier-label','.cargo-label']) assert.ok(await page.locator('#s03 ' + selector).evaluate(el => parseFloat(getComputedStyle(el).fontSize)) >= 12);
+      await jump(page, 's14');
+      const positioned = await page.evaluate(() => document.querySelector('#h14').getBoundingClientRect().top >= document.querySelector('.site-header').getBoundingClientRect().bottom - 1);
+      assert.equal(positioned, true, width + 'px / final heading must clear header');
+      for (const selector of ['#previous-scene','#next-scene']) {
+        const r = await page.locator(selector).boundingBox(); assert.ok(r.width >= 44 && r.height >= 44);
+        assert.equal(await page.locator(selector + ' svg').count(), 1);
+      }
+      assert.equal(await page.evaluate(() => document.documentElement.scrollWidth > innerWidth + 1), false);
+    }
+    await page.setViewportSize({ width: 1440, height: 936 });
+  });
   await check(label + ': reduced motion removes ambient sources', async () => {
     await page.emulateMedia({ reducedMotion: 'reduce' }); await jump(page, 's04');
     assert.equal(await page.locator('video[data-ambient] source[src]').count(), 0); assert.equal(await page.locator('#motion-toggle').getAttribute('aria-pressed'), 'false');
@@ -120,6 +158,7 @@ async function inspect(browser, label, screenshots = true) {
   });
   await check('Render route is deterministic and normal route stays 14 scenes', async () => {
     const p = await browser.newPage({ viewport: { width: 1440, height: 936 } }); await p.goto(url + '?render=s12');
+    await p.waitForSelector('body[data-render-ready="s12"]');
     assert.equal(await p.locator('.render-active').getAttribute('id'), 's12'); await p.evaluate(() => window.verbaFrame('s03')); assert.equal(await p.locator('.render-active').getAttribute('id'), 's03'); await p.close();
   });
   await browser.close();
