@@ -295,8 +295,14 @@
 .film-versions .text-action{min-height:48px;margin-top:0;font-size:13px}
 .film-versions [aria-pressed=true]{text-decoration:underline;text-underline-offset:5px}
 @media(max-width:600px), (max-width:950px) and (max-height:500px) and (orientation:landscape){
-  .scene.opening .bleed>video{object-position:67% center}
+  .scene.opening .bleed>video{object-position:100% center}
   .scene.lipids .science-bleed,.scene.hepatic .hepatic-hero{aspect-ratio:16/9;max-height:none}
   .scene.lipids .science-bleed>video,.scene.hepatic .hepatic-hero>video{object-fit:contain;object-position:center}
   .scene.lipids .ambient-replay,.scene.hepatic .ambient-replay{bottom:42px;font-size:12px;min-height:44px;padding:8px 12px}
+}
+
+/* Replay controls avoid the science labels at the foot of the frame. */
+.lipids .ambient-replay,.hepatic .ambient-replay{top:96px;bottom:auto}
+@media(max-width:600px), (max-width:950px) and (max-height:500px) and (orientation:landscape){
+  .scene.lipids .ambient-replay,.scene.hepatic .ambient-replay{top:12px;bottom:auto}
 }
