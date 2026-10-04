@@ -306,3 +306,6 @@
 @media(max-width:600px), (max-width:950px) and (max-height:500px) and (orientation:landscape){
   .scene.lipids .ambient-replay,.scene.hepatic .ambient-replay{top:12px;bottom:auto}
 }
+
+/* Decorative washes must never intercept the explicit replay controls. */
+.photo:before,.finale-light{pointer-events:none}
