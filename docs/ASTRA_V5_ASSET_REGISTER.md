@@ -4,7 +4,7 @@
 
 | Final asset | Role / source generation | Continuity and usage |
 |---|---|---|
-| s01-master-casting.webp | Built-in imagegen, `exec-9f622a98-c1c8-4812-abb6-b2342cec3689.png` | Master fictional51yo woman, chestnut/silver bob, ivory shirt, breakfast pause; human hero |
+| s01-master-casting.webp | Built-in imagegen, `exec-9f622a98-c1c8-4812-abb6-b2342cec3689.png` | Master fictional 51-year-old woman, chestnut / silver bob, ivory shirt, breakfast pause; human hero |
 | s02-context.webp | Built-in imagegen identity reference, `exec-ce38e0ae-6535-4080-a98b-37e767ec4291.png` | Same woman with unreadable illustrative lab sheet; analysis-context scene |
 | s03-lipoprotein-cutaway.webp | Built-in imagegen revised asset, `exec-56f598f9-9901-4de2-b768-265e67fddb41.png` | Pale conceptual LDL cross-section only; see scientific addendum and mandatory on-screen labels |
 | s05-fibre.webp | Built-in imagegen; exact prompt/source path in `assets/science-image-prompts.json` | Viscous fluid/oat macro; not biological microscopy or literal LDL trap |
@@ -17,23 +17,18 @@
 
 ## Image prompt specifications
 
-S01 master prompt: a 16:9 human-first editorial campaign photograph, fictional woman 51, short wavy chestnut bob with silver temples, hazel eyes, softly angular face, real skin lines, ivory linen shirt. Waist-up3/4 profile on right, breakfast walnut table, bowl of oats/walnuts and pear secondary; quiet pause looking to garden light, no camera smile. Natural sidelight and leaf shadows, darkolive negative space left40%, realistic50mm optical depth, cream/bronze/olive filmic texture. No medical equipment, logos, text, plastic skin or split panels.
+All images were generated with the built-in image tool. These production specifications record the final scene requirements; exact prompts and source paths for S05/S06 are additionally preserved in `assets/science-image-prompts.json`.
 
-S02 identity-preserving prompt: same master woman in lightcream study, seated right reading an unbranded illustrative blood-test sheet, no readable words/numbers. Curious thoughtful mood, not illness. Lightoak table, waterglass/closednotebook, uncluttered cream left40%, documentary50mm, no food or ads.
+- **S01:** 16:9 human-first editorial photograph. Fictional woman, age 51, short wavy chestnut bob with silver temples, hazel eyes, real skin lines, ivory linen shirt. A quiet breakfast pause on the right; bowl, pear and walnuts are secondary. Natural side light, olive shadow, cream highlights, no camera smile or medical advertising.
+- **S02:** Preserve the master woman's identity. A bright cream study; she reads an unbranded illustrative blood-test sheet with no readable numbers. Thoughtful curiosity rather than illness; light oak, water glass and closed notebook.
+- **S03:** Preserve the off-centre cutaway composition; replace dark metallic styling with a pale cream environment. One surface lipid monolayer, inward tails, neutral-lipid core and restrained outside protein component. No jewellery, cell membrane, second carrier, orbit, neon or labels. Residual stylisation requires the visible conceptual disclaimer.
+- **S07:** Two distinct dishes form an arc: fish, lemon and herbs lower right; lentils and white beans upper right. Pale stone and linen, natural side light, realistic food texture, no generic complete meal or menu text.
+- **S08:** Same woman, bright cream and sage kitchen, hands rinsing greens in a ceramic colander. Chickpeas are secondary. Genuine concentration, no camera smile, lived-in textures and bright left-side space.
+- **S10:** Same woman's neutral close portrait in a cream clinical lounge. Natural skin, unchanged age and wardrobe, no disease cues, no healthy/sick comparison. One image serves every clinical factor state.
+- **S12:** Preserve both fictional women, identities, pose, hands, pen and notebook. Refine the room into a warm modern consultation setting with pale plaster, frosted glass, light oak, an unreadable lab screen and report. No kitchen cups or advertising smile.
+- **S14:** Same woman, ivory shirt and olive cardigan, a natural step in a bright courtyard with canvas groceries. Recognizable three-quarter face, ordinary life and gentle breeze, pale wall for closing copy, no fitness cliché.
 
-S03 final revision prompt: dramatic off-centre LDL cutaway on right, palecream fluid, remove metallic ribbons/jewellery/cellular doublelayer. One surface phospholipid monolayer, inward tails, neutral-lipid core, understated outside apolipoprotein band. No implied precise atomistic reconstruction, no second carrier, no orbit/neon/arrows/text. Medical review found residual nonliteral pearl-rim/core stylisation, hence visible conceptualcaption is mandatory; image not a valid molecular model.
-
-S07 prompt: two distinct modest ceramic dishes as a compositional arc, fish/lemon/herbs lower right, greenlentils/whitebeans upper right, pale limestone/linen,45degree macro, natural sidelight, cream left35%. No generic fullmeal, menu or typography.
-
-S08 prompt: same master woman in brightcream/softsage lived-in kitchen, standing right, hands rinsing greens in ceramiccolander, chickpeas secondary, engaged natural action, no smile/eyecontact. Left35% bright softenedcounter/wall, tactile filmic50mm.
-
-S10 prompt: same woman and age in neutral cream clinical-lounge closeportrait, chest-up3/4, composed levelgaze, left45% creamspace, no disease cues, no alternate face, no healthy/sick comparison.
-
-S12 final prompt: preserve both fictionalwomen, faces/age/pose/clothes/interaction/hands/pen/notebook from consultationdraft; change only room to warm light modernpreventivemedicine cabinet, pale plaster, frostedglass, lightoakdesk, unreadable labmonitor/report, restrainedfileholder. No diningplants/cups, no smile, no logos, no realclinicclaim.
-
-S14 prompt: same woman with ivoryshirt/olivecardigan walking through sunlitcourtyard with canvasgroceries, recognizable3/4profile, naturalstep/breeze, brightpale wall left40%, healthintegratedintolife, no fitnesscliché, no text.
-
-These specifications document the generation direction; they are not claims of real-world locations, people, medical structures or product efficacy.
+These are fictional editorial assets, not evidence of real locations, patients, doctors, molecular structures or product efficacy.
 
 ## Reused assets
 
@@ -41,6 +36,6 @@ All referenced via `../v4/assets/` in the prototype: `olive-motion.mp4`, `olive-
 
 ## Code-native objects / videos
 
-S09 package: HTML/CSS typography and perspective; independent native vector package in animatic renderer. No AI label text, no invented nutritionnumbers. S13 calendar/habits code-native, current-visit only.
+S09 package: HTML/CSS typography and perspective; independent native vector package in animatic renderer. No AI label text, no invented nutrition numbers. S13 calendar/habits code-native, current-visit only.
 
-`animatic.mp4`:26s,10source-shot montage; sourceframes/actual donorvideo/nativepackageturn. Not screen-recordedslides. `s03-motion-study.mp4`:5s masked2D optical composite, no3Dmesh, no generativevideo. Both silent. Reproducible scripts and QC JSON stored under tools/ and renders/. Paid natural-motion generation is a separate approval gate.
+`animatic.mp4`:26 s,10 source-shot montage; source frames, actual donor video and native package turn. Not screen-recorded slides. `s03-motion-study.mp4`:5 s masked 2D optical composite, no 3D mesh, no generativevideo. Both silent. Reproducible scripts and QC JSON stored under tools/ and renders/. Paid natural-motion generation is a separate approval gate.

@@ -1,0 +1,50 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="robots" content="noindex,nofollow,noarchive">
+  <title>VERBA V5 · Responsive review harness</title>
+  <style>
+    html,body{margin:0;padding:0;background:#d8d8d5}
+    #review-frame{display:block;position:absolute;top:0;left:0;border:0;background:#f2eee5}
+  </style>
+</head>
+<body>
+  <iframe id="review-frame" title="VERBA V5: точный размер сцены для проверки адаптивности"></iframe>
+  <script>
+    'use strict';
+    (() => {
+      const params = new URLSearchParams(location.search);
+      const dimension = (key, fallback) => {
+        const value = Number(params.get(key));
+        return Number.isFinite(value) && value >= 240 && value <= 4096 ? Math.round(value) : fallback;
+      };
+      const width = dimension('width', 390);
+      const height = dimension('height', 844);
+      const requested = params.get('scene') || 's01';
+      const scene = /^s(0[1-9]|1[0-4])$/.test(requested) ? requested : 's01';
+      const frame = document.getElementById('review-frame');
+      frame.width = width;
+      frame.height = height;
+      frame.style.width = width + 'px';
+      frame.style.height = height + 'px';
+      document.body.style.width = width + 'px';
+      document.body.style.height = height + 'px';
+      document.body.dataset.reviewWidth = String(width);
+      document.body.dataset.reviewHeight = String(height);
+      frame.addEventListener('load', () => {
+        const body = frame.contentDocument?.body;
+        if (!body) return;
+        const sync = () => {
+          if (body.dataset.renderReady === scene) document.body.dataset.renderReady = scene;
+          else delete document.body.dataset.renderReady;
+        };
+        new MutationObserver(sync).observe(body, { attributes: true, attributeFilter: ['data-render-ready'] });
+        sync();
+      });
+      frame.src = '../index.html?render=' + encodeURIComponent(scene);
+    })();
+  </script>
+</body>
+</html>

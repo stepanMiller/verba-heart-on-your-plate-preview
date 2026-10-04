@@ -328,6 +328,7 @@
 
   // Deterministic still capture only. The separate animatic is not a screen recording.
   window.verbaFrame = async (id, time = 0) => {
+    delete document.body.dataset.renderReady;
     const scene = $('#' + id);
     if (!scene || !scenes.includes(scene)) throw new Error('Unknown scene: ' + id);
     document.body.classList.add('render-mode');
@@ -337,6 +338,7 @@
     await Promise.all($$('img', scene).map(img => img.decode().catch(() => {})));
     scene.getAnimations({ subtree: true }).forEach(animation => { animation.pause(); animation.currentTime = time * 1000; });
     updateScroll();
+    document.body.dataset.renderReady = id;
   };
   if (renderMode) {
     const requested = new URLSearchParams(location.search).get('render');
