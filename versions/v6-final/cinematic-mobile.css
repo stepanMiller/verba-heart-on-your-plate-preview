@@ -26,11 +26,11 @@
   .header-controls { gap: 7px; }
   #motion-toggle,
   #menu-toggle {
-    width: 36px;
-    min-width: 36px;
-    height: 36px;
-    min-height: 36px;
-    padding: 8px;
+    width: 44px;
+    min-width: 44px;
+    height: 44px;
+    min-height: 44px;
+    padding: 11px;
     border-color: rgba(63,68,48,.22);
     background: rgba(250,247,239,.68);
   }
@@ -173,7 +173,7 @@
   .scene .switches button,
   .scene .protein-rotation button,
   .scene .question-tabs button {
-    min-height: 38px;
+    min-height: 44px;
     padding: 7px 5px;
     border: 1px solid rgba(63,68,48,.24);
     border-radius: 3px;
@@ -193,7 +193,7 @@
   .oil .text-action {
     position: relative;
     z-index: 4;
-    min-height: 38px;
+    min-height: 44px;
     width: auto;
     margin: 13px 0 0;
     padding: 8px 0;
@@ -361,7 +361,7 @@
   .label .package-front .pack-fine { bottom: 22px; font-size: 9px; }
   .label .package-back > p:first-of-type { margin-top: 8px; font-size: 23px; }
   .label .label-fields { margin-top: 11px; }
-  .label .label-fields button { min-height: 35px; padding: 4px; font-size: 8px; }
+  .label .label-fields button { min-height: 44px; padding: 4px; font-size: 8px; }
   .label .pack-instruction { margin-top: 8px; font-size: 8px; }
   .label .barcode { height: 16px; margin-top: 8px; }
 
@@ -425,7 +425,7 @@
   .consultation .question-number { margin: 0 0 5px; font-size: 8px; }
   .consultation #question-text { min-height: 2.4em; max-width: 18ch; font-size: 20px!important; line-height: 1.15; }
   .consultation .question-tabs { display: grid; grid-template-columns: repeat(3,1fr); gap: 6px; margin-top: 9px; }
-  .consultation .question-tabs button { width: auto; min-width: 0; min-height: 34px; }
+  .consultation .question-tabs button { width: auto; min-width: 0; min-height: 44px; }
   .consultation .question-paper .small-copy { margin-top: 7px; font-size: 8px; line-height: 1.35; }
 
   /* 13: a usable two-week card that still fits in the cinematic viewport. */
@@ -463,7 +463,7 @@
   .habit .calendar-number { margin-top: 3px; gap: 12px; font-size: 55px; }
   .habit .calendar-number > span { font-size: 8px; }
   .habit .calendar-days { display: grid; grid-template-columns: repeat(7,1fr); gap: 4px; margin-top: 6px; }
-  .habit .calendar-days button { min-width: 0; min-height: 31px; width: 100%; aspect-ratio: auto; font-size: 7px; }
+  .habit .calendar-days button { min-width: 0; min-height: 44px; width: 100%; aspect-ratio: auto; font-size: 7px; }
   .habit .habit-notebook #practice-status { margin-top: 7px; font-size: 7px; line-height: 1.3; }
   .habit .notebook-line { margin-top: 7px; }
 
@@ -521,7 +521,7 @@
   .scene .scene-lead { margin-top: 8px; font-size: 10.5px!important; }
   .scene .scene-visual { inset-block-start: 48%!important; }
   .label .package { height: min(360px,49svh); }
-  .habit .habit-options button { min-height: 42px; }
+  .habit .habit-options button { min-height: 44px; }
   .habit .calendar-number { font-size: 45px; }
 }
 

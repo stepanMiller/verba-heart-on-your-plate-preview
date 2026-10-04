@@ -138,6 +138,10 @@ async function inspect(browser, label, screenshots = true) {
       const positioned = await page.evaluate(() => document.querySelector('#h14').getBoundingClientRect().top >= document.querySelector('.site-header').getBoundingClientRect().bottom - 1);
       assert.equal(positioned, true, width + 'px / final heading must clear header');
       for (const selector of ['#previous-scene','#next-scene']) {
+        if (width <= 640) {
+          assert.equal(await page.locator(selector).isVisible(), false, width + 'px / cinematic navigation arrows stay hidden');
+          continue;
+        }
         const r = await page.locator(selector).boundingBox(); assert.ok(r.width >= 44 && r.height >= 44);
         assert.equal(await page.locator(selector + ' svg').count(), 1);
       }
