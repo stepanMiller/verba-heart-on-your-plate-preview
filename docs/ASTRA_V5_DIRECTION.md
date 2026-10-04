@@ -72,3 +72,11 @@ Reused V4 assets: olive-motion.mp4, olive-poster.webp, heart-loop.mp4, heart-pos
 ## Review limits / next gates
 
 Creative prototype only. Scientific editorial review is documented, final clinical sign-off remains open. Human still-based optical motion is not claimed as natural video. Runway or other paid video requires an explicit model/duration/attempt/credit quote and approval; current authorized paid credits for V5 =0. No main merge and no Yandex publication. Next gates: S03 motion acceptance, all14scene visual consistency, desktop/mobile runtime QA, clinical editor, separately authorized final natural-motion production.
+
+## Review changes after the anchor gate
+
+04.10.2026: the user accepted the rest of the visual direction but rejected the first mobile implementation. Mobile is being rebuilt as a separate reading-and-interaction layout, not a scaled desktop canvas. All interactive arrows/play/rotate/close controls use inline SVG; touch targets are at least 44px, preferably 48px. The completed mobile QA must be recorded before final delivery.
+
+The user also requested meaningful film titles and recognizable creator attribution. Ending hierarchy: authentic VERBA mark with «Медицинский курорт», then the authentic MILLER wordmark with smaller «Visual Production». MILLER's site uses HTML/CSS typography; the supplied SVG is an exact outline export of the official bundled Manrope 600 and tracking, not a generated or invented logo. Source commit and verification are in `assets/miller-logo-provenance.json`.
+
+A clear motion-readiness matrix is maintained in `ASTRA_V5_MOTION_READINESS.md`. Approval of visual direction or of attribution is not approval to spend Runway credits. The single proposed Gen-4.5 S03 test remains separately scoped at 5 seconds / 60 credits until explicitly approved.

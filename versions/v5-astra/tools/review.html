@@ -24,6 +24,8 @@
       const height = dimension('height', 844);
       const requested = params.get('scene') || 's01';
       const scene = /^s(0[1-9]|1[0-4])$/.test(requested) ? requested : 's01';
+      const normal = params.get('mode') === 'normal';
+      document.body.dataset.reviewMode = normal ? 'normal' : 'render';
       const frame = document.getElementById('review-frame');
       frame.width = width;
       frame.height = height;
@@ -33,9 +35,16 @@
       document.body.style.height = height + 'px';
       document.body.dataset.reviewWidth = String(width);
       document.body.dataset.reviewHeight = String(height);
-      frame.addEventListener('load', () => {
+      frame.addEventListener('load', async () => {
         const body = frame.contentDocument?.body;
         if (!body) return;
+        if (normal) {
+          const selected = frame.contentDocument.getElementById(scene);
+          await Promise.all([...selected.querySelectorAll('img')].map(img => img.decode().catch(() => {})));
+          selected.scrollIntoView({ behavior: 'instant', block: 'start' });
+          document.body.dataset.renderReady = scene;
+          return;
+        }
         const sync = () => {
           if (body.dataset.renderReady === scene) document.body.dataset.renderReady = scene;
           else delete document.body.dataset.renderReady;
@@ -43,7 +52,7 @@
         new MutationObserver(sync).observe(body, { attributes: true, attributeFilter: ['data-render-ready'] });
         sync();
       });
-      frame.src = '../index.html?render=' + encodeURIComponent(scene);
+      frame.src = normal ? '../index.html#' + encodeURIComponent(scene) : '../index.html?render=' + encodeURIComponent(scene);
     })();
   </script>
 </body>

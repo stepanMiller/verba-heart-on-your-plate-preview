@@ -23,9 +23,8 @@ SERIF='/usr/share/fonts/truetype/dejavu/DejaVuSerif.ttf'
 SHOTS=[
  dict(id='human-opening', source='s01-master-casting.webp', frames=72,
       start=(.60,.48,1.08), end=(.67,.47,1.20)),
- dict(id='ldl-macro', source='s03-lipoprotein-cutaway.webp', frames=60,
-      start=(.67,.50,1.30), end=(.63,.48,1.17),
-      caption=('Концептуальный разрез ЛПНП','Цвет, форма и масштаб условны')),
+ dict(id='ldl-macro', source='s03-motion-study.mp4', frames=60,
+      start=(.5,.5,1.0), end=(.5,.5,1.0), video_start=0),
  dict(id='oil-pouring', source='../v4/assets/olive-motion.mp4', frames=36,
       start=(.68,.55,1.18), end=(.68,.55,1.18), video_start=0),
  dict(id='fibre-medium', source='s05-fibre.webp', frames=60,
@@ -74,21 +73,67 @@ def caption(im,lines):
         d.text((44,base+j*30),line,font=fnt(22 if j==0 else 18),fill=(250,248,240,255))
     return Image.alpha_composite(im.convert('RGBA'),overlay).convert('RGB')
 
+def brand_asset(name):
+    path=ASSETS/name
+    if not path.exists():
+        raise RuntimeError('Authentic brand asset missing: '+str(path))
+    return Image.open(path).convert('RGBA')
+
 def closing_title(im,t):
-    opacity=max(0,min(1,(t-.12)/.24))
-    if opacity<=0:return im
+    opacity=max(0,min(1,(t-.06)/.19))
     layer=Image.new('RGBA',(W,H),(0,0,0,0))
+    # Genuine supplied brand artwork, scaled without changing its geometry.
     logo=Image.open(ROOT/'verba-wordmark.png').convert('RGBA')
-    # Preserve source logo geometry. White matte extraction only if source has no alpha.
     if logo.getextrema()[3]==(255,255):
         a=255-np.asarray(logo.convert('L'))
         logo=Image.fromarray(np.dstack([np.full_like(a,43),np.full_like(a,52),np.full_like(a,33),a]).astype('uint8'))
-    logo.thumbnail((298,62),Image.Resampling.LANCZOS)
+    logo.thumbnail((322,65),Image.Resampling.LANCZOS)
     logo.putalpha(logo.getchannel('A').point(lambda a:int(a*opacity)))
-    layer.alpha_composite(logo,(62,304))
+    layer.alpha_composite(logo,(62,258))
     d=ImageDraw.Draw(layer)
-    d.text((63,396),'Здоровье, встроенное в жизнь',font=fnt(22),fill=(46,54,34,int(255*opacity)))
+    d.text((64,344),'Медицинский курорт',font=fnt(23),fill=(46,54,34,int(255*opacity)))
+    creator_alpha=max(0,min(1,(t-.26)/.17))
+    miller=brand_asset('miller-authentic-logo.png')
+    miller.thumbnail((228,93),Image.Resampling.LANCZOS)
+    miller.putalpha(miller.getchannel('A').point(lambda a:int(a*creator_alpha)))
+    layer.alpha_composite(miller,(65,476))
+    d.text((65,486+miller.height),'Visual Production',font=fnt(20),fill=(40,43,37,int(255*creator_alpha)))
     return Image.alpha_composite(im.convert('RGBA'),layer).convert('RGB')
+
+# Short editorial beats approved after the initial animatic; no slide copy.
+TITLES={
+ 'human-opening':('Здоровье начинается','в жизни'),
+ 'ldl-macro':('Холестерин','не плавает сам'),
+ 'human-kitchen':('Работает то,','что повторяется'),
+ 'consultation':('Решение вместе с врачом',),
+}
+def editorial_title(im,shot,t):
+    if shot not in TITLES:return im
+    opacity=ease(max(0,min(1,(t-.06)/.13)))
+    if opacity==0:return im
+    lines=TITLES[shot];layer=Image.new('RGBA',(W,H),(0,0,0,0));d=ImageDraw.Draw(layer)
+    if shot=='ldl-macro':
+        x,y,size,color=47,120,29,(65,66,45)
+    elif shot=='human-opening':
+        x,y,size,color=45,265,31,(249,247,233)
+    else:
+        x,y,size,color=45,H-70-(len(lines)-1)*42,29,(255,253,244)
+        for row in range(H-220,H):
+            d.line((0,row,W,row),fill=(20,25,15,round(122*opacity*((row-(H-220))/220)**1.2)))
+    for k,line in enumerate(lines):d.text((x,y+k*42),line,font=fnt(size),fill=(*color,round(255*opacity)))
+    return Image.alpha_composite(im.convert('RGBA'),layer).convert('RGB')
+
+def optical_science_light(im,shot,t):
+    if shot not in ('fibre-medium','hepatic-energy'):return im
+    # Non-deforming optical light pass only, not material flow or a metabolic simulation.
+    a=np.asarray(im).astype(np.float32)
+    yy,xx=np.mgrid[0:H,0:W]
+    if shot=='fibre-medium':
+        field=np.exp(-((xx-(250+750*t))/270)**2-((yy-330)/450)**2)
+    else:
+        field=np.exp(-((xx-825)/290)**2-((yy-335)/270)**2)*(.5+.5*math.sin(t*2*math.pi-.7))
+    a=np.clip(a*(.985+.044*field[:,:,None]),0,255)
+    return Image.fromarray(a.astype('uint8'))
 
 # Native object textures: no generative text, no nutritional numbers, no actual product claim.
 TW,TH=720,1080
@@ -214,7 +259,9 @@ def frame_for(s,i,clip=None):
         q=ease(t)
         state=tuple(a+(b-a)*q for a,b in zip(s['start'],s['end']))
         im=crop(source,state)
+    im=optical_science_light(im,s['id'],t)
     if 'caption'in s:im=caption(im,s['caption'])
+    im=editorial_title(im,s['id'],t)
     if s['id']=='human-closing':im=closing_title(im,t)
     if s['id']=='human-opening' and i<8:im=ImageEnhance.Brightness(im).enhance(.35+.65*i/7)
     # End holds the single title; final quarter-second closes to dark.
@@ -225,6 +272,7 @@ def frame_for(s,i,clip=None):
 def main():
     parser=argparse.ArgumentParser();parser.add_argument('--preview-only',action='store_true')
     args=parser.parse_args();QC.mkdir(parents=True,exist_ok=True)
+    brand_asset('miller-authentic-logo.png')
     for s in SHOTS:
         if s['id']!='package-turn' and not source_path(s).exists():
             raise SystemExit('Missing approved source: '+str(source_path(s)))

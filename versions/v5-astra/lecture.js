@@ -5,6 +5,7 @@
   const scenes = $$('#lecture > .scene');
   const reduced = matchMedia('(prefers-reduced-motion: reduce)');
   const connection = navigator.connection;
+  const mobileReading = matchMedia('(max-width:600px), (max-width:950px) and (max-height:500px) and (orientation:landscape)');
   const motionButton = $('#motion-toggle');
   const ambient = $$('video[data-ambient]');
   const film = $('#film-dialog');
@@ -74,6 +75,10 @@
     motionButton.setAttribute('aria-label', motion ? 'Остановить анимацию' : 'Включить анимацию');
     motionButton.disabled = reducedData();
     motionButton.title = motionButton.disabled ? 'Движение отключено системной настройкой' : '';
+    $('#motion-state').textContent = reducedData() ? 'Статично' : (motion ? 'Вкл' : 'Выкл');
+    $('#motion-status').hidden = !reducedData();
+    document.documentElement.classList.toggle('device-static', reducedData());
+    if (reducedData()) motionButton.setAttribute('aria-label', 'Статичный режим устройства: анимация отключена');
     $('path', motionButton).setAttribute('d', motion ? 'M9 6v12M15 6v12' : 'm9 6 9 6-9 6Z');
     if (reducedData()) ambient.forEach(video => {
       const source = $('source', video);
@@ -174,6 +179,19 @@
   reel.addEventListener('error', filmError);
   $('source', reel).addEventListener('error', filmError);
 
+  function actionLabel(button, label, iconName) {
+    const paths = {
+      external: 'M6 18 18 6M6 6h12v12',
+      return: 'M18 6 6 18M6 6v12h12',
+      rotate: 'M20 7v5h-5M20 12a8 8 0 1 0-2.3 5.7'
+    };
+    const svg = document.createElementNS('http://www.w3.org/2000/svg', 'svg');
+    svg.setAttribute('class', 'ui-icon'); svg.setAttribute('viewBox', '0 0 24 24');
+    svg.setAttribute('aria-hidden', 'true'); svg.setAttribute('focusable', 'false');
+    const path = document.createElementNS('http://www.w3.org/2000/svg', 'path');
+    path.setAttribute('d', paths[iconName]); svg.append(path);
+    button.replaceChildren(document.createTextNode(label + ' '), svg);
+  }
   function selectGroup(attribute, index) {
     $$('[' + attribute + ']').forEach(button => button.setAttribute('aria-pressed', String(Number(button.getAttribute(attribute)) === index)));
   }
@@ -198,7 +216,7 @@
   $('#swap-toggle').addEventListener('click', () => {
     const active = $('#swap-toggle').getAttribute('aria-pressed') !== 'true';
     $('#swap-toggle').setAttribute('aria-pressed', String(active));
-    $('#swap-toggle').textContent = active ? 'Вернуться к общей картине ↙' : 'Показать принцип замены ↗';
+    actionLabel($('#swap-toggle'), active ? 'Вернуться к общей картине' : 'Показать принцип замены', active ? 'return' : 'external');
     $('#swap-note').hidden = !active;
     $('#s04').classList.toggle('swap-active', active);
   });
@@ -224,12 +242,12 @@
     stopLabelSequence(); turned = value;
     $('#package').classList.toggle('turned', value);
     $('#package-turn').setAttribute('aria-pressed', String(value));
-    $('#package-turn').textContent = value ? 'Вернуть лицевую сторону ↻' : 'Повернуть упаковку ↻';
+    actionLabel($('#package-turn'), value ? 'Вернуть лицевую сторону' : 'Повернуть упаковку', 'rotate');
     $('.package-front').inert = value; $('.package-back').inert = !value;
     $('.package-front').setAttribute('aria-hidden', String(value));
     $('.package-back').setAttribute('aria-hidden', String(!value));
     $('#label-message').textContent = value ? labelMessages[labelIndex] : 'Обещание — спереди.\nИнформация — на обороте.';
-    if (value && guided && motion && !document.hidden) {
+    if (value && guided && motion && !document.hidden && !mobileReading.matches) {
       setLabel(0);
       for (let index = 1; index < 4; index++) labelTimers.push(setTimeout(() => {
         if (turned && $('#s09').classList.contains('in-view') && !hasDialog() && !document.hidden) setLabel(index);
@@ -318,7 +336,7 @@
   const textObserver = new ResizeObserver(entries => {
     entries.forEach(({ target }) => {
       const scene = target.closest('.scene');
-      if (!scene || renderMode || document.body.classList.contains('render-mode')) return;
+      if (!scene || renderMode || document.body.classList.contains('render-mode') || getComputedStyle(target).display === 'contents') return;
       const available = scene.clientHeight - parseFloat(getComputedStyle(scene).paddingTop) - 115;
       if (target.scrollHeight > available) scene.style.minHeight = (target.scrollHeight + parseFloat(getComputedStyle(scene).paddingTop) + 140) + 'px';
     });

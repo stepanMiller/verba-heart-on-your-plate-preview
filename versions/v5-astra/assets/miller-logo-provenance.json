@@ -1,0 +1,35 @@
+{
+  "checked_at_utc": "2026-10-04T14:01:00Z",
+  "official_site": "https://millervisual.ru/",
+  "repository": "https://github.com/stepanMiller/visual-production-studio",
+  "commit": "df1f39384e881c2abe56c05670a2a3f8d6cb87eb",
+  "original_format": "HTML/CSS typography, not a standalone image asset",
+  "source_files": {
+    "index.html": {
+      "live_url": "https://millervisual.ru/",
+      "github_blob_sha": "e9560ea4d39ba05c11810bd1e6d8788877d22c8e",
+      "live_blob_sha": "e9560ea4d39ba05c11810bd1e6d8788877d22c8e",
+      "live_matches_repo": true
+    },
+    "styles.css": {
+      "live_url": "https://millervisual.ru/styles.css",
+      "github_blob_sha": "5f2b2e70c21221ef00fc2d1dc7c065b1ffeb5881",
+      "live_blob_sha": "5f2b2e70c21221ef00fc2d1dc7c065b1ffeb5881",
+      "live_matches_repo": true
+    },
+    "assets/fonts/manrope-latin.woff2": {
+      "live_url": "https://millervisual.ru/assets/fonts/manrope-latin.woff2",
+      "github_blob_sha": "9d7abb17d323bff647995a94222b92b26a0fc93d",
+      "live_blob_sha": "9d7abb17d323bff647995a94222b92b26a0fc93d",
+      "live_matches_repo": true
+    }
+  },
+  "export_method": "Exact font outlines from official bundled Manrope 4.504 variable font instantiated at weight 600, with official desktop .34em tracking; tight transparent bounds plus .025em padding. No generative image model or invented logo design.",
+  "source_css": ".miller-wordmark span { font:600 14px/.85 var(--sans); letter-spacing:.34em; }",
+  "colors": {
+    "miller-logo-light.svg": "#f4f0e9 (official site foreground)",
+    "miller-logo-dark.svg": "#151613 (official site ink, color adaptation for ivory background)",
+    "miller-logo.svg": "#151613 (same as dark)"
+  },
+  "usage": "MILLER wordmark only. Preserve proportions. Add the user-requested Visual Production separately below. The website itself says Visual Production Studio; shortening is a requested endcard caption, not an original logo variant. No standalone light/dark logo assets exist in the repo; exports preserve the same source typography with documented site-palette fills."
+}
