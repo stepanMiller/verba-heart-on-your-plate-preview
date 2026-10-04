@@ -28,7 +28,7 @@
 @keyframes science-focus{0%,100%{opacity:.75}50%{opacity:1}}
 @keyframes path-arrive{from{opacity:.5;transform:translateX(-4px)}to{opacity:1;transform:none}}
 @keyframes linen-light{0%,100%{filter:brightness(1)}50%{filter:brightness(1.05)}}
-.motion-on .opening .bleed img{animation:human-breathe 16s ease-in-out infinite}.motion-on .light-wash{animation:light-drift 14s ease-in-out infinite}.motion-on .context-term{animation:context-arrive 1.2s ease both;animation-delay:calc(var(--index,0) * .13s)}.motion-on .lipids .science-label i{animation:science-focus 6s ease-in-out infinite}.motion-on .fibre-path>div{animation:path-arrive 1.6s ease both;animation-delay:calc(var(--index,0) * .4s)}.motion-on .everyday .bleed img{animation:linen-light 11s ease-in-out infinite}.motion-on .hepatic-path>i{animation:science-focus 3s ease-in-out infinite}.motion-on .consultation-hero img{animation:human-breathe 20s ease-in-out infinite}.motion-on .finale-light{animation:linen-light 12s ease-in-out infinite}.scene:not(.in-view) *,body.motion-paused *,body.dialog-open *{animation-play-state:paused!important}.scene-copy,.science-label,.scene-foot{transition:opacity .25s}html:not(.motion-on) *,html:not(.motion-on) *:before,html:not(.motion-on) *:after{animation:none!important;scroll-behavior:auto!important}.scene.change-beat .scene-lead{animation:context-arrive .45s ease}.scene.change-beat .risk-variable,.scene.change-beat #question-text{animation:context-arrive .4s ease}.render-mode .site-header,.render-mode .scene-dock,.render-mode .page-progress{display:none!important}.render-mode .scene{min-height:100vh}.render-mode .scene:not(.render-active),.render-mode .appendix,.render-mode .no-js{display:none!important}.render-mode .scene-foot{right:var(--gutter)}
+.motion-on .opening .bleed img{animation:human-breathe 16s ease-in-out infinite}.motion-on .light-wash{animation:light-drift 14s ease-in-out infinite}.motion-on .context-term{animation:context-arrive 1.2s ease both;animation-delay:calc(var(--index,0) * .13s)}.motion-on .lipids .science-label i{animation:science-focus 6s ease-in-out infinite}.motion-on .fibre-path>div{animation:path-arrive 1.6s ease both;animation-delay:calc(var(--index,0) * .4s)}.motion-on .everyday .bleed img{animation:linen-light 11s ease-in-out infinite}.motion-on .hepatic-path>i{animation:science-focus 3s ease-in-out infinite}.motion-on .consultation-hero img{animation:human-breathe 20s ease-in-out infinite}.motion-on .finale-light{animation:linen-light 12s ease-in-out infinite}.scene:not(.in-view) *,body.motion-paused *,body.dialog-open *{animation-play-state:paused!important}.scene-copy,.science-label,.scene-foot{transition:opacity .25s}html:not(.motion-on) *,html:not(.motion-on) *:before,html:not(.motion-on) *:after{animation:none!important;scroll-behavior:auto!important}.scene.change-beat .scene-lead{animation:context-arrive .45s ease}.scene.change-beat .risk-variable,.scene.change-beat #question-text{animation:context-arrive .4s ease}.render-mode .site-header,.render-mode .scene-dock,.render-mode .page-progress{display:none!important}.render-mode .scene:not(.render-active),.render-mode .appendix,.render-mode .no-js{display:none!important}.render-mode .scene-foot{right:var(--gutter)}
 @media(min-width:1600px){.scene{min-height:max(860px,100svh)}.scene-copy{max-width:850px}.eyebrow{font-size:11px;margin-bottom:34px}.lipid-copy .scene-lead,.context .scene-lead,.risk .scene-lead,.hepatic .scene-lead,.therapy .scene-lead,.habit .scene-lead,.finale .scene-lead{font-size:21px}.science-label{font-size:13px}.cargo-branch p{font-size:13px}.package{height:580px}.package-face{padding:42px 35px}.package-front>p{font-size:49px}.package-back>p:first-of-type{font-size:42px}.pack-kicker{font-size:10px}.package-front svg{height:190px;width:215px;margin-top:28px}.label-fields button{font-size:13px;min-height:46px}.pack-instruction{font-size:11px;margin-top:22px}.barcode{margin-top:23px;height:28px}.package-back .pack-fine{font-size:8px}.habit-notebook{min-height:520px;padding:45px}.habit-notebook>strong{font-size:32px}.calendar-number{font-size:155px}.calendar-days button{font-size:11px}.risk-context{bottom:145px}.risk-variable strong{font-size:31px}.risk-context>p{font-size:12px}.risk-fixed{font-size:15px}.question-paper .small-copy{font-size:12px}.question-tabs{margin-top:24px}.question-number{font-size:13px}}
 @media(min-width:901px) and (max-height:820px){.scene{--top:105px;min-height:800px}.scene h1{font-size:min(7.1vw,84px)}.scene h2{font-size:min(5.25vw,72px)}.scene .scene-lead{font-size:16px;margin-top:22px}.scene .eyebrow{margin-bottom:20px}.opening .speaker{margin-top:25px}.context .scene-copy{margin-top:12px}.lipid-copy{padding-top:4px}.fibre-path{bottom:133px}.risk .scene-copy{margin-top:5px}.risk-context{bottom:115px}.consultation .question-paper{top:44%;padding-top:19px}.question-paper #question-text{font-size:33px}.habit-notebook{top:19%}}
 /* Tablet: preserve each scene's authorship while giving text breathing room. */
@@ -41,3 +41,81 @@
 @media print{.site-header,.scene-dock,.page-progress,.enhanced,dialog{display:none!important}.scene{break-after:page;min-height:180mm;height:180mm;padding-top:20mm}.scene-foot{bottom:7mm}.appendix{display:block}.notes-list details{display:block}.notes-list details>*{display:block!important}.scene h1,.scene h2{font-size:50pt}.scene .scene-lead{font-size:12pt!important}.photo{-webkit-print-color-adjust:exact;print-color-adjust:exact}}
 .science-caption{position:absolute;z-index:3;bottom:87px;right:7%;font-size:8px;line-height:1.5;color:var(--muted);text-align:right;max-width:260px}.lipids .scene-foot .foot-meta{display:none}
 @media(max-width:600px){.science-caption{font-size:7px;right:7%;bottom:82px;max-width:230px}.lipids .scene-foot{padding-right:117px}}
+/* Anchor review polish: portraits occupy the scene rather than a photo panel. */
+.package.turned{transform:rotateY(180deg) rotateZ(0deg)}
+@media(min-width:901px){
+  .context-portrait{left:30%;right:0;top:0;bottom:0;width:auto;height:auto}
+  .context-portrait img{object-position:64% center}
+  .context-portrait:after{box-shadow:none;background:linear-gradient(90deg,var(--cream) 0%,rgba(242,238,229,.9) 12%,rgba(242,238,229,.18) 32%,transparent 48%)}
+  .context:before,.risk:before{content:'';position:absolute;inset:0;z-index:1;pointer-events:none;background:linear-gradient(90deg,var(--cream) 0%,var(--cream) 27%,rgba(242,238,229,.94) 36%,rgba(242,238,229,.25) 52%,transparent 64%)}
+  .context-caption{left:45%;right:auto;width:23%;top:27%;height:45%;align-items:flex-start;z-index:3}
+  .context-term{background:rgba(242,238,229,.9);box-shadow:none;padding:7px 12px}
+  .context-term:nth-child(n){margin-right:0}
+  .context-term:nth-child(2n){margin-left:13%}
+  .context-portrait figcaption{left:18%;bottom:98px;z-index:2;font-size:8px;color:var(--ink);max-width:230px}
+  .risk-portrait{left:35%;right:0;top:0;bottom:0}
+  .risk-portrait img{object-position:65% center}
+  .risk:before{background:linear-gradient(90deg,var(--cream) 0%,var(--cream) 31%,rgba(242,238,229,.96) 41%,rgba(242,238,229,.17) 59%,transparent 70%)}
+  .risk-portrait figcaption{left:30%;bottom:95px;font-size:8px;z-index:2;color:var(--ink)}
+  .risk-context{background:linear-gradient(90deg,var(--cream) 0%,rgba(242,238,229,.95) 75%,rgba(242,238,229,.5));padding-right:20px}
+  .consultation{background:var(--cream)}
+  .consultation-hero{left:32%;right:0;top:0;bottom:0}
+  .consultation-hero img{object-position:59% center}
+  .consultation:after{content:'';position:absolute;inset:0;z-index:2;pointer-events:none;background:linear-gradient(90deg,var(--cream) 0%,var(--cream) 27%,rgba(242,238,229,.94) 31%,rgba(242,238,229,.15) 43%,transparent 52%)}
+  .consultation-heading{max-width:35%;margin-top:6vh}
+  .consultation h2{font-size:clamp(58px,4.4vw,85px)}
+  .question-paper{left:var(--gutter);top:47%;bottom:auto;width:29%;max-width:560px;padding:0;background:transparent;box-shadow:none}
+  .question-paper #question-text{font-size:clamp(29px,2.25vw,43px);line-height:1.25;min-height:3.8em;max-width:13em}
+  .question-number{margin-bottom:18px}
+  .question-tabs{margin-top:24px}
+  .question-paper .small-copy{margin-top:19px;line-height:1.7}
+}
+@media(min-width:901px) and (max-width:1200px){
+  .context-caption{left:48%;width:24%;top:30%;height:42%}
+  .context-term{font-size:9px;padding:6px 9px}
+  .consultation-heading{margin-top:4vh;max-width:36%}
+  .question-paper{width:31%;top:47%}
+  .question-paper #question-text{font-size:29px}
+  .question-paper .small-copy{font-size:9px}
+}
+@media(min-width:601px) and (max-width:900px){
+  .context-portrait{left:20%;right:0;width:80%;top:35%;bottom:4%;height:auto}
+  .context-portrait:after{box-shadow:none;background:linear-gradient(180deg,var(--cream),rgba(242,238,229,.12) 25%,transparent 75%,var(--cream)),linear-gradient(90deg,var(--cream),transparent 42%)}
+  .context-caption{left:var(--gutter);right:auto;top:58%;width:36%;height:27%;align-items:flex-start;z-index:3}
+  .context-term:nth-child(n){margin-right:0}
+  .context-portrait figcaption{left:10%;bottom:100px;z-index:2;font-size:7px}
+  .risk-portrait{left:33%;right:0;top:35%;bottom:6%}
+  .risk-portrait:after{content:'';position:absolute;inset:0;background:linear-gradient(180deg,var(--cream),transparent 25%,transparent 70%,var(--cream)),linear-gradient(90deg,var(--cream),transparent 35%);pointer-events:none}
+  .risk-portrait figcaption{left:30%;bottom:96px;z-index:2}
+  .consultation-hero{left:8%;right:0;top:28%;bottom:22%}
+  .consultation-hero:after{content:'';position:absolute;inset:0;background:linear-gradient(180deg,var(--cream),transparent 15%,transparent 76%,var(--cream)),linear-gradient(90deg,var(--cream),transparent 19%);pointer-events:none}
+  .question-paper{background:linear-gradient(90deg,var(--cream) 55%,rgba(242,238,229,.93) 88%,transparent);box-shadow:none;padding-right:30px}
+}
+@media(max-width:600px){
+  .context-portrait{left:0;right:0;width:100%;top:42%;bottom:5%;height:auto}
+  .context-portrait img{object-position:65% center}
+  .context-portrait:after{box-shadow:none;background:linear-gradient(180deg,var(--cream),rgba(242,238,229,.04) 20%,transparent 72%,var(--cream)),linear-gradient(90deg,rgba(242,238,229,.7),transparent 42%)}
+  .context-caption{left:var(--gutter);right:auto;top:58%;width:54%;height:26%;align-items:flex-start;z-index:3}
+  .context-term:nth-child(n){margin-right:0}
+  .context-term{background:rgba(242,238,229,.9);box-shadow:none}
+  .context-portrait figcaption{left:var(--gutter);bottom:49px;z-index:2;font-size:6px;max-width:210px}
+  .risk-portrait{left:12%;right:0;top:40%;bottom:8%}
+  .risk-portrait img{object-position:64% center}
+  .risk-portrait:after{content:'';position:absolute;inset:0;background:linear-gradient(180deg,var(--cream),transparent 17%,transparent 70%,var(--cream)),linear-gradient(90deg,rgba(242,238,229,.7),transparent 25%);pointer-events:none}
+  .risk-portrait figcaption{left:23%;bottom:12px;z-index:2;font-size:6px}
+  .consultation-hero{left:0;right:0;top:27%;bottom:35%}
+  .consultation-hero img{object-position:55% center}
+  .consultation-hero:after{content:'';position:absolute;inset:0;background:linear-gradient(180deg,var(--cream),transparent 15%,transparent 75%,var(--cream));pointer-events:none}
+  .question-paper{background:transparent;box-shadow:none}
+}
+/* Small screens keep the scientific limits readable over the textured image. */
+@media(max-width:600px){
+  .lipids .science-label{font-size:10px;line-height:1.45;padding:7px 9px;background:rgba(250,247,239,.93)}
+  .lipids .carrier-label{max-width:155px;right:6%;top:56%}
+  .lipids .cargo-label{max-width:190px;right:6%;top:70%}
+  .lipids .science-label i{margin-bottom:6px}
+  .lipids .science-caption{font-size:10px;line-height:1.45;padding:6px 9px;background:rgba(250,247,239,.94);max-width:270px;right:6%;bottom:80px;text-align:left}
+  .lipids .cargo-branch>span{font-size:9px}
+  .lipids .cargo-branch p{font-size:10px}
+  .lipids .cargo-branch{max-width:220px;bottom:134px}
+}
