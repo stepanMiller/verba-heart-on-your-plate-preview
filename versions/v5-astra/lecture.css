@@ -255,3 +255,18 @@
   .device-static .scene{padding-top:130px!important}
   .final-credits>div{flex:0 0 auto}
 }
+/* One header offset for native scene anchors; no doubled padding. */
+@media(max-width:600px), (max-width:950px) and (max-height:500px) and (orientation:landscape){
+  html{scroll-padding-top:0}
+  .scene{scroll-margin-top:calc(76px + env(safe-area-inset-top))}
+  .scene:not(.opening){padding-top:32px!important}
+  .opening{scroll-margin-top:0}
+  .device-static .scene:not(.opening){scroll-margin-top:calc(112px + env(safe-area-inset-top))}
+  .notes-list details{scroll-margin-top:calc(96px + env(safe-area-inset-top))}
+}
+@media(max-width:950px) and (max-height:500px) and (orientation:landscape){
+  .scene{scroll-margin-top:calc(64px + env(safe-area-inset-top))}
+  .scene:not(.opening){padding-top:32px!important}
+  .opening{scroll-margin-top:0}
+  .device-static .scene:not(.opening){scroll-margin-top:calc(100px + env(safe-area-inset-top))}
+}
