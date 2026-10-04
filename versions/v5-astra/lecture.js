@@ -192,6 +192,12 @@
     openDialog(notes, link);
   }));
   const films = {
+    foyer: {
+      src: 'assets/foyer-loop.mp4', poster: 'assets/s01-hero-motion-poster.webp',
+      title: 'Внутри обычного дня',
+      label: 'Фильм VERBA для фойе, 26 секунд, без звука',
+      caption: 'Фильм для фойе · 00:26 · Без звука · Сгенерированные кадры и CGI · Creative prototype'
+    },
     animatic: {
       src: 'assets/animatic.mp4', poster: 'assets/s01-master-casting.webp',
       title: 'Внутри обычного дня',
@@ -199,15 +205,15 @@
       caption: 'Аниматик · 00:26 · Без звука · Монтажный замысел, не финальный фильм'
     },
     s03: {
-      src: 'assets/s03-motion-study.mp4', poster: 'assets/s03-lipoprotein-cutaway.webp',
-      title: 'S03 · оптический motion study',
-      label: 'S03: оптический motion study, 5 секунд',
-      caption: '00:05 · 2D-композиция по контрольному кадру; не 3D-реконструкция'
+      src: 'assets/s03-lipoprotein-motion-web.mp4', poster: 'assets/s03-lipoprotein-motion-poster.webp',
+      title: 'Холестерин не плавает сам',
+      label: 'Концептуальный разрез ЛПНП, 2 секунды',
+      caption: '00:02 · Сгенерированный концептуальный разрез ЛПНП · Цвет, форма и масштаб условны'
     }
   };
   $$('[data-open-film]').forEach(button => button.addEventListener('click', () => {
     // No film receives a src until an explicit request, including Save-Data mode.
-    const selected = films[button.dataset.film] || films.animatic;
+    const selected = films[button.dataset.film] || films.foyer;
     const source = $('source', reel);
     reel.pause();
     if (reel.readyState >= 1) reel.currentTime = 0;
@@ -219,6 +225,7 @@
     $('.film-caption', film).textContent = selected.caption;
     $('#film-error').hidden = true;
     loadVideo(reel); openDialog(film, button);
+    $$('.film-versions [data-film]').forEach(choice => choice.setAttribute('aria-pressed', String(films[choice.dataset.film] === selected)));
     reel.play().catch(() => { /* Native controls remain available. */ });
   }));
   const filmError = () => { $('#film-error').hidden = false; };
@@ -389,6 +396,35 @@
   });
   $$('.scene-copy,.question-paper').forEach(copy => textObserver.observe(copy));
   applyMotion(); updateScroll();
+
+  // Browser fragment restoration can precede the final image/font layout.
+  // Real deep links receive one settled alignment, unless the user has taken over.
+  function alignInitialDeepLink() {
+    if (renderMode || !/^#s(0[1-9]|1[0-4])$/.test(location.hash)) return;
+    if (performance.getEntriesByType('navigation')[0]?.type === 'back_forward') return;
+    const initialHash = location.hash;
+    const target = $(initialHash);
+    if (!target) return;
+    let cancelled = false;
+    const listeners = new AbortController();
+    const cancel = () => { cancelled = true; listeners.abort(); };
+    for (const event of ['wheel', 'touchstart', 'pointerdown', 'keydown']) {
+      addEventListener(event, cancel, { capture: true, passive: true, signal: listeners.signal });
+    }
+    addEventListener('hashchange', () => { if (location.hash !== initialHash) cancel(); }, { signal: listeners.signal });
+    addEventListener('popstate', cancel, { signal: listeners.signal });
+    const pageLoaded = document.readyState === 'complete' ? Promise.resolve() : new Promise(resolve => addEventListener('load', resolve, { once: true }));
+    const fontsReady = document.fonts?.ready || Promise.resolve();
+    const picturesReady = Promise.all($$('img', target).map(img => img.decode().catch(() => {})));
+    const twoFrames = () => new Promise(resolve => requestAnimationFrame(() => requestAnimationFrame(resolve)));
+    Promise.all([pageLoaded, fontsReady, picturesReady]).then(twoFrames).then(() => {
+      if (cancelled || location.hash !== initialHash || hasDialog()) return;
+      target.scrollIntoView({ behavior: 'instant', block: 'start' });
+      document.body.dataset.initialAnchorAligned = target.id;
+      updateScroll();
+    }).catch(() => {}).finally(() => listeners.abort());
+  }
+  alignInitialDeepLink();
 
   // Deterministic still capture only. The separate animatic is not a screen recording.
   window.verbaFrame = async (id, time = 0) => {

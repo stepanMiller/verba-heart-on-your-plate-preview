@@ -85,24 +85,41 @@ async function inspect(browser, label, screenshots = true) {
     assert.equal(await page.locator('#s11 video').evaluate(v => v.paused), true); assert.equal(await page.locator('body').evaluate(el => el.classList.contains('motion-paused')), true);
     await page.evaluate(() => { delete document.hidden; document.dispatchEvent(new Event('visibilitychange')); });
   });
-  await check(label + ': animatic duration, close and focus return', async () => {
+  await check(label + ': foyer duration, close and focus return', async () => {
     await page.locator('[data-open-film]').first().click(); await page.waitForFunction(() => Number.isFinite(document.querySelector('#showreel').duration));
     assert.equal(await page.locator('#showreel').evaluate(v => Math.round(v.duration)), 26); await page.keyboard.press('Escape');
     assert.equal(await page.locator('#showreel').evaluate(v => v.paused), true); assert.equal(await page.evaluate(() => document.activeElement.hasAttribute('data-open-film')), true);
   });
-  await check(label + ': separate S03 study and animatic switch cleanly', async () => {
+  await check(label + ': accepted S03 clip, foyer and animatic switch cleanly', async () => {
     await jump(page, 's03');
     await page.locator('[data-open-film][data-film="s03"]').last().click();
-    await page.waitForFunction(() => Math.round(document.querySelector('#showreel').duration) === 5);
-    assert.match(await page.locator('#showreel source').getAttribute('src'), /s03-motion-study\.mp4$/);
-    assert.match(await page.locator('.film-caption').innerText(), /2D/);
+    await page.waitForFunction(() => Math.round(document.querySelector('#showreel').duration) === 2);
+    assert.match(await page.locator('#showreel source').getAttribute('src'), /s03-lipoprotein-motion-web\.mp4$/);
+    assert.match(await page.locator('.film-caption').innerText(), /Концептуальный|концептуальный/);
     await page.keyboard.press('Escape');
     assert.equal(await page.locator('#showreel').evaluate(v => v.paused), true);
     assert.equal(await page.evaluate(() => document.activeElement.dataset.film), 's03');
     await page.locator('[data-open-film]').first().click();
     await page.waitForFunction(() => Math.round(document.querySelector('#showreel').duration) === 26);
-    assert.match(await page.locator('#showreel source').getAttribute('src'), /animatic\.mp4$/);
+    assert.match(await page.locator('#showreel source').getAttribute('src'), /foyer-loop\.mp4$/);
+    await page.locator('.film-versions [data-film="animatic"]').click();
+    await page.waitForFunction(() => Math.round(document.querySelector('#showreel').duration) === 26 && document.querySelector('#showreel source').getAttribute('src').endsWith('animatic.mp4'));
+    assert.match(await page.locator('.film-caption').innerText(), /Аниматик/);
     await page.keyboard.press('Escape');
+  });
+  await check(label + ': all four generated shots play once and explicitly replay', async () => {
+    for (const [id, duration] of [['s01',5],['s03',2],['s06',3],['s14',5]]) {
+      await jump(page, id);
+      const video = page.locator('#' + id + '-ambient');
+      assert.equal(await video.evaluate(v => v.loop), false);
+      await page.waitForFunction(id => document.getElementById(id + '-ambient').ended, id, { timeout: 30000 });
+      assert.equal(await video.evaluate(v => Math.round(v.duration)), duration);
+      assert.equal(await video.evaluate(v => v.paused && v.classList.contains('ready')), true);
+      await page.locator('[data-ambient-replay="' + id + '-ambient"]').click();
+      await page.waitForFunction(id => !document.getElementById(id + '-ambient').paused, id);
+      await jump(page, 's02');
+      assert.equal(await video.evaluate(v => v.paused), true);
+    }
   });
   await check(label + ': mobile touch targets, readable science and native anchor offset', async () => {
     for (const [width, height] of [[320,780],[390,844],[844,390]]) {
