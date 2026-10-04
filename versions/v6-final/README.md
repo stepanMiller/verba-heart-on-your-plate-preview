@@ -15,3 +15,5 @@ The standalone film preserves the V5 montage through frame 611 and holds the exi
 Run `npm run check` and `npm run qa` after installing the declared Playwright dependency. The QA wrapper starts its own static HTTP server. `VERBA_CHROMIUM` can select an installed Chromium executable. `VERBA_WEBKIT=1` enables WebKit; optional `VERBA_WEBKIT_ROOT`, `VERBA_WEBKIT_LIBS`, `VERBA_GST_PLUGINS` and `VERBA_GST_SCANNER` support a locally installed Linux WebKit runtime. See `review/RELEASE-REPORT.md` for exact tests and limits.
 
 This is a review release. Medical approval is pending. Do not merge or publish to a final production domain as part of this pass.
+
+Phone correction: complete phone compositions, automatic forward replay with a 2.2-second endpoint hold, no replay overlay. Run `npm run qa:phone` for focused final phone checks. See `review/RELEASE-REPORT.md`.

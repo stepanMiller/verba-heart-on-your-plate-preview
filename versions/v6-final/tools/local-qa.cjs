@@ -21,5 +21,5 @@ const server = http.createServer((req,res) => {
 server.listen(0,'127.0.0.1',() => {
   process.env.VERBA_URL = `http://127.0.0.1:${server.address().port}/versions/v6-final/`;
   // Do not keep the process alive after browser QA ends.
-  server.unref(); require('./qa.cjs');
+  server.unref(); require(process.argv.includes('--phone') ? './phone-qa.cjs' : './qa.cjs');
 });

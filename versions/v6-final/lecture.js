@@ -9,6 +9,7 @@
   const motionButton = $('#motion-toggle');
   const ambient = $$('video[data-ambient]');
   const completedShots = new WeakSet();
+  const shotTimers = new Map();
   const replayButtons = new Map($$('[data-ambient-replay]').map(button => [button.dataset.ambientReplay, button]));
   const film = $('#film-dialog');
   const reel = $('#showreel');
@@ -49,7 +50,7 @@
   }
   function offerReplay(video, completed = false) {
     const button = replayButtons.get(video.id);
-    if (!button || renderMode) return;
+    if (!button || renderMode || !reviewMode) return;
     actionLabel(button, completed ? 'Повторить движение' : 'Посмотреть движение', 'rotate');
     button.hidden = false;
     syncReplayButton(video);
@@ -58,14 +59,41 @@
     const finished = isOneShot(video) && (completedShots.has(video) || video.ended);
     return motion && !finished && visibleVideos.has(video) && !document.hidden && !hasDialog() && !renderMode;
   }
+  function stopShotTimer(video) {
+    clearTimeout(shotTimers.get(video)); shotTimers.delete(video);
+  }
+  function restartShot(video) {
+    if (!motion || !visibleVideos.has(video) || document.hidden || hasDialog() || renderMode) return;
+    stopShotTimer(video); completedShots.delete(video);
+    video.dataset.playbackState = 'ready';
+    if (video.readyState >= 1) video.currentTime = 0;
+    syncVideos();
+  }
+  function scheduleShot(video) {
+    if (shotTimers.has(video)) return;
+    // An intentional quiet hold retains the accepted endpoint before automatic replay.
+    shotTimers.set(video, setTimeout(() => { shotTimers.delete(video); restartShot(video); }, 2200));
+  }
   function syncVideos() {
     ambient.forEach(video => {
       syncReplayButton(video);
+      if (!motion || !visibleVideos.has(video) || document.hidden || hasDialog() || renderMode) {
+        stopShotTimer(video); video.pause(); return;
+      }
+      if (isOneShot(video) && (completedShots.has(video) || video.ended)) {
+        video.pause(); scheduleShot(video); return;
+      }
       if (!allowedToPlay(video)) { video.pause(); return; }
       loadVideo(video);
       if (!video.paused) return;
       video.play().then(() => {
-        if (!allowedToPlay(video)) { video.pause(); return; }
+        if (!motion || !visibleVideos.has(video) || document.hidden || hasDialog() || renderMode) {
+        stopShotTimer(video); video.pause(); return;
+      }
+      if (isOneShot(video) && (completedShots.has(video) || video.ended)) {
+        video.pause(); scheduleShot(video); return;
+      }
+      if (!allowedToPlay(video)) { video.pause(); return; }
         video.classList.add('ready');
         if (isOneShot(video)) video.dataset.playbackState = 'playing';
       }).catch(() => {
@@ -84,12 +112,13 @@
     if (isOneShot(video)) {
       video.loop = false;
       video.addEventListener('ended', () => {
-        // Leave the decoded final frame visible. Re-entering the scene never restarts it.
+        // Hold the decoded endpoint, then replay automatically while the image is visible.
         completedShots.add(video);
         video.dataset.playbackState = 'complete';
         video.pause();
         video.classList.add('ready');
         offerReplay(video, true);
+        syncVideos();
       });
       replayButtons.get(video.id)?.addEventListener('click', () => {
         // A replay is explicit, forward-only, and still respects the global motion policy.
@@ -105,8 +134,16 @@
   });
   const mediaObserver = new IntersectionObserver(entries => {
     entries.forEach(entry => {
-      if (entry.isIntersecting) visibleVideos.add(entry.target);
-      else visibleVideos.delete(entry.target);
+      const wasVisible = visibleVideos.has(entry.target);
+      const visible = entry.isIntersecting && entry.intersectionRatio >= .35;
+      if (visible) {
+        visibleVideos.add(entry.target);
+        if (!wasVisible && isOneShot(entry.target) && (completedShots.has(entry.target) || entry.target.ended)) {
+          completedShots.delete(entry.target);
+          entry.target.dataset.playbackState = 'ready';
+          if (entry.target.readyState >= 1) entry.target.currentTime = 0;
+        }
+      } else { visibleVideos.delete(entry.target); stopShotTimer(entry.target); }
     });
     syncVideos();
   }, { threshold: .35 });
@@ -141,6 +178,10 @@
   motionButton.addEventListener('click', () => { userPaused = !userPaused; applyMotion(); });
   reduced.addEventListener('change', applyMotion);
   connection?.addEventListener('change', applyMotion);
+  // Safari may require the first real interaction to release muted autoplay.
+  for (const event of ['pointerdown', 'touchend', 'keydown']) {
+    addEventListener(event, () => { if (motion) syncVideos(); }, {passive:true});
+  }
   document.addEventListener('visibilitychange', () => {
     if (document.hidden) { reel.pause(); stopLabelSequence(); }
     applyMotion();
@@ -391,14 +432,16 @@
   }
   function requestScroll() { if (!scrollFrame) scrollFrame = requestAnimationFrame(updateScroll); }
   addEventListener('scroll', requestScroll, { passive: true });
-  addEventListener('resize', requestScroll);
+  addEventListener('resize', () => { fitReadingMode(); requestScroll(); });
   addEventListener('hashchange', requestScroll);
   // Fit unusually enlarged text without clipping the outer scene.
   function fitReadingMode() {
-    if (renderMode || mobileReading.matches) return;
-    const expected = Math.min(124, Math.max(68, innerWidth * .0645));
+    if (renderMode) return;
+    const phone = innerWidth <= 600 && innerHeight > innerWidth;
+    const expected = phone ? Math.min(60, Math.max(49, innerWidth * .136)) : Math.min(124, Math.max(68, innerWidth * .0645));
     const enlarged = parseFloat(getComputedStyle($('#h01')).fontSize) > expected * 1.45;
     document.documentElement.classList.toggle('text-enlarged', enlarged);
+    document.body.classList.toggle('phone-cinema', phone && !enlarged);
   }
   const pendingText = new Set();
   let fitFrame = 0;

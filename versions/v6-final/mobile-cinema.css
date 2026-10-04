@@ -1,0 +1,153 @@
+/* Approved Astra imagery, arranged as complete phone scenes.
+   Normal text enlargement and no-JS retain the accessible reading layout. */
+.ambient-replay { display:none!important; }
+@media(max-width:600px) and (orientation:portrait) {
+  body.phone-cinema { padding-bottom:0; }
+  .phone-cinema .site-header,.phone-cinema.dark-ui .site-header {
+    height:calc(60px + env(safe-area-inset-top)); min-height:60px;
+    padding:env(safe-area-inset-top) 20px 0; gap:16px;
+    border:0; background:linear-gradient(var(--cream) 40%,rgba(242,238,229,.9)); backdrop-filter:blur(8px);
+  }
+  .phone-cinema .site-header .brand img { width:80px; }
+  .phone-cinema .header-controls { gap:2px; }
+  .phone-cinema .icon-button,.phone-cinema #motion-toggle { width:44px!important; min-width:44px!important; height:44px!important; min-height:44px!important; padding:11px!important; border:0; background:transparent; }
+  .phone-cinema #motion-toggle .motion-label { display:none!important; }
+  .js .phone-cinema .site-header .film-link { display:flex!important; font-size:0; width:44px; height:44px; min-height:44px; justify-content:center; }
+  .phone-cinema .site-header .film-link .ui-icon { width:20px; height:20px; }
+  .phone-cinema .scene-dock,.phone-cinema.dark-ui .scene-dock {
+    min-height:60px; padding:4px 20px calc(6px + env(safe-area-inset-bottom));
+    background:linear-gradient(rgba(242,238,229,0),rgba(242,238,229,.96) 20%); border:0; backdrop-filter:none; pointer-events:none;
+  }
+  .phone-cinema .scene-dock>* { pointer-events:auto; }
+  .phone-cinema .scene-dock>a { width:44px; height:44px; min-width:44px; min-height:44px; background:var(--paper); color:var(--olive); border-color:var(--line); }
+  .phone-cinema .scene-dock>span { font-size:13px; }
+  .phone-cinema .scene-dock b { font-size:14px; }
+  .phone-cinema .scene-dock i { width:28px; }
+  .phone-cinema .scene,.phone-cinema .scene.photo,.phone-cinema .scene.dark,.phone-cinema .scene:not(.opening) {
+    min-height:100svh!important; height:auto; padding:calc(82px + env(safe-area-inset-top)) 20px 92px!important;
+    scroll-margin-top:0; border-bottom:0; overflow:hidden;
+  }
+  .phone-cinema .scene :is(.eyebrow,h1,h2,.scene-lead,.speaker,.small-copy,.switches,.lipid-controls,.lipid-key,.context-caption,.swap-proof,.effect-line,.fibre-path,.hepatic-path,.hepatic-caption,.protein-rotation,.risk-context,.therapy-thread,.habit-options) { position:relative; z-index:3; }
+  .phone-cinema .scene .eyebrow { font-size:11px!important; letter-spacing:.09em; margin-bottom:14px; line-height:1.45; }
+  .phone-cinema .scene h1 { font-size:clamp(42px,12vw,51px)!important; line-height:1.03; }
+  .phone-cinema .scene h2 { font-size:clamp(32px,9.6vw,40px)!important; line-height:1.06; text-wrap:pretty; }
+  .phone-cinema .scene h1 br,.phone-cinema .scene h2 br { display:none; }
+  .phone-cinema .scene .scene-lead { order:2; margin:14px 0 0; font-size:15px!important; line-height:1.45; }
+  .phone-cinema .scene .scene-visual {
+    position:absolute!important; z-index:0; inset:40% 0 72px!important;
+    order:3; width:100%!important; margin:0; height:auto!important; aspect-ratio:auto; background:transparent;
+    mask-image:linear-gradient(transparent,#000 20%,#000 88%,transparent); -webkit-mask-image:linear-gradient(transparent,#000 20%,#000 88%,transparent);
+  }
+  .phone-cinema .scene .scene-visual>img,.phone-cinema .scene .scene-visual>video { object-fit:cover; object-position:65% center; }
+  .phone-cinema .opening .bleed { top:35%!important; }
+  .phone-cinema .opening .bleed>img,.phone-cinema .opening .bleed>video { object-position:85% 35%; }
+  .phone-cinema .scene .scene-foot { position:absolute; z-index:5; inset:auto 20px 66px; margin:0; padding:0; border:0; gap:3px; }
+  .phone-cinema .scene .scene-foot>a { border:0; background:transparent; padding:9px 0; min-height:44px; border-radius:0; font-size:13px; }
+  .phone-cinema .scene .scene-foot .foot-meta { color:var(--caption-ink); font-size:12px; line-height:1.4; }
+  .phone-cinema .opening .speaker { order:2; margin-top:14px; font-size:13px; gap:3px; }
+  .phone-cinema .opening .speaker span { font-size:12px; }
+  .js .phone-cinema .opening .text-action { display:none!important; }
+  .phone-cinema .scene .switches { margin-top:12px; gap:6px; }
+  .phone-cinema .scene .switches button { font-size:13px; min-height:44px; padding:8px 5px; background:rgba(250,247,239,.8); }
+  .phone-cinema .context .context-caption { grid-template-columns:1fr 1fr; gap:0 14px; margin-top:12px; }
+  .phone-cinema .context .context-term,.phone-cinema .context .context-term:nth-child(n) { font-size:12px; line-height:1.4; padding:8px 0; border-left:0; }
+  .phone-cinema .context .context-portrait { top:46%!important; }
+  .phone-cinema .scene.lipids .science-bleed>img,.phone-cinema .scene.lipids .science-bleed>video,.phone-cinema .scene.hepatic .hepatic-hero>img,.phone-cinema .scene.hepatic .hepatic-hero>video { object-fit:cover; object-position:70% center; }
+  .phone-cinema .lipids .lipid-controls { margin-top:12px; }
+  .phone-cinema .lipids .lipid-key { margin-top:10px; gap:4px 12px; font-size:13px; }
+  .phone-cinema .lipids .lipid-key small { font-size:12px; }
+  .phone-cinema .scene.lipids .science-label { z-index:3; font-size:12px; padding:0; margin-top:8px; border:0; background:transparent; }
+  .phone-cinema .lipids .cargo-label { display:none; }
+  .phone-cinema .lipids[data-beat=cargo] .carrier-label { display:none; }
+  .phone-cinema .lipids[data-beat=cargo] .cargo-label { display:block; }
+  .phone-cinema .lipids .cargo-branch { position:absolute; z-index:3; inset:auto auto 152px 20px; width:175px; max-width:175px; margin:0; padding:10px; border:0; background:rgba(250,247,239,.9); }
+  .phone-cinema .lipids .cargo-branch>span { font-size:11px; }
+  .phone-cinema .lipids .cargo-branch strong { font-size:19px; overflow-wrap:normal; margin-top:3px; }
+  .phone-cinema .lipids .cargo-branch p { font-size:12px; line-height:1.4; margin-top:4px; }
+  .phone-cinema .lipids .science-caption { position:absolute; z-index:3; inset:auto 20px 120px auto; width:168px; max-width:168px; font-size:12px; line-height:1.4; margin:0; padding:5px; background:rgba(250,247,239,.9); }
+  .phone-cinema .lipids .apob-beat { position:absolute; z-index:3; inset:45% auto auto 20px; width:180px; min-width:0; padding:12px; margin:0; background:rgba(250,247,239,.93); }
+  .phone-cinema .lipids .apob-beat>span { font-size:30px; }
+  .phone-cinema .lipids .apob-beat p { font-size:15px; }
+  .phone-cinema .oil .swap-proof { margin-top:12px; font-size:13px; gap:8px; }
+  .phone-cinema .oil .effect-line { font-size:13px; margin-top:8px; }
+  .phone-cinema .scene .text-action { z-index:3; min-height:44px; margin-top:12px; padding:9px 0; border:0; border-bottom:1px solid var(--line); border-radius:0; background:transparent; font-size:14px!important; }
+  .phone-cinema .fibre .fibre-path { margin-top:12px; background:rgba(242,238,229,.85); }
+  .phone-cinema .fibre .fibre-path>div { padding:9px 0; gap:12px; }
+  .phone-cinema .fibre .fibre-path strong { font-size:20px; }
+  .phone-cinema .fibre .science-whisper { position:relative; z-index:3; margin-top:10px; font-size:13px; }
+  .phone-cinema .hepatic .hepatic-path { margin-top:12px; gap:6px; border:0; flex-direction:row; flex-wrap:wrap; align-items:baseline; }
+  .phone-cinema .hepatic .hepatic-path>span,.phone-cinema .hepatic .hepatic-path>strong { padding:4px 0; border:0; font-size:14px; }
+  .phone-cinema .hepatic .hepatic-path>span:after { display:inline; content:' →'; }
+  .phone-cinema .scene .hepatic-caption { margin-top:8px; padding:8px 0 0; border:0; }
+  .phone-cinema .hepatic .hepatic-caption>span { font-size:25px; }
+  .phone-cinema .hepatic .hepatic-caption p { font-size:13px; }
+  .phone-cinema .protein .protein-rotation { margin-top:12px; }
+  .phone-cinema .protein .protein-rotation button { min-height:44px; font-size:14px; padding:8px; }
+  .phone-cinema .scene .small-copy { font-size:13px; margin-top:10px; }
+  .phone-cinema .risk .switches { grid-template-columns:repeat(3,minmax(0,1fr)); }
+  .phone-cinema .risk .switches button:last-child { grid-column:auto; }
+  .phone-cinema .risk .risk-context { margin-top:12px; padding-top:10px; background:linear-gradient(var(--cream),rgba(242,238,229,.6)); }
+  .phone-cinema .risk .risk-variable { margin-top:10px; gap:8px; }
+  .phone-cinema .risk .risk-variable strong { font-size:21px; }
+  .phone-cinema .risk .risk-context>p { font-size:13px; margin-top:9px; }
+  .phone-cinema .risk .risk-portrait { top:48%!important; }
+  .phone-cinema .therapy .therapy-thread { flex-direction:row; flex-wrap:wrap; gap:10px; margin-top:12px; font-size:13px; }
+  .phone-cinema .therapy .therapy-thread>i { height:1px; width:18px; }
+  .phone-cinema .consultation .consultation-hero { top:51%!important; }
+  .phone-cinema .consultation .question-paper { position:relative; z-index:3; margin-top:16px; order:4; }
+  .phone-cinema .consultation .question-number { margin-bottom:8px; font-size:12px; }
+  .phone-cinema .consultation #question-text { font-size:27px!important; min-height:3.6em; }
+  .phone-cinema .consultation .question-tabs { margin-top:10px; }
+  .phone-cinema .consultation .question-tabs button { min-height:44px; min-width:44px; }
+  .phone-cinema .consultation .question-paper .small-copy { margin-top:12px; font-size:13px; }
+  .phone-cinema .label .scene-lead { min-height:0!important; }
+  .phone-cinema .label #package-turn { margin-top:12px; }
+  .phone-cinema .label .label-hero { inset:auto 12px 110px auto!important; width:66%!important; height:430px!important; padding:0; mask-image:none; -webkit-mask-image:none; overflow:visible; }
+  .phone-cinema .label .package { width:220px; height:430px; }
+  .phone-cinema .label .package-face { padding:22px 16px; }
+  .phone-cinema .label .package-front>p { font-size:33px; }
+  .phone-cinema .label .package-front svg:not(.ui-icon) { width:140px; height:140px; margin:20px auto; }
+  .phone-cinema .label .package-back>p:first-of-type { font-size:26px; margin-top:10px; }
+  .phone-cinema .label .label-fields { margin-top:12px; }
+  .phone-cinema .label .label-fields button { min-height:44px; font-size:11px; padding:6px 2px; gap:4px; }
+  .phone-cinema .label .pack-instruction { font-size:10px; margin-top:8px; }
+  .phone-cinema .label .barcode { margin-top:8px; height:18px; }
+  .phone-cinema .label .package-back .pack-fine { font-size:9px; margin-top:6px; }
+  .phone-cinema .label .label-index { position:absolute; z-index:3; inset:auto auto 240px 20px; width:24%; display:flex; flex-direction:column; gap:6px; }
+  .phone-cinema .label .label-index button { min-height:44px; padding:8px 4px; gap:5px; font-size:12px; }
+  .phone-cinema .label .label-hero figcaption { position:absolute; inset:auto 0 -30px; font-size:11px; }
+  .phone-cinema .habit .habit-options { margin-top:14px; gap:6px; }
+  .phone-cinema .habit .habit-options button { min-height:44px; font-size:13px; padding:8px; }
+  .phone-cinema .habit .habit-notebook { position:relative; z-index:3; order:5; margin-top:18px; padding:18px 14px; }
+  .phone-cinema .habit .calendar-number { font-size:64px; margin-top:8px; gap:18px; }
+  .phone-cinema .habit .calendar-days { grid-template-columns:repeat(7,minmax(44px,1fr)); gap:3px; margin-top:12px; }
+  .phone-cinema .habit .calendar-days button { min-width:44px; min-height:44px; aspect-ratio:auto; font-size:12px; }
+  .phone-cinema .habit .habit-notebook>strong { font-size:24px; margin-top:8px; }
+  .phone-cinema .habit .habit-notebook #practice-status { margin-top:12px; font-size:12px; }
+  .phone-cinema .habit .notebook-line { margin-top:10px; }
+  .phone-cinema .habit { padding-bottom:140px!important; }
+  .phone-cinema .finale .final-credits { position:absolute; z-index:3; inset:auto 20px 145px; margin:0; padding:12px 0; gap:18px; background:rgba(250,247,239,.85); }
+  .phone-cinema .final-credits>div { flex-basis:130px; }
+  .phone-cinema .final-credits img { width:120px; }
+  .phone-cinema .final-credits .creator-logo { width:140px; }
+  .phone-cinema .final-credits span { font-size:12px; }
+  .phone-cinema.device-static .scene,.phone-cinema.device-static .scene:not(.opening) { padding-top:120px!important; scroll-margin-top:0; }
+}
+@media(max-width:370px) and (orientation:portrait) {
+  .phone-cinema .habit .calendar-days { grid-template-columns:repeat(4,minmax(44px,1fr)); }
+  .phone-cinema .label .package { width:190px; }
+  .phone-cinema .label .package-back>p:first-of-type { font-size:23px; }
+  .phone-cinema .lipids .cargo-branch { width:155px; max-width:155px; }
+}
+
+@media(max-width:600px) and (orientation:portrait) {
+.phone-cinema .scene .switches button[aria-pressed=true] { background:var(--olive); color:var(--paper); border-color:var(--olive); }
+.phone-cinema .scene .scene-visual>img,.phone-cinema .scene .scene-visual>video { mix-blend-mode:multiply; }
+}
+@media(max-width:600px) and (orientation:portrait) {
+  .phone-cinema .scene,.phone-cinema .scene.photo,.phone-cinema .scene.dark,.phone-cinema .scene:not(.opening) { min-height:max(720px,100svh)!important; }
+  .phone-cinema .lipids .cargo-branch { bottom:220px; width:210px; max-width:210px; }
+  .phone-cinema .lipids .cargo-branch>span { display:none; }
+  .phone-cinema .lipids[data-beat=apob] .cargo-branch { display:none; }
+  .phone-cinema .scene .scene-foot { background:linear-gradient(rgba(242,238,229,.15),rgba(242,238,229,.9)); }
+}

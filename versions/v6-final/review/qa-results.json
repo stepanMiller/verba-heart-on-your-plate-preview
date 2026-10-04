@@ -1,13 +1,293 @@
 {
   "date": "2026-10-04",
-  "url": "http://127.0.0.1:34601/versions/v6-final/",
+  "url": "http://127.0.0.1:44863/versions/v6-final/",
   "viewportResults": [
     {
       "browser": "Chromium",
       "width": 320,
+      "height": 640,
+      "scene": "s01",
+      "sceneHeight": 640,
+      "horizontalOverflow": false,
+      "clippedText": [],
+      "brokenImages": []
+    },
+    {
+      "browser": "Chromium",
+      "width": 320,
+      "height": 640,
+      "scene": "s02",
+      "sceneHeight": 640,
+      "horizontalOverflow": false,
+      "clippedText": [],
+      "brokenImages": []
+    },
+    {
+      "browser": "Chromium",
+      "width": 320,
+      "height": 640,
+      "scene": "s03",
+      "sceneHeight": 640,
+      "horizontalOverflow": false,
+      "clippedText": [],
+      "brokenImages": []
+    },
+    {
+      "browser": "Chromium",
+      "width": 320,
+      "height": 640,
+      "scene": "s04",
+      "sceneHeight": 640,
+      "horizontalOverflow": false,
+      "clippedText": [],
+      "brokenImages": []
+    },
+    {
+      "browser": "Chromium",
+      "width": 320,
+      "height": 640,
+      "scene": "s05",
+      "sceneHeight": 640,
+      "horizontalOverflow": false,
+      "clippedText": [],
+      "brokenImages": []
+    },
+    {
+      "browser": "Chromium",
+      "width": 320,
+      "height": 640,
+      "scene": "s06",
+      "sceneHeight": 640,
+      "horizontalOverflow": false,
+      "clippedText": [],
+      "brokenImages": []
+    },
+    {
+      "browser": "Chromium",
+      "width": 320,
+      "height": 640,
+      "scene": "s07",
+      "sceneHeight": 640,
+      "horizontalOverflow": false,
+      "clippedText": [],
+      "brokenImages": []
+    },
+    {
+      "browser": "Chromium",
+      "width": 320,
+      "height": 640,
+      "scene": "s08",
+      "sceneHeight": 640,
+      "horizontalOverflow": false,
+      "clippedText": [],
+      "brokenImages": []
+    },
+    {
+      "browser": "Chromium",
+      "width": 320,
+      "height": 640,
+      "scene": "s09",
+      "sceneHeight": 640,
+      "horizontalOverflow": false,
+      "clippedText": [],
+      "brokenImages": []
+    },
+    {
+      "browser": "Chromium",
+      "width": 320,
+      "height": 640,
+      "scene": "s10",
+      "sceneHeight": 640,
+      "horizontalOverflow": false,
+      "clippedText": [],
+      "brokenImages": []
+    },
+    {
+      "browser": "Chromium",
+      "width": 320,
+      "height": 640,
+      "scene": "s11",
+      "sceneHeight": 640,
+      "horizontalOverflow": false,
+      "clippedText": [],
+      "brokenImages": []
+    },
+    {
+      "browser": "Chromium",
+      "width": 320,
+      "height": 640,
+      "scene": "s12",
+      "sceneHeight": 640,
+      "horizontalOverflow": false,
+      "clippedText": [],
+      "brokenImages": []
+    },
+    {
+      "browser": "Chromium",
+      "width": 320,
+      "height": 640,
+      "scene": "s13",
+      "sceneHeight": 989,
+      "horizontalOverflow": false,
+      "clippedText": [],
+      "brokenImages": []
+    },
+    {
+      "browser": "Chromium",
+      "width": 320,
+      "height": 640,
+      "scene": "s14",
+      "sceneHeight": 640,
+      "horizontalOverflow": false,
+      "clippedText": [],
+      "brokenImages": []
+    },
+    {
+      "browser": "Chromium",
+      "width": 390,
+      "height": 664,
+      "scene": "s01",
+      "sceneHeight": 664,
+      "horizontalOverflow": false,
+      "clippedText": [],
+      "brokenImages": []
+    },
+    {
+      "browser": "Chromium",
+      "width": 390,
+      "height": 664,
+      "scene": "s02",
+      "sceneHeight": 664,
+      "horizontalOverflow": false,
+      "clippedText": [],
+      "brokenImages": []
+    },
+    {
+      "browser": "Chromium",
+      "width": 390,
+      "height": 664,
+      "scene": "s03",
+      "sceneHeight": 664,
+      "horizontalOverflow": false,
+      "clippedText": [],
+      "brokenImages": []
+    },
+    {
+      "browser": "Chromium",
+      "width": 390,
+      "height": 664,
+      "scene": "s04",
+      "sceneHeight": 664,
+      "horizontalOverflow": false,
+      "clippedText": [],
+      "brokenImages": []
+    },
+    {
+      "browser": "Chromium",
+      "width": 390,
+      "height": 664,
+      "scene": "s05",
+      "sceneHeight": 664,
+      "horizontalOverflow": false,
+      "clippedText": [],
+      "brokenImages": []
+    },
+    {
+      "browser": "Chromium",
+      "width": 390,
+      "height": 664,
+      "scene": "s06",
+      "sceneHeight": 664,
+      "horizontalOverflow": false,
+      "clippedText": [],
+      "brokenImages": []
+    },
+    {
+      "browser": "Chromium",
+      "width": 390,
+      "height": 664,
+      "scene": "s07",
+      "sceneHeight": 664,
+      "horizontalOverflow": false,
+      "clippedText": [],
+      "brokenImages": []
+    },
+    {
+      "browser": "Chromium",
+      "width": 390,
+      "height": 664,
+      "scene": "s08",
+      "sceneHeight": 664,
+      "horizontalOverflow": false,
+      "clippedText": [],
+      "brokenImages": []
+    },
+    {
+      "browser": "Chromium",
+      "width": 390,
+      "height": 664,
+      "scene": "s09",
+      "sceneHeight": 664,
+      "horizontalOverflow": false,
+      "clippedText": [],
+      "brokenImages": []
+    },
+    {
+      "browser": "Chromium",
+      "width": 390,
+      "height": 664,
+      "scene": "s10",
+      "sceneHeight": 664,
+      "horizontalOverflow": false,
+      "clippedText": [],
+      "brokenImages": []
+    },
+    {
+      "browser": "Chromium",
+      "width": 390,
+      "height": 664,
+      "scene": "s11",
+      "sceneHeight": 664,
+      "horizontalOverflow": false,
+      "clippedText": [],
+      "brokenImages": []
+    },
+    {
+      "browser": "Chromium",
+      "width": 390,
+      "height": 664,
+      "scene": "s12",
+      "sceneHeight": 664,
+      "horizontalOverflow": false,
+      "clippedText": [],
+      "brokenImages": []
+    },
+    {
+      "browser": "Chromium",
+      "width": 390,
+      "height": 664,
+      "scene": "s13",
+      "sceneHeight": 835,
+      "horizontalOverflow": false,
+      "clippedText": [],
+      "brokenImages": []
+    },
+    {
+      "browser": "Chromium",
+      "width": 390,
+      "height": 664,
+      "scene": "s14",
+      "sceneHeight": 664,
+      "horizontalOverflow": false,
+      "clippedText": [],
+      "brokenImages": []
+    },
+    {
+      "browser": "Chromium",
+      "width": 320,
       "height": 780,
       "scene": "s01",
-      "sceneHeight": 1153,
+      "sceneHeight": 780,
       "horizontalOverflow": false,
       "clippedText": [],
       "brokenImages": []
@@ -17,7 +297,7 @@
       "width": 320,
       "height": 780,
       "scene": "s02",
-      "sceneHeight": 1269,
+      "sceneHeight": 780,
       "horizontalOverflow": false,
       "clippedText": [],
       "brokenImages": []
@@ -27,7 +307,7 @@
       "width": 320,
       "height": 780,
       "scene": "s03",
-      "sceneHeight": 1339,
+      "sceneHeight": 780,
       "horizontalOverflow": false,
       "clippedText": [],
       "brokenImages": []
@@ -37,7 +317,7 @@
       "width": 320,
       "height": 780,
       "scene": "s04",
-      "sceneHeight": 900,
+      "sceneHeight": 780,
       "horizontalOverflow": false,
       "clippedText": [],
       "brokenImages": []
@@ -47,7 +327,7 @@
       "width": 320,
       "height": 780,
       "scene": "s05",
-      "sceneHeight": 1166,
+      "sceneHeight": 780,
       "horizontalOverflow": false,
       "clippedText": [],
       "brokenImages": []
@@ -57,7 +337,7 @@
       "width": 320,
       "height": 780,
       "scene": "s06",
-      "sceneHeight": 1126,
+      "sceneHeight": 780,
       "horizontalOverflow": false,
       "clippedText": [],
       "brokenImages": []
@@ -67,7 +347,7 @@
       "width": 320,
       "height": 780,
       "scene": "s07",
-      "sceneHeight": 873,
+      "sceneHeight": 780,
       "horizontalOverflow": false,
       "clippedText": [],
       "brokenImages": []
@@ -77,7 +357,7 @@
       "width": 320,
       "height": 780,
       "scene": "s08",
-      "sceneHeight": 968,
+      "sceneHeight": 780,
       "horizontalOverflow": false,
       "clippedText": [],
       "brokenImages": []
@@ -87,7 +367,7 @@
       "width": 320,
       "height": 780,
       "scene": "s09",
-      "sceneHeight": 1250,
+      "sceneHeight": 780,
       "horizontalOverflow": false,
       "clippedText": [],
       "brokenImages": []
@@ -97,7 +377,7 @@
       "width": 320,
       "height": 780,
       "scene": "s10",
-      "sceneHeight": 1286,
+      "sceneHeight": 780,
       "horizontalOverflow": false,
       "clippedText": [],
       "brokenImages": []
@@ -107,7 +387,7 @@
       "width": 320,
       "height": 780,
       "scene": "s11",
-      "sceneHeight": 927,
+      "sceneHeight": 780,
       "horizontalOverflow": false,
       "clippedText": [],
       "brokenImages": []
@@ -117,7 +397,7 @@
       "width": 320,
       "height": 780,
       "scene": "s12",
-      "sceneHeight": 915,
+      "sceneHeight": 780,
       "horizontalOverflow": false,
       "clippedText": [],
       "brokenImages": []
@@ -127,7 +407,7 @@
       "width": 320,
       "height": 780,
       "scene": "s13",
-      "sceneHeight": 1419,
+      "sceneHeight": 989,
       "horizontalOverflow": false,
       "clippedText": [],
       "brokenImages": []
@@ -137,7 +417,7 @@
       "width": 320,
       "height": 780,
       "scene": "s14",
-      "sceneHeight": 974,
+      "sceneHeight": 780,
       "horizontalOverflow": false,
       "clippedText": [],
       "brokenImages": []
@@ -147,7 +427,7 @@
       "width": 390,
       "height": 844,
       "scene": "s01",
-      "sceneHeight": 1235,
+      "sceneHeight": 844,
       "horizontalOverflow": false,
       "clippedText": [],
       "brokenImages": []
@@ -157,7 +437,7 @@
       "width": 390,
       "height": 844,
       "scene": "s02",
-      "sceneHeight": 1344,
+      "sceneHeight": 844,
       "horizontalOverflow": false,
       "clippedText": [],
       "brokenImages": []
@@ -167,7 +447,7 @@
       "width": 390,
       "height": 844,
       "scene": "s03",
-      "sceneHeight": 1249,
+      "sceneHeight": 844,
       "horizontalOverflow": false,
       "clippedText": [],
       "brokenImages": []
@@ -177,7 +457,7 @@
       "width": 390,
       "height": 844,
       "scene": "s04",
-      "sceneHeight": 936,
+      "sceneHeight": 844,
       "horizontalOverflow": false,
       "clippedText": [],
       "brokenImages": []
@@ -187,7 +467,7 @@
       "width": 390,
       "height": 844,
       "scene": "s05",
-      "sceneHeight": 1125,
+      "sceneHeight": 844,
       "horizontalOverflow": false,
       "clippedText": [],
       "brokenImages": []
@@ -197,7 +477,7 @@
       "width": 390,
       "height": 844,
       "scene": "s06",
-      "sceneHeight": 1120,
+      "sceneHeight": 844,
       "horizontalOverflow": false,
       "clippedText": [],
       "brokenImages": []
@@ -207,7 +487,7 @@
       "width": 390,
       "height": 844,
       "scene": "s07",
-      "sceneHeight": 892,
+      "sceneHeight": 844,
       "horizontalOverflow": false,
       "clippedText": [],
       "brokenImages": []
@@ -217,7 +497,7 @@
       "width": 390,
       "height": 844,
       "scene": "s08",
-      "sceneHeight": 1067,
+      "sceneHeight": 844,
       "horizontalOverflow": false,
       "clippedText": [],
       "brokenImages": []
@@ -227,7 +507,7 @@
       "width": 390,
       "height": 844,
       "scene": "s09",
-      "sceneHeight": 1257,
+      "sceneHeight": 844,
       "horizontalOverflow": false,
       "clippedText": [],
       "brokenImages": []
@@ -237,7 +517,7 @@
       "width": 390,
       "height": 844,
       "scene": "s10",
-      "sceneHeight": 1245,
+      "sceneHeight": 844,
       "horizontalOverflow": false,
       "clippedText": [],
       "brokenImages": []
@@ -247,7 +527,7 @@
       "width": 390,
       "height": 844,
       "scene": "s11",
-      "sceneHeight": 963,
+      "sceneHeight": 844,
       "horizontalOverflow": false,
       "clippedText": [],
       "brokenImages": []
@@ -257,7 +537,7 @@
       "width": 390,
       "height": 844,
       "scene": "s12",
-      "sceneHeight": 990,
+      "sceneHeight": 844,
       "horizontalOverflow": false,
       "clippedText": [],
       "brokenImages": []
@@ -267,7 +547,7 @@
       "width": 390,
       "height": 844,
       "scene": "s13",
-      "sceneHeight": 1363,
+      "sceneHeight": 844,
       "horizontalOverflow": false,
       "clippedText": [],
       "brokenImages": []
@@ -277,7 +557,7 @@
       "width": 390,
       "height": 844,
       "scene": "s14",
-      "sceneHeight": 952,
+      "sceneHeight": 844,
       "horizontalOverflow": false,
       "clippedText": [],
       "brokenImages": []
@@ -307,7 +587,7 @@
       "width": 844,
       "height": 390,
       "scene": "s03",
-      "sceneHeight": 1539,
+      "sceneHeight": 1466,
       "horizontalOverflow": false,
       "clippedText": [],
       "brokenImages": []
@@ -447,7 +727,7 @@
       "width": 768,
       "height": 1024,
       "scene": "s03",
-      "sceneHeight": 1511,
+      "sceneHeight": 1438,
       "horizontalOverflow": false,
       "clippedText": [],
       "brokenImages": []
@@ -587,7 +867,7 @@
       "width": 1024,
       "height": 768,
       "scene": "s03",
-      "sceneHeight": 1680,
+      "sceneHeight": 1608,
       "horizontalOverflow": false,
       "clippedText": [],
       "brokenImages": []
@@ -985,9 +1265,289 @@
     {
       "browser": "WebKit",
       "width": 320,
+      "height": 640,
+      "scene": "s01",
+      "sceneHeight": 640,
+      "horizontalOverflow": false,
+      "clippedText": [],
+      "brokenImages": []
+    },
+    {
+      "browser": "WebKit",
+      "width": 320,
+      "height": 640,
+      "scene": "s02",
+      "sceneHeight": 640,
+      "horizontalOverflow": false,
+      "clippedText": [],
+      "brokenImages": []
+    },
+    {
+      "browser": "WebKit",
+      "width": 320,
+      "height": 640,
+      "scene": "s03",
+      "sceneHeight": 640,
+      "horizontalOverflow": false,
+      "clippedText": [],
+      "brokenImages": []
+    },
+    {
+      "browser": "WebKit",
+      "width": 320,
+      "height": 640,
+      "scene": "s04",
+      "sceneHeight": 640,
+      "horizontalOverflow": false,
+      "clippedText": [],
+      "brokenImages": []
+    },
+    {
+      "browser": "WebKit",
+      "width": 320,
+      "height": 640,
+      "scene": "s05",
+      "sceneHeight": 640,
+      "horizontalOverflow": false,
+      "clippedText": [],
+      "brokenImages": []
+    },
+    {
+      "browser": "WebKit",
+      "width": 320,
+      "height": 640,
+      "scene": "s06",
+      "sceneHeight": 640,
+      "horizontalOverflow": false,
+      "clippedText": [],
+      "brokenImages": []
+    },
+    {
+      "browser": "WebKit",
+      "width": 320,
+      "height": 640,
+      "scene": "s07",
+      "sceneHeight": 640,
+      "horizontalOverflow": false,
+      "clippedText": [],
+      "brokenImages": []
+    },
+    {
+      "browser": "WebKit",
+      "width": 320,
+      "height": 640,
+      "scene": "s08",
+      "sceneHeight": 640,
+      "horizontalOverflow": false,
+      "clippedText": [],
+      "brokenImages": []
+    },
+    {
+      "browser": "WebKit",
+      "width": 320,
+      "height": 640,
+      "scene": "s09",
+      "sceneHeight": 640,
+      "horizontalOverflow": false,
+      "clippedText": [],
+      "brokenImages": []
+    },
+    {
+      "browser": "WebKit",
+      "width": 320,
+      "height": 640,
+      "scene": "s10",
+      "sceneHeight": 640,
+      "horizontalOverflow": false,
+      "clippedText": [],
+      "brokenImages": []
+    },
+    {
+      "browser": "WebKit",
+      "width": 320,
+      "height": 640,
+      "scene": "s11",
+      "sceneHeight": 640,
+      "horizontalOverflow": false,
+      "clippedText": [],
+      "brokenImages": []
+    },
+    {
+      "browser": "WebKit",
+      "width": 320,
+      "height": 640,
+      "scene": "s12",
+      "sceneHeight": 640,
+      "horizontalOverflow": false,
+      "clippedText": [],
+      "brokenImages": []
+    },
+    {
+      "browser": "WebKit",
+      "width": 320,
+      "height": 640,
+      "scene": "s13",
+      "sceneHeight": 937,
+      "horizontalOverflow": false,
+      "clippedText": [],
+      "brokenImages": []
+    },
+    {
+      "browser": "WebKit",
+      "width": 320,
+      "height": 640,
+      "scene": "s14",
+      "sceneHeight": 640,
+      "horizontalOverflow": false,
+      "clippedText": [],
+      "brokenImages": []
+    },
+    {
+      "browser": "WebKit",
+      "width": 390,
+      "height": 664,
+      "scene": "s01",
+      "sceneHeight": 664,
+      "horizontalOverflow": false,
+      "clippedText": [],
+      "brokenImages": []
+    },
+    {
+      "browser": "WebKit",
+      "width": 390,
+      "height": 664,
+      "scene": "s02",
+      "sceneHeight": 664,
+      "horizontalOverflow": false,
+      "clippedText": [],
+      "brokenImages": []
+    },
+    {
+      "browser": "WebKit",
+      "width": 390,
+      "height": 664,
+      "scene": "s03",
+      "sceneHeight": 664,
+      "horizontalOverflow": false,
+      "clippedText": [],
+      "brokenImages": []
+    },
+    {
+      "browser": "WebKit",
+      "width": 390,
+      "height": 664,
+      "scene": "s04",
+      "sceneHeight": 664,
+      "horizontalOverflow": false,
+      "clippedText": [],
+      "brokenImages": []
+    },
+    {
+      "browser": "WebKit",
+      "width": 390,
+      "height": 664,
+      "scene": "s05",
+      "sceneHeight": 664,
+      "horizontalOverflow": false,
+      "clippedText": [],
+      "brokenImages": []
+    },
+    {
+      "browser": "WebKit",
+      "width": 390,
+      "height": 664,
+      "scene": "s06",
+      "sceneHeight": 664,
+      "horizontalOverflow": false,
+      "clippedText": [],
+      "brokenImages": []
+    },
+    {
+      "browser": "WebKit",
+      "width": 390,
+      "height": 664,
+      "scene": "s07",
+      "sceneHeight": 664,
+      "horizontalOverflow": false,
+      "clippedText": [],
+      "brokenImages": []
+    },
+    {
+      "browser": "WebKit",
+      "width": 390,
+      "height": 664,
+      "scene": "s08",
+      "sceneHeight": 664,
+      "horizontalOverflow": false,
+      "clippedText": [],
+      "brokenImages": []
+    },
+    {
+      "browser": "WebKit",
+      "width": 390,
+      "height": 664,
+      "scene": "s09",
+      "sceneHeight": 664,
+      "horizontalOverflow": false,
+      "clippedText": [],
+      "brokenImages": []
+    },
+    {
+      "browser": "WebKit",
+      "width": 390,
+      "height": 664,
+      "scene": "s10",
+      "sceneHeight": 664,
+      "horizontalOverflow": false,
+      "clippedText": [],
+      "brokenImages": []
+    },
+    {
+      "browser": "WebKit",
+      "width": 390,
+      "height": 664,
+      "scene": "s11",
+      "sceneHeight": 664,
+      "horizontalOverflow": false,
+      "clippedText": [],
+      "brokenImages": []
+    },
+    {
+      "browser": "WebKit",
+      "width": 390,
+      "height": 664,
+      "scene": "s12",
+      "sceneHeight": 664,
+      "horizontalOverflow": false,
+      "clippedText": [],
+      "brokenImages": []
+    },
+    {
+      "browser": "WebKit",
+      "width": 390,
+      "height": 664,
+      "scene": "s13",
+      "sceneHeight": 835,
+      "horizontalOverflow": false,
+      "clippedText": [],
+      "brokenImages": []
+    },
+    {
+      "browser": "WebKit",
+      "width": 390,
+      "height": 664,
+      "scene": "s14",
+      "sceneHeight": 664,
+      "horizontalOverflow": false,
+      "clippedText": [],
+      "brokenImages": []
+    },
+    {
+      "browser": "WebKit",
+      "width": 320,
       "height": 780,
       "scene": "s01",
-      "sceneHeight": 1153,
+      "sceneHeight": 780,
       "horizontalOverflow": false,
       "clippedText": [],
       "brokenImages": []
@@ -997,7 +1557,7 @@
       "width": 320,
       "height": 780,
       "scene": "s02",
-      "sceneHeight": 1269,
+      "sceneHeight": 780,
       "horizontalOverflow": false,
       "clippedText": [],
       "brokenImages": []
@@ -1007,7 +1567,7 @@
       "width": 320,
       "height": 780,
       "scene": "s03",
-      "sceneHeight": 1243,
+      "sceneHeight": 780,
       "horizontalOverflow": false,
       "clippedText": [],
       "brokenImages": []
@@ -1017,7 +1577,7 @@
       "width": 320,
       "height": 780,
       "scene": "s04",
-      "sceneHeight": 872,
+      "sceneHeight": 780,
       "horizontalOverflow": false,
       "clippedText": [],
       "brokenImages": []
@@ -1027,7 +1587,7 @@
       "width": 320,
       "height": 780,
       "scene": "s05",
-      "sceneHeight": 1062,
+      "sceneHeight": 780,
       "horizontalOverflow": false,
       "clippedText": [],
       "brokenImages": []
@@ -1037,7 +1597,7 @@
       "width": 320,
       "height": 780,
       "scene": "s06",
-      "sceneHeight": 1066,
+      "sceneHeight": 780,
       "horizontalOverflow": false,
       "clippedText": [],
       "brokenImages": []
@@ -1047,7 +1607,7 @@
       "width": 320,
       "height": 780,
       "scene": "s07",
-      "sceneHeight": 856,
+      "sceneHeight": 780,
       "horizontalOverflow": false,
       "clippedText": [],
       "brokenImages": []
@@ -1057,7 +1617,7 @@
       "width": 320,
       "height": 780,
       "scene": "s08",
-      "sceneHeight": 968,
+      "sceneHeight": 780,
       "horizontalOverflow": false,
       "clippedText": [],
       "brokenImages": []
@@ -1067,7 +1627,7 @@
       "width": 320,
       "height": 780,
       "scene": "s09",
-      "sceneHeight": 1250,
+      "sceneHeight": 780,
       "horizontalOverflow": false,
       "clippedText": [],
       "brokenImages": []
@@ -1077,7 +1637,7 @@
       "width": 320,
       "height": 780,
       "scene": "s10",
-      "sceneHeight": 1241,
+      "sceneHeight": 780,
       "horizontalOverflow": false,
       "clippedText": [],
       "brokenImages": []
@@ -1087,7 +1647,7 @@
       "width": 320,
       "height": 780,
       "scene": "s11",
-      "sceneHeight": 900,
+      "sceneHeight": 780,
       "horizontalOverflow": false,
       "clippedText": [],
       "brokenImages": []
@@ -1097,7 +1657,7 @@
       "width": 320,
       "height": 780,
       "scene": "s12",
-      "sceneHeight": 915,
+      "sceneHeight": 780,
       "horizontalOverflow": false,
       "clippedText": [],
       "brokenImages": []
@@ -1107,7 +1667,7 @@
       "width": 320,
       "height": 780,
       "scene": "s13",
-      "sceneHeight": 1343,
+      "sceneHeight": 937,
       "horizontalOverflow": false,
       "clippedText": [],
       "brokenImages": []
@@ -1117,7 +1677,7 @@
       "width": 320,
       "height": 780,
       "scene": "s14",
-      "sceneHeight": 933,
+      "sceneHeight": 780,
       "horizontalOverflow": false,
       "clippedText": [],
       "brokenImages": []
@@ -1127,7 +1687,7 @@
       "width": 390,
       "height": 844,
       "scene": "s01",
-      "sceneHeight": 1208,
+      "sceneHeight": 844,
       "horizontalOverflow": false,
       "clippedText": [],
       "brokenImages": []
@@ -1137,7 +1697,7 @@
       "width": 390,
       "height": 844,
       "scene": "s02",
-      "sceneHeight": 1343,
+      "sceneHeight": 844,
       "horizontalOverflow": false,
       "clippedText": [],
       "brokenImages": []
@@ -1147,7 +1707,7 @@
       "width": 390,
       "height": 844,
       "scene": "s03",
-      "sceneHeight": 1249,
+      "sceneHeight": 844,
       "horizontalOverflow": false,
       "clippedText": [],
       "brokenImages": []
@@ -1157,7 +1717,7 @@
       "width": 390,
       "height": 844,
       "scene": "s04",
-      "sceneHeight": 936,
+      "sceneHeight": 844,
       "horizontalOverflow": false,
       "clippedText": [],
       "brokenImages": []
@@ -1167,7 +1727,7 @@
       "width": 390,
       "height": 844,
       "scene": "s05",
-      "sceneHeight": 1125,
+      "sceneHeight": 844,
       "horizontalOverflow": false,
       "clippedText": [],
       "brokenImages": []
@@ -1177,7 +1737,7 @@
       "width": 390,
       "height": 844,
       "scene": "s06",
-      "sceneHeight": 1093,
+      "sceneHeight": 844,
       "horizontalOverflow": false,
       "clippedText": [],
       "brokenImages": []
@@ -1187,7 +1747,7 @@
       "width": 390,
       "height": 844,
       "scene": "s07",
-      "sceneHeight": 892,
+      "sceneHeight": 844,
       "horizontalOverflow": false,
       "clippedText": [],
       "brokenImages": []
@@ -1197,7 +1757,7 @@
       "width": 390,
       "height": 844,
       "scene": "s08",
-      "sceneHeight": 1039,
+      "sceneHeight": 844,
       "horizontalOverflow": false,
       "clippedText": [],
       "brokenImages": []
@@ -1207,7 +1767,7 @@
       "width": 390,
       "height": 844,
       "scene": "s09",
-      "sceneHeight": 1257,
+      "sceneHeight": 844,
       "horizontalOverflow": false,
       "clippedText": [],
       "brokenImages": []
@@ -1217,7 +1777,7 @@
       "width": 390,
       "height": 844,
       "scene": "s10",
-      "sceneHeight": 1245,
+      "sceneHeight": 844,
       "horizontalOverflow": false,
       "clippedText": [],
       "brokenImages": []
@@ -1227,7 +1787,7 @@
       "width": 390,
       "height": 844,
       "scene": "s11",
-      "sceneHeight": 963,
+      "sceneHeight": 844,
       "horizontalOverflow": false,
       "clippedText": [],
       "brokenImages": []
@@ -1237,7 +1797,7 @@
       "width": 390,
       "height": 844,
       "scene": "s12",
-      "sceneHeight": 990,
+      "sceneHeight": 844,
       "horizontalOverflow": false,
       "clippedText": [],
       "brokenImages": []
@@ -1247,7 +1807,7 @@
       "width": 390,
       "height": 844,
       "scene": "s13",
-      "sceneHeight": 1237,
+      "sceneHeight": 844,
       "horizontalOverflow": false,
       "clippedText": [],
       "brokenImages": []
@@ -1257,7 +1817,7 @@
       "width": 390,
       "height": 844,
       "scene": "s14",
-      "sceneHeight": 952,
+      "sceneHeight": 844,
       "horizontalOverflow": false,
       "clippedText": [],
       "brokenImages": []
@@ -1287,7 +1847,7 @@
       "width": 844,
       "height": 390,
       "scene": "s03",
-      "sceneHeight": 1539,
+      "sceneHeight": 1466,
       "horizontalOverflow": false,
       "clippedText": [],
       "brokenImages": []
@@ -1427,7 +1987,7 @@
       "width": 768,
       "height": 1024,
       "scene": "s03",
-      "sceneHeight": 1479,
+      "sceneHeight": 1406,
       "horizontalOverflow": false,
       "clippedText": [],
       "brokenImages": []
@@ -1567,7 +2127,7 @@
       "width": 1024,
       "height": 768,
       "scene": "s03",
-      "sceneHeight": 1680,
+      "sceneHeight": 1608,
       "horizontalOverflow": false,
       "clippedText": [],
       "brokenImages": []
@@ -2009,15 +2569,19 @@
       "passed": true
     },
     {
-      "name": "Chromium: accepted S03 clip and single final foyer film",
+      "name": "Chromium: automatic S03 and single final foyer film, no replay overlays",
       "passed": true
     },
     {
-      "name": "Chromium: all four generated shots play once and explicitly replay",
+      "name": "Chromium: all four generated shots autoplay, hold endpoint and automatically replay",
       "passed": true
     },
     {
       "name": "Chromium: mobile touch targets, readable science and native anchor offset",
+      "passed": true
+    },
+    {
+      "name": "Chromium: phone scenes stay whole, selected controls remain readable",
       "passed": true
     },
     {
@@ -2109,15 +2673,19 @@
       "passed": true
     },
     {
-      "name": "WebKit: accepted S03 clip and single final foyer film",
+      "name": "WebKit: automatic S03 and single final foyer film, no replay overlays",
       "passed": true
     },
     {
-      "name": "WebKit: all four generated shots play once and explicitly replay",
+      "name": "WebKit: all four generated shots autoplay, hold endpoint and automatically replay",
       "passed": true
     },
     {
       "name": "WebKit: mobile touch targets, readable science and native anchor offset",
+      "passed": true
+    },
+    {
+      "name": "WebKit: phone scenes stay whole, selected controls remain readable",
       "passed": true
     },
     {
@@ -2151,12 +2719,12 @@
     {
       "browser": "Chromium",
       "version": "153.0.8010.0",
-      "sceneViews": 98
+      "sceneViews": 126
     },
     {
       "browser": "WebKit",
       "version": "26.5",
-      "sceneViews": 98
+      "sceneViews": 126
     }
   ],
   "passed": true

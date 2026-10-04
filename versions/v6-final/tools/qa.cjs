@@ -5,7 +5,7 @@ const assert = require('node:assert/strict');
 const url = process.env.VERBA_URL || 'http://127.0.0.1:4173/versions/v6-final/';
 const output = process.env.VERBA_QA_OUTPUT || path.resolve(__dirname, '../review/qa');
 fs.mkdirSync(output, { recursive: true });
-const sizes = [[320,780],[390,844],[844,390],[768,1024],[1024,768],[1440,936],[1920,1080]];
+const sizes = [[320,640],[390,664],[320,780],[390,844],[844,390],[768,1024],[1024,768],[1440,936],[1920,1080]];
 const report = { date: '2026-10-04', url, viewportResults: [], checks: [], errors: [], failedAssets: [], browserResults: [] };
 async function check(name, fn) { try { await fn(); report.checks.push({ name, passed: true }); } catch (e) { report.checks.push({ name, passed: false, error: e.message }); } }
 async function jump(page, id) { await page.evaluate(id => document.getElementById(id).scrollIntoView({ behavior: 'instant', block: 'start' }), id); await page.waitForTimeout(80); }
@@ -90,15 +90,9 @@ async function inspect(browser, label, screenshots = true) {
     assert.equal(await page.locator('#showreel').evaluate(v => Math.round(v.duration)), 26); await page.keyboard.press('Escape');
     assert.equal(await page.locator('#showreel').evaluate(v => v.paused), true); assert.equal(await page.evaluate(() => document.activeElement.hasAttribute('data-open-film')), true);
   });
-  await check(label + ': accepted S03 clip and single final foyer film', async () => {
-    await jump(page, 's03');
-    await page.locator('[data-open-film][data-film="s03"]').last().click();
-    await page.waitForFunction(() => Math.round(document.querySelector('#showreel').duration) === 2);
-    assert.match(await page.locator('#showreel source').getAttribute('src'), /s03-lipoprotein-motion-web\.mp4$/);
-    assert.match(await page.locator('.film-caption').innerText(), /Концептуальный|концептуальный/);
-    await page.keyboard.press('Escape');
-    assert.equal(await page.locator('#showreel').evaluate(v => v.paused), true);
-    assert.equal(await page.evaluate(() => document.activeElement.dataset.film), 's03');
+  await check(label + ': automatic S03 and single final foyer film, no replay overlays', async () => {
+    assert.equal(await page.locator('[data-ambient-replay]').count(), 0);
+    assert.equal(await page.locator('[data-film="s03"]').count(), 0);
     await page.locator('[data-open-film]').first().click();
     await page.waitForFunction(() => Math.round(document.querySelector('#showreel').duration) === 26);
     assert.match(await page.locator('#showreel source').getAttribute('src'), /foyer-film\.mp4$/);
@@ -106,7 +100,7 @@ async function inspect(browser, label, screenshots = true) {
     assert.doesNotMatch(await page.locator('.film-caption').innerText(), /prototype|аниматик/i);
     await page.keyboard.press('Escape');
   });
-  await check(label + ': all four generated shots play once and explicitly replay', async () => {
+  await check(label + ': all four generated shots autoplay, hold endpoint and automatically replay', async () => {
     for (const [id, duration] of [['s01',5],['s03',2],['s06',3],['s14',5]]) {
       await jump(page, id);
       const video = page.locator('#' + id + '-ambient');
@@ -114,10 +108,12 @@ async function inspect(browser, label, screenshots = true) {
       await page.waitForFunction(id => document.getElementById(id + '-ambient').ended, id, { timeout: 30000 });
       assert.equal(await video.evaluate(v => Math.round(v.duration)), duration);
       assert.equal(await video.evaluate(v => v.paused && v.classList.contains('ready')), true);
-      await page.locator('[data-ambient-replay="' + id + '-ambient"]').click();
+      assert.equal(await page.locator('[data-ambient-replay="' + id + '-ambient"]').isVisible(), false);
       await page.waitForFunction(id => !document.getElementById(id + '-ambient').paused, id);
       await jump(page, 's02');
       assert.equal(await video.evaluate(v => v.paused), true);
+      await jump(page, id);
+      await page.waitForFunction(id => !document.getElementById(id + '-ambient').paused && document.getElementById(id + '-ambient').currentTime < 1.5, id);
     }
   });
   await check(label + ': mobile touch targets, readable science and native anchor offset', async () => {
@@ -143,6 +139,19 @@ async function inspect(browser, label, screenshots = true) {
       assert.equal(await page.evaluate(() => document.documentElement.scrollWidth > innerWidth + 1), false);
     }
     await page.setViewportSize({ width: 1440, height: 936 });
+  });
+  await check(label + ': phone scenes stay whole, selected controls remain readable', async () => {
+    await page.setViewportSize({width:390,height:844});
+    for (const id of ['s01','s03','s06','s12']) {
+      await jump(page,id);
+      assert.equal(await page.locator('#'+id).evaluate(s=>s.clientHeight),844);
+      assert.ok(await page.locator('#'+id+' h1,#'+id+' h2').evaluate(h=>h.getBoundingClientRect().top)>=60);
+      assert.ok(await page.locator('#'+id+' .scene-foot').evaluate(f=>f.getBoundingClientRect().bottom)<=784);
+    }
+    await jump(page,'s03');
+    assert.notEqual(await page.locator('[data-lipid="0"]').evaluate(b=>getComputedStyle(b).backgroundColor),await page.locator('[data-lipid="0"]').evaluate(b=>getComputedStyle(b).color));
+    assert.equal(await page.locator('[data-ambient-replay]').count(),0);
+    await page.setViewportSize({width:1440,height:936});
   });
   await check(label + ': reduced motion removes ambient sources', async () => {
     await page.emulateMedia({ reducedMotion: 'reduce' }); await jump(page, 's04');
