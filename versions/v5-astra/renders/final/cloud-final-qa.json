@@ -1,0 +1,312 @@
+{
+  "date": "2026-10-04",
+  "codeCommit": "ae5c61823eb631eb2114ffba20c4d708b6ca7926",
+  "browser": "cloud Chromium",
+  "viewports": [
+    {
+      "requested": [
+        390,
+        844
+      ],
+      "scenes": [
+        {
+          "clipped": [],
+          "id": "s01",
+          "small": []
+        },
+        {
+          "clipped": [],
+          "id": "s02",
+          "small": []
+        },
+        {
+          "clipped": [],
+          "id": "s03",
+          "small": []
+        },
+        {
+          "clipped": [],
+          "id": "s04",
+          "small": []
+        },
+        {
+          "clipped": [],
+          "id": "s05",
+          "small": []
+        },
+        {
+          "clipped": [],
+          "id": "s06",
+          "small": []
+        },
+        {
+          "clipped": [],
+          "id": "s07",
+          "small": []
+        },
+        {
+          "clipped": [],
+          "id": "s08",
+          "small": []
+        },
+        {
+          "clipped": [],
+          "id": "s09",
+          "small": []
+        },
+        {
+          "clipped": [],
+          "id": "s10",
+          "small": []
+        },
+        {
+          "clipped": [],
+          "id": "s11",
+          "small": []
+        },
+        {
+          "clipped": [],
+          "id": "s12",
+          "small": []
+        },
+        {
+          "clipped": [],
+          "id": "s13",
+          "small": []
+        },
+        {
+          "clipped": [],
+          "id": "s14",
+          "small": []
+        }
+      ],
+      "scroll": 375,
+      "width": 375
+    },
+    {
+      "requested": [
+        320,
+        780
+      ],
+      "scenes": [
+        {
+          "clipped": [],
+          "id": "s01",
+          "small": []
+        },
+        {
+          "clipped": [],
+          "id": "s02",
+          "small": []
+        },
+        {
+          "clipped": [],
+          "id": "s03",
+          "small": []
+        },
+        {
+          "clipped": [],
+          "id": "s04",
+          "small": []
+        },
+        {
+          "clipped": [],
+          "id": "s05",
+          "small": []
+        },
+        {
+          "clipped": [],
+          "id": "s06",
+          "small": []
+        },
+        {
+          "clipped": [],
+          "id": "s07",
+          "small": []
+        },
+        {
+          "clipped": [],
+          "id": "s08",
+          "small": []
+        },
+        {
+          "clipped": [],
+          "id": "s09",
+          "small": []
+        },
+        {
+          "clipped": [],
+          "id": "s10",
+          "small": []
+        },
+        {
+          "clipped": [],
+          "id": "s11",
+          "small": []
+        },
+        {
+          "clipped": [],
+          "id": "s12",
+          "small": []
+        },
+        {
+          "clipped": [],
+          "id": "s13",
+          "small": []
+        },
+        {
+          "clipped": [],
+          "id": "s14",
+          "small": []
+        }
+      ],
+      "scroll": 305,
+      "video": [
+        {
+          "d": 5,
+          "id": "s01-ambient",
+          "paused": true,
+          "t": 0.159752
+        },
+        {
+          "d": null,
+          "id": "s03-ambient",
+          "paused": true,
+          "t": 0
+        },
+        {
+          "d": null,
+          "id": "",
+          "paused": true,
+          "t": 0
+        },
+        {
+          "d": null,
+          "id": "s06-ambient",
+          "paused": true,
+          "t": 0
+        },
+        {
+          "d": null,
+          "id": "",
+          "paused": true,
+          "t": 0
+        },
+        {
+          "d": null,
+          "id": "s14-ambient",
+          "paused": true,
+          "t": 0
+        },
+        {
+          "d": null,
+          "id": "showreel",
+          "paused": true,
+          "t": 0
+        }
+      ],
+      "width": 305
+    },
+    {
+      "requested": [
+        844,
+        390
+      ],
+      "scenes": [
+        {
+          "clipped": [],
+          "id": "s01",
+          "small": []
+        },
+        {
+          "clipped": [],
+          "id": "s02",
+          "small": []
+        },
+        {
+          "clipped": [],
+          "id": "s03",
+          "small": []
+        },
+        {
+          "clipped": [],
+          "id": "s04",
+          "small": []
+        },
+        {
+          "clipped": [],
+          "id": "s05",
+          "small": []
+        },
+        {
+          "clipped": [],
+          "id": "s06",
+          "small": []
+        },
+        {
+          "clipped": [],
+          "id": "s07",
+          "small": []
+        },
+        {
+          "clipped": [],
+          "id": "s08",
+          "small": []
+        },
+        {
+          "clipped": [],
+          "id": "s09",
+          "small": []
+        },
+        {
+          "clipped": [],
+          "id": "s10",
+          "small": []
+        },
+        {
+          "clipped": [],
+          "id": "s11",
+          "small": []
+        },
+        {
+          "clipped": [],
+          "id": "s12",
+          "small": []
+        },
+        {
+          "clipped": [],
+          "id": "s13",
+          "small": []
+        },
+        {
+          "clipped": [],
+          "id": "s14",
+          "small": []
+        }
+      ],
+      "scroll": 829,
+      "width": 829
+    }
+  ],
+  "checks": [
+    "All14 scene widths and touch targets passed",
+    "S01/S03/S06/S14 accepted clips completed5/2/3/5sec with loop=false",
+    "Explicit S01 and S14 replay starts forward again after completion",
+    "Modal opens pause ambient",
+    "Global motion pause stops ambient",
+    "Foyer26sec completed readyState4",
+    "Separate animatic switches source and label",
+    "Escape closes and returns focus",
+    "Four S03 scientific links",
+    "All4 S09 labels and repeat flip",
+    "S10 same portrait through3 contexts",
+    "S12 all3 questions",
+    "S13 all3 habits and reversible day mark",
+    "Deep-link S06 settled correctly"
+  ],
+  "limits": [
+    "Full scripted Chromium suite blocked by local socket EPERM",
+    "No physical Safari/iOS, WebKit, reduced motion/Save-Data runtime emulation, no-JavaScript or200% text zoom certification",
+    "Native screenshots1180x757; fullPage capture unavailable"
+  ]
+}

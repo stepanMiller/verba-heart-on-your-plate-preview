@@ -1,0 +1,9 @@
+VERBA V5 current static browser review
+
+All 14 JPEGs captured from immutable commit 274aae663d346546b1649712d90958f498706bf4 using the cloud browser CUA only. Harness requested width=1180,height=757,scene=s01…s14. Actual JPEG dimensions verified: 1180×757. The 1920×1080 full-page screenshot route timed out; no upscaling or claim of a 1920×1080 render is made. Original source renders outside this folder were not changed.
+
+Every scene visually inspected. Screenshot readiness checked through body[data-render-ready=scene] and fresh browser observations. A transient blank S06 image and stale S02 image were caught and recaptured; final versions show the correct artwork. S14 visibly uses the current bean-and-greens salad. Static screenshots do not establish animation quality or interaction correctness.
+
+Scientific framing retained: S03 conceptual lipoprotein cross-section with conditional colour, shape and scale; S05 conceptual metaphor, not anatomy; S06 conceptual model, not a forecast; S11 CGI, not a treatment-effect image; S13 14 days denotes practice, not a promised lab-change timeline. This review checks presentation and visible caveats, not clinical validation. Some small footer/caveat captions have low contrast at this responsive size.
+
+The contact sheet is a labelled layout of these screenshots. Anchor files are byte-identical copies of S01, S03 and S12 at native 1180×757. No source artwork was edited.

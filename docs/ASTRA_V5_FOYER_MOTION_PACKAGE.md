@@ -1,6 +1,6 @@
 # VERBA — four-shot motion package for a silent foyer film
 
-Prepared 04.10.2026, rate/availability rechecked 14:10 UTC. **Execution update at 14:29 UTC: the four-shot/240-credit package was explicitly approved. One S14 human-motion clip has succeeded (60 net credits). Three source-host failures remain un-retried pending explicit recovery permission. The separate foyer edit is approved in scope but not yet assembled.**
+Completed 04.10.2026, updated 14:51 UTC. **All four clips succeeded within the approved 240-credit net cap. Three hostname failures were explicitly authorized for one recovery each; no further retries. Accepted motion ranges are now rendered into the separate 26-second silent foyer film. The original ten-shot animatic is unchanged.**
 
 ## One bounded approval
 
@@ -30,7 +30,7 @@ Read-only connection check confirms Gen-4.5 remains available without a reported
 | 3 · Lipoprotein | `versions/v5-astra/assets/s03-lipoprotein-cutaway.webp` | Whole conceptual carrier drifts gently, with a minimal few-degree turn while the cutaway continues facing the viewer | Silhouette, fixed cutaway, shell and cargo stable; no rupture, widening, released gold, HDL transformation or new particles; maintain conditional science caption in final composite |
 | 4 · Liver macro | `versions/v5-astra/assets/s06-hepatic.webp` | Nearly locked camera with slight optical perspective change and quiet existing-light variation | Organ geometry/lobes remain fixed; no heartbeat-like pulsing, direct sugar-to-fat morph, invented outgoing lipid stream, damaged tissue or predicted blood-test result |
 
-## Ready prompts, to use only after approval
+## Production motion briefs retained for review (completed package)
 
 ### 1 · Living hero
 
@@ -50,42 +50,47 @@ Locked camera. The single conceptual lipoprotein particle floats slowly in the s
 
 A quiet cinematic macro of the same liver concept. The camera makes an extremely small slow lateral movement while the existing warm light moves subtly over its surface. Preserve the complete original organ silhouette, lobes, surface and internal light design. The liver remains stationary and structurally stable. This is a restrained conceptual view of the organ, without any new particles, outputs, transformations or visible change of tissue. One calm continuous shot.
 
-## Tool fields
+## Production format
 
-`mcp__codex_apps__runway_generate_video` with explicit `model: "gen-4.5"`, `duration: 5`, `ratio: "16:9"`, `startFrame: {url: exact_verified_reference_url}`, `promptText` and short rationale. There is no project ID to configure; the connected workspace is already pinned. Omit `endFrame`, `referenceVideo`, `referenceImages`, `generateAudio` and resolution override. Standard generation is the quoted 720p; no native 1080p is promised.
+Four approved five-second Gen-4.5 image-to-video outputs, 16:9, standard 720p and silent. No audio generation, paid upscale or alternate model was used. The approved package is complete and its cap is fully consumed; these retained specifications are not authorization for another generation.
 
-## Foyer edit structure — scope approved, remaining clips pending
+## Final foyer edit and accepted ranges
 
-Use seven motion-led source shots and a closing brand hold; leave the still-based fibre/kitchen/consultation passages in the full 14-topic web presentation:
+Master: `versions/v5-astra/assets/foyer-loop.mp4`. Reproduction: `python versions/v5-astra/tools/render-foyer-loop.py`.
 
-| Edit time | Length | Shot |
+| Edit time | Length | Accepted source |
 |---|---:|---|
-| 00:00–00:04.5 | 4.5 s | New living hero |
-| 00:04.5–00:08.5 | 4 s | New floating LDL |
-| 00:08.5–00:10 | 1.5 s | Existing real oil footage |
-| 00:10–00:14 | 4 s | New liver macro |
-| 00:14–00:17 | 3 s | Existing native controlled package turn |
-| 00:17–00:20 | 3 s | Existing real vessel CGI |
-| 00:20–00:24.5 | 4.5 s | New salad-bowl placement |
-| 00:24.5–00:26 | 1.5 s | Brand hold, continuing marks already visible over the ending |
+|00:00–00:05|5s|S01 motion, constant 16:9 crop `(96,0)–(1168,603)` excludes uncertain low-board props|
+|00:05–00:07|2s|S03 first 0–2s only, with conceptual-LDL caption|
+|00:07–00:08.5|1.5s|Existing moving oil donor|
+|00:08.5–00:11.5|3s|S06 first 0–3s only, before stronger late camera cropping|
+|00:11.5–00:16|4.5s|Native controlled package turn/label attention|
+|00:16–00:19.5|3.5s|Vessel CGI donor, source 1.5–5s, no therapeutic before/after|
+|00:19.5–00:24.5|5s|Same heroine places salad; forward action only|
+|00:24.5–00:26|1.5s|Warm brand hold, last 12 frames dissolve to exact opening frame|
 
-This is a complete 26-second alternative cut, not a silent replacement of the existing ten-shot animatic. Parent confirmed this edit scope is within the latest user request. Keep the existing ten-shot animatic separate; assemble a new foyer master only after the needed clips pass QA.
+The later S03 turn hides the cutaway; it is preserved in the raw review file but not used in the film or explanatory web clip. S06 later macro crop is also excluded. S01 mouths slightly; editorial titles are not presented as synced dialogue. The lower-board reframe avoids uncertain newly revealed props.
 
-For a foyer, titles should be short and approximately 42–48 px at 720p, held around three seconds where possible. Meaning cannot depend on voice or sound. Science captions remain visible and clear; don't turn them into microscopic boilerplate. VERBA + «Медицинский курорт» and the authentic MILLER mark + smaller Visual Production stay distinct.
+Foyer primary titles are 45 px at 720p, concise and independent of sound. Science caveats are 25/22 px. Genuine VERBA + «Медицинский курорт» and exact official-site MILLER + smaller Visual Production stay separate. The creator area receives a soft light field for contrast.
 
-Loop the **complete edit**, never an individual human action. Prefer compatible table framing/daylight between hero and bowl-ending, with a brief controlled editorial transition through the warm brand hold into the opening. Do not ping-pong, reverse pouring or a human gesture, or ask Gen-4.5 for an unsupported end-frame constraint. The loop transition will be checked on two consecutive complete cycles after the actual clips exist.
+Looping applies to the **whole 26 s edit**, not individual generated actions. No reverse, ping-pong or forced individual loop. The raw first/last composite frames match exactly before encoding. Two complete encoded cycles, 52 s / 1248 frames, fully decode. The decoded endpoint comparison records only small compression differences; see `foyer-QA.json`.
 
-## Current actual state and cost
+## Final task-only credit accounting
 
-- Before three public-source submissions: 6,491 credits
-- S01/S03/S06: all terminal FAILED with “URL hostname is not in allowed hostnames”; no output; no retry
-- After those three failures: 6,491 credits, net decrease 0
-- Official same-image uploads: completed and byte-identical; no generation in upload steps
-- S14 first attempt via Runway-hosted reference: SUCCEEDED, task `3936a1e8-9f77-4b47-9412-e6159d7bc492`; one generated human-motion clip passed draft QA
-- Current observed balance: 6,431 credits; net spend 60; 180 remains of the approved 240 cap
-- **Three recovery submissions require separate explicit permission due to the one-attempt constraint. None has been made**
-- Raw S14: `versions/v5-astra/assets/s14-salad-motion.mp4`, measured 5.041667 s / 121 frames
-- Web S14: `versions/v5-astra/assets/s14-salad-motion-web.mp4`, exactly 5.000 s / 120 frames, 1280×720 / 24 fps, H.264/yuv420p, fast-start, silent, forward only
-- QA: `versions/v5-astra/renders/foyer-motion-qa/s14-QA.json`; cost ledger: `credit-ledger.json` in the same folder
+- Approved task cap: 240 Runway credits
+- Initial three public-source failures: 0 net credits
+- Successful first S14 attempt: 60 credits
+- Explicitly authorized single recovery for each of S01/S03/S06: 180 credits total
+- **Actual task net spend 240; remaining task budget 0**
+- No further retries, paid edits, audio or upscaling
+- Account-wide before/after balances were verified privately; they are excluded from public project provenance
 
-Transport URLs and raw connector responses are excluded from public provenance. Source/clip hashes, task IDs, prompts, exact model/duration, status and actual balances are retained.
+Successful tasks:
+- S01 `8988bbc0-8499-4b08-87a6-727446530b6d`
+- S03 `f4cf4668-d528-4a6b-a3b2-939d133ad1f3`
+- S06 `61228348-bc2d-4e21-b01f-69b9968f2f1c`
+- S14 `3936a1e8-9f77-4b47-9412-e6159d7bc492`
+
+Raw source files are 5.041667 s / 121 frames. Web derivatives are S01 5.000s, S03 2.000s, S06 3.000s, S14 5.000s; all 1280×720 / 24 fps, H.264/yuv420p, fast-start, silent. Exact paths, hashes and sizes: `versions/v5-astra/renders/foyer-motion-qa/web-derivatives.json`.
+
+Transport URLs and raw connector responses are excluded from public provenance. Safe IDs, local filenames, prompts, model/duration, status, task-only cost observations and hashes are retained. The four images were byte-verified after official upload. Independent source-clip QA and final-frame checks remain alongside the ledger.

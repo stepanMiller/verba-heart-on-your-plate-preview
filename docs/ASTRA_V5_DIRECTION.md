@@ -39,7 +39,7 @@ Critical: переносчики/липиды, замена вместо доб�
 
 ## Master casting / continuity bible
 
-Primary protagonist: художественная женщина около51года, короткий волнистый каштановый bob, заметная седина у висков, ореховые глаза, естественные линии кожи, мягко угловатое лицо. Ivory linen shirt связывает S01/S02/S08/S10/S12; светлый olive cardigan появляется только на выходе S14. S01 — master casting, все последующие human assets созданы с ним как reference.
+Primary protagonist: художественная женщина около51года, короткий волнистый каштановый bob, заметная седина у висков, ореховые глаза, естественные линии кожи, мягко угловатое лицо. Ivory linen shirt связывает S01/S02/S08/S10/S12; светлый olive cardigan остаётся в историческом courtyard-кадре S14. Текущий S14 использует ту же героиню в ivory-рубашке за столом с салатом. S01 — master casting, все последующие human assets созданы с ним как reference.
 
 Secondary: художественный врач в S12, тёмные убранные волосы, cream jacket/sage blouse, внимательный взгляд. Не выдаётся за Юлию Кондальскую. Никаких случайных пар, новых персонажей и улыбок в камеру. В клинических сценариях S10 фото никогда не меняется при переключении факторов.
 
@@ -51,7 +51,7 @@ Secondary: художественный врач в S12, тёмные убран
 - **Фотография:** natural side light, 40–50mm editorial perspective, реальные текстуры кожи/льна/дерева, действие или пауза; без generic wellness stock.
 - **Science:** физическая тактильность, оптическая глубина, ясный объект; без неонового sci-fi. Каждая условная модель видимо названа условной. Изображение не выдаётся за молекулярную реконструкцию.
 - **Композиция:** один герой кадра; разная крупность и распределение масс; 3–5секунд для первого смысла. Фото и типографика живут в одном поле; отдельные «карточки» только когда функционально нужны.
-- **Motion:** не единый parallax. Human — естественное микродвижение в будущем film pass; science — последовательное причинное чтение; object — управляемый поворот/замена/выбор.
+- **Motion:** не единый parallax. Human — approved generated motion в S01/S14, still-based optical intention в S08/S12; science — последовательное причинное чтение; object — управляемый поворот/замена/выбор.
 
 ## Component contracts / anti-patterns
 
@@ -65,18 +65,24 @@ HTML: native scroll, responsive text/image layout, accessible details, reduced m
 
 ## Asset register
 
-New built-in imagegen assets: s01-master-casting, s02-context, s03-lipoprotein-cutaway, s05-fibre, s06-hepatic, s07-protein, s08-everyday, s10-portrait, s12-consultation, s14-closing. Controlled S09 package is code-native. New runtime/composition, 26s animatic, S03 motion study and render/QA tooling.
+New built-in imagegen assets: s01-master-casting, s02-context, s03-lipoprotein-cutaway, s05-fibre, s06-hepatic, s07-protein, s08-everyday, s10-portrait, s12-consultation, s14-closing. Controlled S09 package is code-native. New runtime/composition, separate 26 s foyer film, preserved 26 s animatic, S03 optical motion study and render/QA tooling.
 
 Reused V4 assets: olive-motion.mp4, olive-poster.webp, heart-loop.mp4, heart-poster.webp, verba-wordmark.png. Reused facts/source layer from V4 audit with V5 addendum. V4food.webp, stock couple, old showreel and old sphere not reused.
 
 ## Review limits / next gates
 
-Creative prototype only. Scientific editorial review is documented, final clinical sign-off remains open. Human still-based optical motion is not claimed as natural video. Runway or other paid video requires an explicit model/duration/attempt/credit quote and approval; current authorized paid credits for V5 =0. No main merge and no Yandex publication. Next gates: S03 motion acceptance, all14scene visual consistency, desktop/mobile runtime QA, clinical editor, separately authorized final natural-motion production.
+Creative prototype only. Scientific editorial review is documented; final clinical sign-off remains open. Four approved generated clips add actual video movement to S01, S03, S06 and S14, using the accepted ranges described below. S08 and S12 still-based optical movement is not claimed as natural video. The approved 240-credit package is fully used; no further generation is authorized. No main merge and no Yandex publication. Recorded final integrated cloud-browser checks are in `ASTRA_V5_QA.md`; remaining gates include untested lifecycle/accessibility cases, physical-device/cross-browser checks and clinical approval.
 
 ## Review changes after the anchor gate
 
-04.10.2026: the user accepted the rest of the visual direction but rejected the first mobile implementation. Mobile is being rebuilt as a separate reading-and-interaction layout, not a scaled desktop canvas. All interactive arrows/play/rotate/close controls use inline SVG; touch targets are at least 44px, preferably 48px. The completed mobile QA must be recorded before final delivery.
+04.10.2026: the user accepted the rest of the visual direction but rejected the first mobile implementation. Mobile was rebuilt as a separate reading-and-interaction layout and checked in cloud Chromium at the recorded review commit; see `ASTRA_V5_QA.md`. All interactive arrows/play/rotate/close controls use inline SVG; touch targets are at least 44px, preferably 48px. That earlier mobile QA is distinct from the later four-clip integration. The exact-SHA final integration measurements and the remaining unrun cases are recorded separately in `ASTRA_V5_QA.md`.
 
 The user also requested meaningful film titles and recognizable creator attribution. Ending hierarchy: authentic VERBA mark with «Медицинский курорт», then the authentic MILLER wordmark with smaller «Visual Production». MILLER's site uses HTML/CSS typography; the supplied SVG is an exact outline export of the official bundled Manrope 600 and tracking, not a generated or invented logo. Source commit and verification are in `assets/miller-logo-provenance.json`.
 
-A clear motion-readiness matrix is maintained in `ASTRA_V5_MOTION_READINESS.md`. Approval of visual direction or of attribution is not approval to spend Runway credits. The single proposed Gen-4.5 S03 test remains separately scoped at 5 seconds / 60 credits until explicitly approved.
+A clear motion-readiness matrix is maintained in `ASTRA_V5_MOTION_READINESS.md`. Approval of visual direction or of attribution is not approval to spend Runway credits. The earlier single 60-credit S03 proposal was superseded by the four-clip 240-credit package, not added to it. The exact final accounting follows.
+
+## Approved motion production — final accounting
+
+The initial no-spend phase is superseded by the user's explicit four-clip approval: Gen-4.5, four 5-second outputs, one successful generation each, total 240 credits. Three initial source-host failures showed no net decrease; their recovery was separately approved. The verified net cost of the four successful outputs is 240 credits; account-wide balances are retained only in the private reconciliation. No automatic retry, upscale, audio or further generation was used.
+
+Real video now exists for the heroine, salad serving, lipoprotein and liver. Editorial acceptance uses the stable parts: S03 retains its visible cutaway only in the opening approximately 2 seconds; S06 uses its uncropped early approximately 3 seconds. These limits are reflected in web/film derivatives. Other scenes retain the documented explanatory/object motion or still imagery; natural human motion in S08/S12 is not claimed. The independent foyer film and original ten-shot animatic are separate deliverables.

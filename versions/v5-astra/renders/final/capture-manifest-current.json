@@ -1,0 +1,138 @@
+{
+  "commit": "274aae663d346546b1649712d90958f498706bf4",
+  "browser": "CUA Cloud Browser",
+  "captured_utc": "2026-10-04T15:21–15:25Z",
+  "capture_size": [
+    1180,
+    757
+  ],
+  "reason": "Full-page 1920×1080 screenshot timed out. Native review harness dimensions used instead; captures are not 1920×1080.",
+  "scenes": [
+    {
+      "scene": "s01",
+      "file": "static-s01.jpg",
+      "pixels": [
+        1180,
+        757
+      ],
+      "sha256": "f5a1e22e73994b62cc3bbc5d854d553f2d9db4151547f2e6b97d0a0733c8e7e0"
+    },
+    {
+      "scene": "s02",
+      "file": "static-s02.jpg",
+      "pixels": [
+        1180,
+        757
+      ],
+      "sha256": "6a9fb1934bfedc83eee9ed9df4709f40fca18a3d96e4ece721b01ece95bdc34c"
+    },
+    {
+      "scene": "s03",
+      "file": "static-s03.jpg",
+      "pixels": [
+        1180,
+        757
+      ],
+      "sha256": "7650a2f4fe6685d6a3dfc87eaf59a743688d20a51adf648a5c50556e133ed74e"
+    },
+    {
+      "scene": "s04",
+      "file": "static-s04.jpg",
+      "pixels": [
+        1180,
+        757
+      ],
+      "sha256": "d164099ea354c6fb3a28bf430c0b24a037aced1e6f71471a0c8cb922359cc468"
+    },
+    {
+      "scene": "s05",
+      "file": "static-s05.jpg",
+      "pixels": [
+        1180,
+        757
+      ],
+      "sha256": "05981f86a298e54aea522ff72e6b8c29f186e0fecd1a096f1ac9c7654f54c53d"
+    },
+    {
+      "scene": "s06",
+      "file": "static-s06.jpg",
+      "pixels": [
+        1180,
+        757
+      ],
+      "sha256": "7298b0603faa343bc9507b1f3e7ce85e5b5f6b60ae6e83594d9442cd286fa9af"
+    },
+    {
+      "scene": "s07",
+      "file": "static-s07.jpg",
+      "pixels": [
+        1180,
+        757
+      ],
+      "sha256": "68020b0bef17fd9eb5f019bf2002eabafa3d9e98dcca7d3026a896f10aea3415"
+    },
+    {
+      "scene": "s08",
+      "file": "static-s08.jpg",
+      "pixels": [
+        1180,
+        757
+      ],
+      "sha256": "40d0fa7dfd4203f41c51163cc53284da521bfc807cc2294a13358d15c82f0760"
+    },
+    {
+      "scene": "s09",
+      "file": "static-s09.jpg",
+      "pixels": [
+        1180,
+        757
+      ],
+      "sha256": "af91813884d1b40358b7724d7fd3b7912c2a75712a094acb10e577f5a0e88cd8"
+    },
+    {
+      "scene": "s10",
+      "file": "static-s10.jpg",
+      "pixels": [
+        1180,
+        757
+      ],
+      "sha256": "ee046523f164052ca71a0494073716922e21285ae8570ac89adaeca681480e1c"
+    },
+    {
+      "scene": "s11",
+      "file": "static-s11.jpg",
+      "pixels": [
+        1180,
+        757
+      ],
+      "sha256": "ee3c5e9d43f170a6e2967204e5287bf30280e30799211a1639223fe8c23c4e6f"
+    },
+    {
+      "scene": "s12",
+      "file": "static-s12.jpg",
+      "pixels": [
+        1180,
+        757
+      ],
+      "sha256": "f0c8c0c077a757794346225f010f90b19afc97dd35b88a5d39d2fcf5171cad50"
+    },
+    {
+      "scene": "s13",
+      "file": "static-s13.jpg",
+      "pixels": [
+        1180,
+        757
+      ],
+      "sha256": "107015a76ca02ad0e3336a446c5305aafa874d3b71ea7bcfad036239f31c0af0"
+    },
+    {
+      "scene": "s14",
+      "file": "static-s14.jpg",
+      "pixels": [
+        1180,
+        757
+      ],
+      "sha256": "4d96715d807c655fb6940548eaa51b02d2441e862a3855c3d29976368ee05dc6"
+    }
+  ]
+}

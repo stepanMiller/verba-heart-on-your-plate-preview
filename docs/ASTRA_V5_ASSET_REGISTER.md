@@ -38,4 +38,29 @@ All referenced via `../v4/assets/` in the prototype: `olive-motion.mp4`, `olive-
 
 S09 package: HTML/CSS typography and perspective; independent native vector package in animatic renderer. No AI label text, no invented nutrition numbers. S13 calendar/habits code-native, current-visit only.
 
-`animatic.mp4`:26 s,10 source-shot montage; source frames, actual donor video and native package turn. Not screen-recorded slides. `s03-motion-study.mp4`:5 s masked 2D optical composite, no 3D mesh, no generativevideo. Both silent. Reproducible scripts and QC JSON stored under tools/ and renders/. Paid natural-motion generation is a separate approval gate.
+`animatic.mp4`:26 s,10 source-shot montage; source frames, actual donor video and native package turn. Not screen-recorded slides. `s03-motion-study.mp4`:5 s masked 2D optical composite, no 3D mesh, no generativevideo. Both silent and preserved as separate historical studies. Reproducible scripts and QC JSON are stored under tools/ and renders/. The subsequently approved four-clip natural-motion package is complete; its cap is fully consumed.
+
+## Added during the approved motion pass
+
+- `s14-salad-serving.webp`: built-in identity-preserving final reference; the same heroine sets a bowl of salad on the table. Source generation `exec-960a36a6-b8b6-48e1-8061-aa8945f7c23f.png`. Replaces the courtyard picture in the live web finale; the courtyard remains in the historical animatic.
+- `miller-logo.svg` and light/dark variants: exact vector-outline export of the official site's Manrope 600 wordmark and spacing. Source provenance is in `miller-logo-provenance.json`; no generated mark.
+- S01/S03/S06/S14 motion sources: four explicitly approved Gen-4.5 image-to-video outputs. Safe web derivatives are forward-only, with scientific captions where required. Source task IDs and hashes are recorded in the sanitized credit/QA records. Temporary transport URLs and authorization data are excluded.
+- Approved package: 240 credits maximum, actual task cost 240 credits. Initial three URL-host failures had zero visible net decrease; explicit recovery approval preceded the three replacement submissions. No additional generation is authorized.
+
+## Current delivery media
+
+| File | Purpose / exact duration | Use limit |
+|---|---|---|
+| `s01-hero-motion-web.mp4` | Web one-shot, 5.000 s | Constant portrait crop excludes ambiguous low-board props |
+| `s03-lipoprotein-motion-web.mp4` | Web one-shot, 2.000 s | Accepted opening only; conceptual-LDL caption embedded |
+| `s06-hepatic-motion-web.mp4` | Web one-shot, 3.000 s | Accepted opening only; cautious conceptual caption embedded |
+| `s14-salad-motion-web.mp4` | Web one-shot, 5.000 s | Forward placement, endpoint hold; explicit replay |
+| `foyer-loop.mp4` | Independent completed 26.000 s foyer edit | Whole edit may loop; no reversed human action |
+| `animatic.mp4` | Original 26.000 s ten-shot optical animatic | Kept separate, labelled as an animatic |
+| `s03-motion-study.mp4` | Original 5.000 s 2D optical study | Kept separate, not labelled as generated/3D video |
+
+The four raw motion sources are each 5.041667 s and remain review sources, not automatically approved full-length web clips. All derivative videos are silent H.264/yuv420p, 1280×720, 24 fps. The contact sheet and S01/S03/S12 large JPGs are static direction snapshots made before the final motion pass. The sheet intentionally retains the earlier courtyard S14; current web/foyer S14 uses salad serving. Small cursor marks remain in the historical anchor captures. These JPGs do not certify the later integration or its runtime behavior.
+
+## Current browser review captures
+
+`renders/final/contact-sheet-14-current.jpg` is a fresh 2478×1948 sheet of all 14 actual browser-rendered scenes from commit `274aae663d346546b1649712d90958f498706bf4`, including the salad-serving S14. The three `renders/final/anchor-s01-current-1180x757.jpg`, `anchor-s03-current-1180x757.jpg`, and `anchor-s12-current-1180x757.jpg` are native 1180×757 screenshots, not enlarged 1920×1080 assets. Original large approved direction anchors remain unchanged in `renders/`. The later functional replay-overlay fix does not alter their visual layout.
