@@ -270,14 +270,10 @@
   .opening{scroll-margin-top:0}
   .device-static .scene:not(.opening){scroll-margin-top:calc(100px + env(safe-area-inset-top))}
 }
-/* A life action is played forward once, then offered as an explicit replay. */
-.ambient-replay{position:absolute;z-index:6;right:24px;bottom:95px;display:flex;align-items:center;gap:13px;min-height:48px;padding:12px 16px;background:rgba(250,247,239,.96);color:var(--ink);border:1px solid var(--line);border-radius:7px;font-size:13px;line-height:1.5;box-shadow:0 2px 14px rgba(43,41,28,.06)}
-.ambient-replay .ui-icon{width:20px;height:20px}.ambient-replay:disabled{opacity:.55;cursor:default}
+/* Short scene films restart automatically when a scene is entered again. */
 @media(max-width:1100px){
-  .ambient-replay{right:20px;bottom:16px;max-width:calc(100% - 40px);min-height:48px;font-size:14px;padding:12px 15px}
   .scene.finale .bleed>img,.scene.finale .bleed>video{object-position:67% center}
 }
-.js .ambient-replay[hidden]{display:none!important}
 @media(max-width:1100px){
   .scene.finale .bleed{aspect-ratio:16/9;max-height:none;background:var(--cream)}
   .scene.finale .bleed>img,.scene.finale .bleed>video{object-fit:contain;object-position:center}
@@ -298,14 +294,7 @@
   .scene.opening .bleed>video{object-position:100% center}
   .scene.lipids .science-bleed,.scene.hepatic .hepatic-hero{aspect-ratio:16/9;max-height:none}
   .scene.lipids .science-bleed>video,.scene.hepatic .hepatic-hero>video{object-fit:contain;object-position:center}
-  .scene.lipids .ambient-replay,.scene.hepatic .ambient-replay{bottom:42px;font-size:12px;min-height:44px;padding:8px 12px}
 }
 
-/* Replay controls avoid the science labels at the foot of the frame. */
-.lipids .ambient-replay,.hepatic .ambient-replay{top:96px;bottom:auto}
-@media(max-width:1100px){
-  .scene.lipids .ambient-replay,.scene.hepatic .ambient-replay{top:12px;bottom:auto}
-}
-
-/* Decorative washes must never intercept the explicit replay controls. */
+/* Decorative washes never intercept scene controls. */
 .photo:before,.finale-light{pointer-events:none}

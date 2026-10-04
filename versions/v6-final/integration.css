@@ -101,7 +101,6 @@ h1 em, h2 em { letter-spacing: -.052em; }
 .scene:not(.in-view) video { opacity: 0; }
 .scene.in-view video.ready { opacity: 1; }
 .scene-visual video { transition: opacity .3s ease; }
-.render-mode .ambient-replay { display: none!important; }
 
 @media(min-width:1101px) {
   .scene { min-height: max(720px,100svh); }
@@ -121,7 +120,6 @@ h1 em, h2 em { letter-spacing: -.052em; }
   .lipids .cargo-label { top: 59%; right: 6%; }
   .lipids[data-beat=apob] .carrier-label, .lipids[data-beat=apob] .cargo-label { opacity: 1; }
   .lipids[data-beat=apob] .apob-beat { right: 7%; top: 39%; }
-  .lipids .ambient-replay, .hepatic .ambient-replay { top: 103px; right: 24px; font-size: 12px; padding: 9px 12px; min-height: 44px; }
   .context-term { font-size: 14px; line-height: 1.45; }
   .context-caption { left: 45%; width: 24%; }
   .package { height: min(520px,60svh); }

@@ -8,8 +8,6 @@
   const mobileReading = matchMedia('(max-width:1100px)');
   const motionButton = $('#motion-toggle');
   const ambient = $$('video[data-ambient]');
-  const completedShots = new WeakSet();
-  const replayButtons = new Map($$('[data-ambient-replay]').map(button => [button.dataset.ambientReplay, button]));
   const film = $('#film-dialog');
   const reel = $('#showreel');
   const notes = $('#note-dialog');
@@ -41,26 +39,11 @@
     }
   }
   function isOneShot(video) { return video.dataset.playback === 'once'; }
-  function syncReplayButton(video) {
-    const button = replayButtons.get(video.id);
-    if (!button) return;
-    button.disabled = !motion || document.hidden || hasDialog() || renderMode;
-    button.title = reducedData() ? 'Статичный режим устройства' : (!motion ? 'Сначала включите движение в верхней панели' : '');
-  }
-  function offerReplay(video, completed = false) {
-    const button = replayButtons.get(video.id);
-    if (!button || renderMode) return;
-    actionLabel(button, completed ? 'Повторить движение' : 'Посмотреть движение', 'rotate');
-    button.hidden = false;
-    syncReplayButton(video);
-  }
   function allowedToPlay(video) {
-    const finished = isOneShot(video) && (completedShots.has(video) || video.ended);
-    return motion && !finished && visibleVideos.has(video) && !document.hidden && !hasDialog() && !renderMode;
+    return motion && !video.ended && visibleVideos.has(video) && !document.hidden && !hasDialog() && !renderMode;
   }
   function syncVideos() {
     ambient.forEach(video => {
-      syncReplayButton(video);
       if (!allowedToPlay(video)) { video.pause(); return; }
       loadVideo(video);
       if (!video.paused) return;
@@ -70,46 +53,48 @@
         if (isOneShot(video)) video.dataset.playbackState = 'playing';
       }).catch(() => {
         video.classList.remove('ready');
-        if (isOneShot(video)) offerReplay(video);
       });
     });
   }
   ambient.forEach(video => {
     const failed = () => {
       video.classList.remove('ready');
-      if (isOneShot(video)) offerReplay(video);
     };
     video.addEventListener('error', failed);
     $('source', video)?.addEventListener('error', failed);
     if (isOneShot(video)) {
       video.loop = false;
       video.addEventListener('ended', () => {
-        // Leave the decoded final frame visible. Re-entering the scene never restarts it.
-        completedShots.add(video);
+        // Hold the final frame while the scene is visible. A later visit starts
+        // the action again automatically, so the story never asks for a replay.
         video.dataset.playbackState = 'complete';
         video.pause();
         video.classList.add('ready');
-        offerReplay(video, true);
-      });
-      replayButtons.get(video.id)?.addEventListener('click', () => {
-        // A replay is explicit, forward-only, and still respects the global motion policy.
-        if (!motion || document.hidden || hasDialog() || renderMode) return;
-        completedShots.delete(video);
-        video.dataset.playbackState = 'ready';
-        replayButtons.get(video.id).hidden = true;
-        loadVideo(video);
-        video.currentTime = 0;
-        syncVideos();
       });
     }
   });
   const mediaObserver = new IntersectionObserver(entries => {
     entries.forEach(entry => {
-      if (entry.isIntersecting) visibleVideos.add(entry.target);
-      else visibleVideos.delete(entry.target);
+      const video = entry.target;
+      const wasVisible = visibleVideos.has(video);
+      if (entry.isIntersecting) {
+        visibleVideos.add(video);
+        if (!wasVisible && isOneShot(video)) {
+          loadVideo(video);
+          try { video.currentTime = 0; } catch { /* Metadata may still be loading. */ }
+          video.dataset.playbackState = 'ready';
+        }
+      } else {
+        visibleVideos.delete(video);
+        video.pause();
+        if (isOneShot(video) && $('source', video)?.getAttribute('src')) {
+          try { video.currentTime = 0; } catch { /* Reset after metadata arrives. */ }
+          video.dataset.playbackState = 'ready';
+        }
+      }
     });
     syncVideos();
-  }, { threshold: .35 });
+  }, { threshold: .28 });
   ambient.forEach(video => mediaObserver.observe(video));
   const sceneObserver = new IntersectionObserver(entries => {
     entries.forEach(entry => entry.target.classList.toggle('in-view', entry.isIntersecting));

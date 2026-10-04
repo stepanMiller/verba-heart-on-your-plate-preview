@@ -8,9 +8,9 @@ Release route: `versions/v6-final/index.html`.
 
 - Preserved all 14 Astra compositions, the recurring protagonist, approved assets and scientific story. Added restrained shared ivory light, consistent olive/graphite hierarchy and local contrast for S03/S05/S06. Kept S03 as the principal science hero.
 - Unified peripheral type, scientific qualifications, controls and touch sizes. S12 is a still conversation pause; S08 remains predominantly still. Removed repeating browser animation on human stills and science labels. Package states now advance only on deliberate input.
-- Preserved native scrolling, added keyboard scene navigation, aligned arrow/contents behavior and kept controls separate from scene copy. Extended the existing readable mobile flow to tablet widths. At substantial text enlargement, the presentation switches to a sequential reading layout, preventing collisions between copy and mechanism/risk panels.
+- Preserved native scrolling, added keyboard scene navigation, aligned arrow/contents behavior and kept controls separate from scene copy. Phones now use a continuous one-scene-per-viewport cinematic deck; tablet widths keep the readable sequential flow. At substantial text enlargement, the presentation switches to a sequential reading layout, preventing collisions between copy and mechanism/risk panels.
 - Removed the public animatic selector, prototype labels and production wording. Public audience sees one final foyer film, optional S03 motion, details/sources, motion control and navigation. `?review` exposes the pending medical review status. AI-character and science-metaphor disclosure remains in the material notes.
-- Ambient media loads only in the relevant viewport, pauses offscreen, in dialogs and on visibility lifecycle changes. One-shot clips retain the accepted endpoint and replay only on explicit request. Reduced motion, Save-Data, blocked-autoplay posters and no-JS content were checked.
+- Ambient media loads only in the relevant viewport, pauses offscreen, in dialogs and on visibility lifecycle changes. One-shot clips retain the accepted endpoint while visible and restart automatically on scene re-entry; public replay prompts were removed. Reduced motion, Save-Data, blocked-autoplay posters and no-JS content remain supported.
 - Finished the existing 26-second foyer master with a held VERBA/MILLER brand ending. Original sequence, imagery, crops, scientific captions and grade retained. No montage rebuild or new generation.
 
 ## Browser QA
@@ -29,7 +29,7 @@ Both **Chromium 153.0.8010.0** and **WebKit 26.5** passed:
 
 196 scene/viewport inspections and 45 functional checks passed. No page errors, missing local assets, horizontal overflow or tested clipped scene copy. Exact results: [`qa-results.json`](qa-results.json).
 
-Checked all three S03 states, all four S09 labels and repeated package turns, all three S10 contexts with unchanged portrait, all three S12 questions, all S13 habits and reversible practice marks. Also checked source/contents/film dialogs, Escape and focus return, arrows, PageDown navigation, accepted 5/2/3/5-second shot completion and replay, poster fallback, offscreen/modal pause and device policy changes.
+Checked all three S03 states, all four S09 labels and repeated package turns, all three S10 contexts with unchanged portrait, all three S12 questions, all S13 habits and reversible practice marks. Also checked source/contents/film dialogs, Escape and focus return, arrows, PageDown navigation, accepted 5/2/3/5-second shot completion and automatic scene re-entry, poster fallback, offscreen/modal pause and device policy changes.
 
 All interactive states were also exercised at 320×780, 390×844, 844×390 and 1024×768. Touch target checks covered all scenes at mobile/landscape dimensions. 200% text enlargement was tested by doubling computed text sizes, checking both clipping and overlap in the editorial blocks in both engines. This is text-enlargement emulation, not a physical browser menu action.
 

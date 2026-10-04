@@ -211,7 +211,6 @@ html.text-enlarged .scene .package{height:600px;width:440px}
 html.text-enlarged .scene .context-caption{grid-template-columns:repeat(2,minmax(0,1fr));gap:15px 30px}
 html.text-enlarged .scene .habit-notebook{max-width:950px;width:100%}
 html.text-enlarged .scene .risk-context,html.text-enlarged .scene .hepatic-path,html.text-enlarged .scene .fibre-path{margin-top:32px}
-html.text-enlarged .scene .ambient-replay{top:12px;bottom:auto;right:20px}
 html.text-enlarged .scene .final-credits{flex-wrap:wrap}
 html.text-enlarged .scene .foot-meta{white-space:normal}
 html.text-enlarged .film-dialog{overflow:auto;max-height:92svh}

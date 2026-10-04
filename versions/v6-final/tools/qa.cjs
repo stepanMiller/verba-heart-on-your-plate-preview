@@ -106,7 +106,7 @@ async function inspect(browser, label, screenshots = true) {
     assert.doesNotMatch(await page.locator('.film-caption').innerText(), /prototype|аниматик/i);
     await page.keyboard.press('Escape');
   });
-  await check(label + ': all four generated shots play once and explicitly replay', async () => {
+  await check(label + ': generated shots replay automatically on scene re-entry', async () => {
     for (const [id, duration] of [['s01',5],['s03',2],['s06',3],['s14',5]]) {
       await jump(page, id);
       const video = page.locator('#' + id + '-ambient');
@@ -114,11 +114,12 @@ async function inspect(browser, label, screenshots = true) {
       await page.waitForFunction(id => document.getElementById(id + '-ambient').ended, id, { timeout: 30000 });
       assert.equal(await video.evaluate(v => Math.round(v.duration)), duration);
       assert.equal(await video.evaluate(v => v.paused && v.classList.contains('ready')), true);
-      await page.locator('[data-ambient-replay="' + id + '-ambient"]').click();
-      await page.waitForFunction(id => !document.getElementById(id + '-ambient').paused, id);
       await jump(page, 's02');
       assert.equal(await video.evaluate(v => v.paused), true);
+      await jump(page, id);
+      await page.waitForFunction(id => !document.getElementById(id + '-ambient').paused && document.getElementById(id + '-ambient').currentTime < 1, id);
     }
+    assert.equal(await page.locator('[data-ambient-replay]').count(), 0);
   });
   await check(label + ': mobile touch targets, readable science and native anchor offset', async () => {
     for (const [width, height] of [[320,780],[390,844],[844,390]]) {
