@@ -1,0 +1,124 @@
+{
+  "version": "V4",
+  "date": "2026-10-04",
+  "branch": "codex/v4-master-science-hero-2026-10-04",
+  "base": "7c3263a262f20cb3881d5ba585a80074a73d039c",
+  "entry": "versions/v4/index.html",
+  "sceneCount": 14,
+  "runtimeDependencies": [],
+  "paidGeneration": false,
+  "runwayCredits": 0,
+  "medicalSignoff": "pending",
+  "assets": [
+    {
+      "path": "versions/v4/assets/food-montage-poster.webp",
+      "bytes": 37216,
+      "sha256": "6324c6b146bc1520b379ed5c95452499ea13d10b62894e09f4566076424bc7aa"
+    },
+    {
+      "path": "versions/v4/assets/food-montage.mp4",
+      "bytes": 734190,
+      "sha256": "2c12dfe6a6a307760dbef91583dbec12b2480c938059e199b7dd30bf79f80223",
+      "media": {
+        "programs": [],
+        "stream_groups": [],
+        "streams": [
+          {
+            "codec_name": "h264",
+            "width": 960,
+            "height": 720,
+            "r_frame_rate": "24/1"
+          }
+        ],
+        "format": {
+          "duration": "11.625000"
+        }
+      }
+    },
+    {
+      "path": "versions/v4/assets/food.webp",
+      "bytes": 189420,
+      "sha256": "bb181d95f8fddec818d04a718e2876cfddca18868fbce81f5878e05d19a876a6"
+    },
+    {
+      "path": "versions/v4/assets/heart-loop.mp4",
+      "bytes": 613068,
+      "sha256": "f848435812c01379696189db7dcb9bbd004d950765fb746119366cef7a4136af",
+      "media": {
+        "programs": [],
+        "stream_groups": [],
+        "streams": [
+          {
+            "codec_name": "h264",
+            "width": 1000,
+            "height": 440,
+            "r_frame_rate": "24/1"
+          }
+        ],
+        "format": {
+          "duration": "6.000000"
+        }
+      }
+    },
+    {
+      "path": "versions/v4/assets/heart-poster.webp",
+      "bytes": 35252,
+      "sha256": "823b7071e4965404b5e51e242ac19d3c858b6890368b26a9b800dcebfd0166e9"
+    },
+    {
+      "path": "versions/v4/assets/olive-motion.mp4",
+      "bytes": 570416,
+      "sha256": "dd55a859dbe0a415ca272f54455580baeeda82a956d9691933abeefeb557db71",
+      "media": {
+        "programs": [],
+        "stream_groups": [],
+        "streams": [
+          {
+            "codec_name": "h264",
+            "width": 1280,
+            "height": 720,
+            "r_frame_rate": "24/1"
+          }
+        ],
+        "format": {
+          "duration": "1.500000"
+        }
+      }
+    },
+    {
+      "path": "versions/v4/assets/olive-poster.webp",
+      "bytes": 76198,
+      "sha256": "825cdedc2ae9c8ffb14d31211f6b87d1f30cbe14ead7426cedac11ca307d2485"
+    },
+    {
+      "path": "versions/v4/assets/showreel-poster.webp",
+      "bytes": 48186,
+      "sha256": "e7ad6fa5cd941009fcfcf59d584f3e524630e1300c8825964cdf207a4dc9ed63"
+    },
+    {
+      "path": "versions/v4/assets/showreel-v4.mp4",
+      "bytes": 1752707,
+      "sha256": "23d9b4ab9c2ae70109cbac6d75ba7d8590004fb39b51052f0c2338be3f828693",
+      "media": {
+        "programs": [],
+        "stream_groups": [],
+        "streams": [
+          {
+            "codec_name": "h264",
+            "width": 1280,
+            "height": 720,
+            "r_frame_rate": "24/1"
+          }
+        ],
+        "format": {
+          "duration": "24.000000"
+        }
+      }
+    },
+    {
+      "path": "versions/v4/assets/verba-wordmark.png",
+      "bytes": 22267,
+      "sha256": "4698e660f92be3308d8c24431cc89b760daa2e2dfa6dd2499f6c925a510525f7"
+    }
+  ]
+}
