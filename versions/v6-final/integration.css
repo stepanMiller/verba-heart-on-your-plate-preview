@@ -1,0 +1,220 @@
+/* Final integration, layered over the approved Astra compositions.
+   Existing assets and science copy are intentionally retained. */
+:root {
+  --graphite: #292e28;
+  --caption-ink: #444738;
+  --honey: #d9bc83;
+}
+html { scroll-behavior: auto; }
+body { overflow-wrap: break-word; }
+h1, h2 { letter-spacing: -.05em; }
+h1 em, h2 em { letter-spacing: -.052em; }
+.scene-lead { text-wrap: pretty; }
+.eyebrow { font-size: 12px; letter-spacing: .14em; }
+.scene-foot { font-size: 14px; line-height: 1.5; }
+.scene-foot > a { min-height: 44px; }
+.foot-meta { font-size: 12px; letter-spacing: .025em; opacity: 1; }
+.header-title { font-size: 12px; letter-spacing: .12em; opacity: .9; }
+.film-link { font-size: 14px; }
+.icon-button { width: 44px; min-width: 44px; height: 44px; }
+.scene-dock { font-size: 13px; gap: 12px; }
+.scene-dock > a { width: 44px; height: 44px; }
+.scene-dock > span { font-size: 13px; }
+.text-action, .oil .text-action { min-height: 44px; font-size: 14px; line-height: 1.5; }
+.text-action small { font-size: 12px; opacity: 1; }
+.speaker { font-size: 14px; }
+.speaker span { font-size: 13px; opacity: 1; }
+.small-copy { font-size: 14px; opacity: 1; }
+.switches button, .label-index button, .habit-options button {
+  min-height: 44px; font-size: 14px; opacity: 1;
+}
+.switches button[aria-pressed=false] { color: #616653; }
+.dark .small-copy, .dark .foot-meta { color: var(--paper); }
+.effect-line { font-size: 14px; color: var(--caption-ink); }
+.swap-proof { font-size: 14px; }
+.lipid-key { font-size: 14px; }
+.lipid-key small { font-size: 12px; color: var(--caption-ink); }
+.apob-beat small { font-size: 13px; color: var(--caption-ink); }
+.science-label, .science-caption, .hepatic-caption p {
+  font-size: 14px; line-height: 1.5; color: var(--caption-ink);
+}
+.science-label {
+  padding: 10px 13px; background: rgba(250,247,239,.94);
+  max-width: 260px; border-radius: 2px;
+}
+.science-caption {
+  padding: 8px 12px; font-size: 12px; background: rgba(250,247,239,.96);
+  bottom: 92px; max-width: 290px; border-radius: 2px;
+}
+.lipids .cargo-branch {
+  background: rgba(250,247,239,.94); padding: 14px 18px;
+  max-width: 310px; bottom: 125px;
+}
+.cargo-branch > span { color: #6c5137; font-size: 12px; letter-spacing: .06em; }
+.cargo-branch p { font-size: 14px; }
+.hepatic-caption {
+  padding: 12px 16px; background: rgba(250,247,239,.92); border-radius: 2px;
+}
+.science-whisper { color: #644c36; font-size: 13px; }
+.fibre-path {
+  padding: 24px 18px 18px 0;
+  background: linear-gradient(90deg,rgba(242,238,229,.96),rgba(242,238,229,.94) 72%,rgba(242,238,229,.7));
+}
+.fibre-path span { font-size: 13px; color: #6c5137; }
+.hepatic-path { font-size: 15px; }
+.risk-fixed > span, .risk-fixed > strong, .risk-variable > span,
+#risk-message, .question-number, .notebook-kicker, #practice-status {
+  font-size: 13px; color: var(--caption-ink); opacity: 1;
+}
+.question-paper .small-copy { font-size: 14px; }
+.question-tabs button { width: 44px; height: 44px; min-height: 44px; font-size: 14px; opacity: 1; }
+.calendar-days button { min-height: 44px; font-size: 12px; }
+.therapy-thread { font-size: 13px; opacity: 1; }
+.pack-kicker, .pack-fine { font-size: 11px; letter-spacing: .03em; }
+.pack-instruction { font-size: 12px; }
+.label-fields button { min-height: 44px; font-size: 13px; }
+.label-fields button > span { font-size: 11px; opacity: 1; }
+.label-index button > span { font-size: 12px; opacity: 1; }
+.habit-options button > span { font-size: 12px; opacity: 1; }
+.scene-visual figcaption { font-size: 12px; letter-spacing: .025em; }
+.label-hero figcaption { color: var(--caption-ink); }
+.context-portrait figcaption, .risk-portrait figcaption { display: none; }
+.notes-list details, .notes-list summary { font-size: 16px; line-height: 1.65; }
+.source-note, .colophon { font-size: 14px; line-height: 1.65; }
+.appendix-heading > p:last-child { font-size: 16px; line-height: 1.65; }
+.note-dialog { width: min(780px,94vw); }
+#note-content { font-size: 16px; line-height: 1.7; }
+.dialog-top button { min-width: 44px; min-height: 44px; }
+#contents-list a { min-height: 48px; font-size: 16px; line-height: 1.5; }
+.film-caption { font-size: 14px; line-height: 1.5; margin-top: 14px; }
+.film-dialog video { background: var(--graphite); max-height: 72svh; object-fit: contain; }
+.no-js { font-size: 16px; }
+.no-js a { display: inline-block; min-height: 44px; text-decoration: underline; }
+.review-status { position: fixed; z-index: 38; top: 90px; left: 0; margin: 0; padding: 8px 16px; background: var(--paper); color: var(--ink); border: 1px solid var(--line); font-size: 13px; }
+
+/* Pauses are deliberate. Still human scenes never imitate a video clip. */
+.motion-on .everyday .bleed img, .motion-on .consultation-hero img,
+.motion-on .light-wash, .motion-on .finale-light,
+.motion-on .lipids .science-label i, .motion-on .hepatic-path > i {
+  animation: none;
+}
+.scene:not(.in-view) video { opacity: 0; }
+.scene.in-view video.ready { opacity: 1; }
+.scene-visual video { transition: opacity .3s ease; }
+.render-mode .ambient-replay { display: none!important; }
+
+@media(min-width:1101px) {
+  .scene { min-height: max(720px,100svh); }
+  .scene-copy { max-width: 660px; }
+  .site-header { gap: 32px; }
+  .scene-foot { bottom: 24px; right: calc(var(--gutter) + 210px); }
+  .scene-dock { bottom: 24px; }
+  .scene-dock > a { border-radius: 50%; }
+  .dark-ui .scene-dock { background: rgba(35,42,30,.55); border-radius: 24px; padding-inline: 5px; }
+  .scene-dock:not(.dark-ui .scene-dock) { text-shadow: 0 1px 8px var(--paper); }
+  .lipid-copy { padding-top: 4px; }
+  .lipid-copy .scene-lead { margin-top: 24px; }
+  .lipid-controls { margin-top: 12px; }
+  .lipid-key { margin-top: 16px; }
+  .lipids .text-action { margin-top: 14px; }
+  .lipids .carrier-label { top: 24%; right: 6%; }
+  .lipids .cargo-label { top: 59%; right: 6%; }
+  .lipids[data-beat=apob] .carrier-label, .lipids[data-beat=apob] .cargo-label { opacity: 1; }
+  .lipids[data-beat=apob] .apob-beat { right: 7%; top: 39%; }
+  .lipids .ambient-replay, .hepatic .ambient-replay { top: 103px; right: 24px; font-size: 12px; padding: 9px 12px; min-height: 44px; }
+  .context-term { font-size: 14px; line-height: 1.45; }
+  .context-caption { left: 45%; width: 24%; }
+  .package { height: min(520px,60svh); }
+  .package-back > p:first-of-type { font-size: 32px; margin-top: 15px; }
+  .label-fields { margin-top: 16px; }
+  .label-hero figcaption { bottom: -12px; }
+  .habit-notebook { min-height: 405px; }
+  .habit-notebook > strong { font-size: 26px; }
+  .calendar-days { gap: 8px; }
+  .calendar-number { font-size: 110px; margin-top: 10px; }
+  .calendar-number > span { font-size: 14px; }
+  .risk-context { padding-top: 18px; bottom: 112px; }
+  .question-paper { top: 45%; width: 31%; }
+  .question-number { margin-bottom: 12px; }
+  .question-tabs { margin-top: 16px; }
+  .question-paper #question-text { font-size: clamp(28px,2.1vw,40px); min-height: 3.9em; }
+  .consultation-heading { margin-top: 4vh; }
+  .consultation h2 { font-size: clamp(58px,4.5vw,86px); }
+  .therapy { background: var(--graphite); }
+  .therapy:before { background: linear-gradient(90deg,#292e28 0%,rgba(41,46,40,.89) 28%,rgba(41,46,40,.3) 52%,transparent 80%); }
+  /* A shared ivory light at the scene edges provides quiet optical matches. */
+  .lipids .science-bleed:after, .hepatic .hepatic-hero:after,
+  .fibre .fibre-hero:after {
+    content: ''; position: absolute; inset: 0; pointer-events: none;
+    background: linear-gradient(180deg,rgba(242,238,229,.22),transparent 9%,transparent 91%,rgba(242,238,229,.32));
+  }
+  .oil-hero, .protein-hero { top: 14%; bottom: 10%; }
+  .oil-hero:after, .protein-hero:after {
+    background: linear-gradient(90deg,var(--cream),rgba(242,238,229,.2) 20%,transparent 34%),linear-gradient(180deg,rgba(242,238,229,.1),transparent 12%,transparent 89%,rgba(242,238,229,.18));
+  }
+  .everyday:before { background: linear-gradient(90deg,rgba(30,36,26,.66),rgba(30,36,26,.22) 46%,transparent 76%); }
+  .finale-light { background: linear-gradient(90deg,rgba(242,238,229,.94),rgba(242,238,229,.84) 26%,rgba(242,238,229,.2) 49%,transparent 72%); }
+}
+@media(min-width:1101px) and (max-height:800px) {
+  :root { --top: 105px; }
+  .scene h2 { font-size: clamp(52px,4.6vw,76px); }
+  .scene h1 { font-size: clamp(64px,5.9vw,96px); }
+  .scene .eyebrow { margin-bottom: 18px; }
+  .scene .scene-lead { margin-top: 20px; }
+  .lipid-copy .scene-lead { min-height: 64px; }
+  .lipid-key { margin-top: 8px; }
+  .fibre-path { bottom: 110px; }
+  .hepatic-path { bottom: 105px; }
+  .risk-context { bottom: 90px; }
+  .consultation-heading { margin-top: 0; }
+  .question-paper { top: 42%; }
+  .question-paper #question-text { min-height: 3.7em; }
+  .question-paper .small-copy { margin-top: 12px; }
+  .habit-notebook { top: 19%; }
+}
+@media(max-width:1100px) {
+  .scene .eyebrow { font-size: 12px!important; letter-spacing: .1em; }
+  .scene .science-caption { color: var(--caption-ink); font-size: 13px; background: transparent; padding: 0; }
+  .scene .science-label { color: var(--caption-ink); background: transparent; font-size: 14px; }
+  .lipids .cargo-branch { padding: 16px 18px; max-width: none; margin-top: 18px; background: var(--paper); }
+  .lipids .cargo-branch > span { font-size: 12px; }
+  .lipids .cargo-branch p { font-size: 14px; }
+  .fibre .fibre-path { padding: 0; background: transparent; }
+  .scene .hepatic-caption { background: transparent; padding: 16px 0 0; }
+  .scene .scene-foot .foot-meta { font-size: 13px; opacity: 1; }
+  .film-caption { font-size: 14px; }
+  .notes-list details, .notes-list summary { font-size: 16px; }
+  .source-note { font-size: 14px; }
+  .scene .scene-visual { background: var(--paper); }
+  .scene.opening .bleed > img, .scene.opening .bleed > video { object-position: 100% center; }
+  .scene.lipids .science-bleed > img, .scene.hepatic .hepatic-hero > img { object-fit: contain; object-position: center; }
+  .review-status { top: 76px; font-size: 12px; }
+  .notes-list details { scroll-margin-top: 100px; }
+  .film-dialog { max-height: 92svh; overflow: auto; }
+  .scene .scene-foot, .scene .science-label { overflow-wrap: anywhere; }
+}
+@media(min-width:601px) and (max-width:1100px) {
+  :root { --mobile-gutter: clamp(32px,6.25vw,68px); }
+  .scene h1 { font-size: clamp(60px,8.8vw,88px)!important; }
+  .scene h2 { font-size: clamp(48px,7vw,72px)!important; }
+  .scene .scene-lead { font-size: 20px!important; max-width: 38em!important; }
+  .scene .scene-visual { width: calc(100% + 2 * var(--mobile-gutter))!important; }
+  .scene.opening .bleed, .scene.everyday .bleed, .scene.context .context-portrait,
+  .scene.risk .risk-portrait { aspect-ratio: 16/10; }
+  .scene .context-caption { grid-template-columns: repeat(2,minmax(0,1fr)); column-gap: 28px; }
+  .scene .switches { grid-template-columns: repeat(3,minmax(0,1fr)); }
+  .scene .label-hero { aspect-ratio: auto; height: 650px!important; }
+  .scene .package { height: 560px; width: 370px; }
+  .scene .habit-notebook { width: 100%; max-width: 650px; align-self: center; }
+  .final-credits > div { flex-basis: auto; }
+  .final-credits { gap: 46px; }
+}
+@media(max-width:1100px) and (max-height:500px) and (orientation:landscape) {
+  .scene .scene-visual { aspect-ratio: 16/9!important; max-height: 75svh; }
+  .scene .label-hero { height: 590px!important; max-height: none; aspect-ratio: auto!important; }
+  .scene .scene-visual > img, .scene .scene-visual > video { object-position: 65% center; }
+}
+@media(prefers-reduced-motion:reduce) {
+  .scene-visual video, .scene-copy, .scene-label, .scene-foot { transition: none; }
+}
+@media print { .review-status { display: none; } }

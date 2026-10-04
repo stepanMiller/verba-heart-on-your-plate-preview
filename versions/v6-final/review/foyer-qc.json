@@ -1,0 +1,16 @@
+{
+  "duration": 26,
+  "frames": 624,
+  "fps": 24,
+  "resolution": [
+    1280,
+    720
+  ],
+  "codec": "H.264/yuv420p",
+  "audio": "silent",
+  "sha256": "1dc24830fcb21e48b0a8a9deb69919127ff33e27dec8cf444c3500f7b90c07f2",
+  "sourceSha256": "9411a1bb7aa049fd4930ebc1586967c528bb4a67091af5145ee5782fdd07a045",
+  "edit": "Approved V5 montage retained through frame 611. Last 12 frames hold the approved brand image instead of dissolving back to the opening. Same duration; full decode passed. Original foyer-loop and animatic unchanged.",
+  "paidGeneration": 0,
+  "RunwayCredits": 0
+}

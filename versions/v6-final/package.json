@@ -1,0 +1,13 @@
+{
+  "name": "verba-heart-final-integration",
+  "version": "6.0.0",
+  "private": true,
+  "scripts": {
+    "check": "node --check lecture.js && node --check tools/qa.cjs && node --check tools/local-qa.cjs && node --check tools/phone-qa.cjs",
+    "qa": "node tools/local-qa.cjs",
+    "qa:phone": "node tools/local-qa.cjs --phone"
+  },
+  "devDependencies": {
+    "playwright": "1.62.1"
+  }
+}

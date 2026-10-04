@@ -1,0 +1,13 @@
+{
+  "sourceCommit": "328f7440f18ee30e3464af730467821acec1420e",
+  "substantiveScientificChanges": 0,
+  "allSceneParagraphsIdentical": true,
+  "medicalDetailsS01ThroughS13Identical": true,
+  "interactiveScientificCopyIdentical": true,
+  "editorialChanges": [
+    "production footers and S09 mockup label",
+    "S12 footer",
+    "about-material production wording and public medical-status routing"
+  ],
+  "medicalApproval": "pending; exposed in ?review, recorded in release report"
+}
