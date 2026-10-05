@@ -5,8 +5,8 @@
     "frames": 144
   },
   "s06-hepatic-smooth-loop.mp4": {
-    "boundary_mean_absolute_rgb_difference": 0.43971643518518516,
-    "mean_consecutive_rgb_difference": 1.202026523414776,
+    "boundary_mean_absolute_rgb_difference": 0.422193287037037,
+    "mean_consecutive_rgb_difference": 1.2022996352045763,
     "frames": 192
   },
   "s05-viscosity-loop.mp4": {
