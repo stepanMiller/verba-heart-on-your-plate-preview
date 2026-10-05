@@ -1,0 +1,218 @@
+[
+  {
+    "width": 390,
+    "state": "cargo",
+    "layers": {
+      ".carrier-label": {
+        "visible": false,
+        "position": "static",
+        "top": 0,
+        "bottom": 0
+      },
+      ".cargo-label": {
+        "visible": true,
+        "position": "absolute",
+        "top": 714.40625,
+        "bottom": 762
+      },
+      "#apob-beat": {
+        "visible": false,
+        "position": "static",
+        "top": 0,
+        "bottom": 0
+      }
+    }
+  },
+  {
+    "width": 390,
+    "state": "apob",
+    "layers": {
+      ".carrier-label": {
+        "visible": false,
+        "position": "static",
+        "top": 0,
+        "bottom": 0
+      },
+      ".cargo-label": {
+        "visible": false,
+        "position": "static",
+        "top": 0,
+        "bottom": 0
+      },
+      "#apob-beat": {
+        "visible": true,
+        "position": "absolute",
+        "top": 665.0625,
+        "bottom": 764
+      }
+    }
+  },
+  {
+    "width": 390,
+    "state": "carrier",
+    "layers": {
+      ".carrier-label": {
+        "visible": true,
+        "position": "absolute",
+        "top": 731.203125,
+        "bottom": 762
+      },
+      ".cargo-label": {
+        "visible": false,
+        "position": "static",
+        "top": 0,
+        "bottom": 0
+      },
+      "#apob-beat": {
+        "visible": false,
+        "position": "static",
+        "top": 0,
+        "bottom": 0
+      }
+    }
+  },
+  {
+    "width": 320,
+    "state": "cargo",
+    "layers": {
+      ".carrier-label": {
+        "visible": false,
+        "position": "static",
+        "top": 0,
+        "bottom": 0
+      },
+      ".cargo-label": {
+        "visible": true,
+        "position": "absolute",
+        "top": 650.40625,
+        "bottom": 698
+      },
+      "#apob-beat": {
+        "visible": false,
+        "position": "static",
+        "top": 0,
+        "bottom": 0
+      }
+    }
+  },
+  {
+    "width": 320,
+    "state": "apob",
+    "layers": {
+      ".carrier-label": {
+        "visible": false,
+        "position": "static",
+        "top": 0,
+        "bottom": 0
+      },
+      ".cargo-label": {
+        "visible": false,
+        "position": "static",
+        "top": 0,
+        "bottom": 0
+      },
+      "#apob-beat": {
+        "visible": true,
+        "position": "absolute",
+        "top": 601.0625,
+        "bottom": 700
+      }
+    }
+  },
+  {
+    "width": 320,
+    "state": "carrier",
+    "layers": {
+      ".carrier-label": {
+        "visible": true,
+        "position": "absolute",
+        "top": 667.203125,
+        "bottom": 698
+      },
+      ".cargo-label": {
+        "visible": false,
+        "position": "static",
+        "top": 0,
+        "bottom": 0
+      },
+      "#apob-beat": {
+        "visible": false,
+        "position": "static",
+        "top": 0,
+        "bottom": 0
+      }
+    }
+  },
+  {
+    "width": 1440,
+    "state": "cargo",
+    "layers": {
+      ".carrier-label": {
+        "visible": false,
+        "position": "absolute",
+        "top": 0,
+        "bottom": 0
+      },
+      ".cargo-label": {
+        "visible": true,
+        "position": "absolute",
+        "top": 552.234375,
+        "bottom": 605.234375
+      },
+      "#apob-beat": {
+        "visible": false,
+        "position": "absolute",
+        "top": 0,
+        "bottom": 0
+      }
+    }
+  },
+  {
+    "width": 1440,
+    "state": "apob",
+    "layers": {
+      ".carrier-label": {
+        "visible": false,
+        "position": "absolute",
+        "top": 0,
+        "bottom": 0
+      },
+      ".cargo-label": {
+        "visible": false,
+        "position": "absolute",
+        "top": 0,
+        "bottom": 0
+      },
+      "#apob-beat": {
+        "visible": true,
+        "position": "absolute",
+        "top": 365.03125,
+        "bottom": 566.5
+      }
+    }
+  },
+  {
+    "width": 1440,
+    "state": "carrier",
+    "layers": {
+      ".carrier-label": {
+        "visible": true,
+        "position": "absolute",
+        "top": 224.625,
+        "bottom": 256.625
+      },
+      ".cargo-label": {
+        "visible": false,
+        "position": "absolute",
+        "top": 0,
+        "bottom": 0
+      },
+      "#apob-beat": {
+        "visible": false,
+        "position": "absolute",
+        "top": 0,
+        "bottom": 0
+      }
+    }
+  }
+]

@@ -1,0 +1,41 @@
+{
+  "passed": true,
+  "results": [
+    {
+      "width": 390,
+      "id": "s03",
+      "scrollDelta": 0,
+      "headingTop": 91.796875
+    },
+    {
+      "width": 390,
+      "id": "s09",
+      "scrollDelta": 0,
+      "headingTop": 91.796875
+    },
+    {
+      "width": 390,
+      "id": "s13",
+      "scrollDelta": 0,
+      "headingTop": 91.796875
+    },
+    {
+      "width": 320,
+      "id": "s03",
+      "scrollDelta": 0,
+      "headingTop": 91.796875
+    },
+    {
+      "width": 320,
+      "id": "s09",
+      "scrollDelta": 0,
+      "headingTop": 91.796875
+    },
+    {
+      "width": 320,
+      "id": "s13",
+      "scrollDelta": 0,
+      "headingTop": 91.796875
+    }
+  ]
+}

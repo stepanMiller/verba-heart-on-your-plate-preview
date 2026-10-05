@@ -28,7 +28,9 @@
   const reviewMode = params.has('review');
   document.documentElement.classList.toggle('review-mode', reviewMode);
   document.documentElement.classList.add('js');
-  $$('.context-term,.fibre-path>div').forEach((el, i) => el.style.setProperty('--index', i));
+  $$('.fibre-path>div').forEach((el, i) => el.style.setProperty('--index', i));
+  // Keep the portrait composition; only the order of its quiet context reveal changes.
+  $$('.context-term').forEach((el, i) => el.style.setProperty('--index', [1,0,3,2,4,5][i]));
   const hasDialog = () => !!$('dialog[open]');
 
   function loadVideo(video) {
@@ -79,7 +81,7 @@
       const wasVisible = visibleVideos.has(video);
       if (entry.isIntersecting) {
         visibleVideos.add(video);
-        if (!wasVisible && isOneShot(video)) {
+        if (motion && !wasVisible && isOneShot(video)) {
           loadVideo(video);
           try { video.currentTime = 0; } catch { /* Metadata may still be loading. */ }
           video.dataset.playbackState = 'ready';
@@ -239,12 +241,22 @@
     ['cargo', 'ХС-ЛПНП и ХС-ЛПВП показывают\nхолестерин в соответствующих переносчиках.'],
     ['apob', 'Холестерин и число переносчиков —\nразные вопросы. ApoB помогает увидеть второй.']
   ];
+  function showLipidLayer(index, detail = true) {
+    const scene = $('#s03');
+    scene.dataset.beat = lipidStates[index][0];
+    scene.dataset.detail = String(detail);
+    $('.carrier-label', scene).hidden = index !== 0;
+    $('.cargo-label', scene).hidden = index !== 1;
+    $('.cargo-branch', scene).hidden = index !== 1;
+    $('.lipid-key', scene).hidden = index !== 0 || !detail;
+    $('#apob-beat').hidden = index !== 2;
+  }
+  showLipidLayer(0, false);
   $$('[data-lipid]').forEach(button => button.addEventListener('click', () => {
     const index = Number(button.dataset.lipid);
     selectGroup('data-lipid', index);
-    $('#s03').dataset.beat = lipidStates[index][0];
+    showLipidLayer(index);
     $('#lipid-message').textContent = lipidStates[index][1];
-    $('#apob-beat').hidden = index !== 2;
     // The picture remains an LDL cutaway, never relabelled as an HDL particle.
     beat($('#s03'));
   }));

@@ -1,0 +1,214 @@
+/* Director finishing pass. Same V6 assets, characters, palette and scene order. */
+
+/* S02 is a portrait with context, never a dashboard. */
+.context .context-term,
+.context .context-term:nth-child(n) {
+  color: #555d4d;
+  background: transparent;
+  box-shadow: none;
+  border: 0;
+  opacity: .82;
+  font-size: 13px;
+  padding: 5px 0;
+  text-shadow: 0 1px 8px rgba(242,238,229,.85);
+}
+.motion-on .context .context-term { animation: none; }
+.motion-on .context.in-view .context-term {
+  animation: context-disclose .7s ease both;
+  animation-delay: calc(var(--index,0) * .55s);
+}
+@keyframes context-disclose { from { opacity: 0; } to { opacity: .82; } }
+
+/* S03 shows one scientific layer at a time. Hidden also removes it from a11y. */
+.lipids [hidden] { display: none!important; }
+.lipids .science-label,
+.lipids .science-caption { background: transparent; padding: 0; }
+.lipids .science-label { font-weight: 400; color: var(--caption-ink); }
+.lipids .science-label i { opacity: .5; }
+.lipids .cargo-branch { background: rgba(250,247,239,.72); }
+.lipids[data-beat=apob] .apob-beat { background: rgba(250,247,239,.84); }
+.lipids .lipid-controls .switches button {
+  background: transparent;
+  border: 0;
+  border-bottom: 1px solid transparent;
+  border-radius: 0;
+}
+.lipids .lipid-controls .switches button[aria-pressed=true] {
+  background: transparent;
+  color: var(--olive);
+  border-bottom-color: var(--olive);
+}
+
+/* S09 / S13: printed editorial affordances, with the same hit areas and states. */
+.label .label-index button,
+.habit .habit-options button {
+  background: transparent;
+  border: 0;
+  border-bottom: 1px solid var(--line);
+  border-radius: 0;
+  opacity: .85;
+  box-shadow: none;
+}
+.label .label-index button[aria-pressed=true],
+.habit .habit-options button[aria-pressed=true] {
+  background: transparent;
+  color: var(--olive);
+  border-bottom-color: var(--olive);
+  opacity: 1;
+}
+.label .label-index button > span,
+.habit .habit-options button > span { color: var(--muted); }
+.habit .habit-notebook { box-shadow: none; }
+.habit .calendar-days button { border-color: #d2d1c4; }
+.label .label-fields button b { opacity: .35; }
+.label .label-fields button[aria-pressed=true] b { opacity: .8; }
+
+@media(max-width:640px) {
+  /* Changing a lead or habit must not re-anchor the viewport to a lower control. */
+  #lecture { overflow-anchor: none; }
+  /* Keep the viewport chapters, but join text to the hero rather than a letterbox. */
+  .scene .scene-lead { font-size: 14px!important; line-height: 1.42; }
+  .scene .small-copy { font-size: 12px; line-height: 1.42; }
+  .scene::after {
+    background: linear-gradient(180deg,var(--cream) 0%,rgba(242,238,229,.99) 33%,rgba(242,238,229,.62) 46%,rgba(242,238,229,.06) 67%,transparent 100%);
+  }
+  .scene .scene-visual { inset-block-start: 39%!important; }
+  .opening .scene-visual,.everyday .scene-visual,
+  .therapy .scene-visual,.finale .scene-visual { inset: 0!important; }
+  .opening::after,.everyday::after,.therapy::after,.finale::after {
+    background: linear-gradient(180deg,rgba(20,26,20,.8),rgba(20,26,20,.62) 36%,rgba(20,26,20,.18) 67%,rgba(20,26,20,.5));
+  }
+  .scene.finale .bleed > img,.scene.finale .bleed > video {
+    object-fit: cover;
+    object-position: 70% center;
+  }
+  .scene.lipids .science-bleed > img,.scene.lipids .science-bleed > video {
+    object-fit: cover;
+    object-position: 83% center;
+  }
+  .scene.hepatic .hepatic-hero > img,.scene.hepatic .hepatic-hero > video {
+    object-fit: cover;
+    object-position: 70% center;
+  }
+  .context .context-portrait { inset-block-start: 37%!important; }
+  .context .context-caption { bottom: 35px; gap: 8px 15px; }
+  .context .context-term,.context .context-term:nth-child(n) {
+    font-size: 11px;
+    padding: 0;
+    min-height: 0;
+    line-height: 1.3;
+    text-shadow: 0 1px 7px var(--cream),0 0 12px var(--cream);
+  }
+  .lipids .science-bleed { inset: 42% 0 28px!important; }
+  .lipids .lipid-controls { margin-top: 12px; }
+  .lipids .lipid-controls .switches { display: flex; gap: 24px; }
+  .lipids .lipid-controls .switches button { font-size: 12px; min-height: 44px; min-width: 44px; padding: 8px 0; }
+  .lipids .science-label:not([hidden]) {
+    display: block!important;
+    position: absolute;
+    left: 20px;
+    right: auto;
+    top: auto;
+    bottom: 82px;
+    max-width: 235px;
+    font-size: 12px;
+    line-height: 1.4;
+    background: rgba(242,238,229,.84);
+    padding: 7px 10px;
+    border: 0;
+  }
+  .lipids .science-label i { display: none; }
+  .lipids .science-caption {
+    display: block!important;
+    position: absolute;
+    left: 20px;
+    right: auto;
+    bottom: 36px;
+    max-width: 285px;
+    font-size: 12px;
+    text-align: left;
+    line-height: 1.4;
+    color: var(--caption-ink);
+    text-shadow: 0 0 8px var(--cream);
+  }
+  .lipids .cargo-branch { display: none!important; }
+  .lipids .apob-beat:not([hidden]) {
+    display: block!important;
+    position: absolute;
+    margin: 0;
+    top: auto;
+    bottom: 80px;
+    left: 20px;
+    right: 20px;
+    min-width: 0;
+    width: auto;
+    padding: 12px 15px;
+    border: 0;
+  }
+  .lipids .apob-beat > span { font-size: 27px; }
+  .lipids .apob-beat p { font-size: 12px; line-height: 1.4; }
+  .lipids .apob-beat p br { display: none; }
+  .lipids .apob-beat small { font-size: 10px; margin-top: 4px; }
+  .oil .oil-hero,.fibre .fibre-hero,.protein .protein-hero { inset-block-start: 40%!important; }
+  .hepatic .hepatic-hero { inset-block-start: 43%!important; }
+  .scene .text-action,.oil .text-action { font-size: 12px!important; }
+  .oil .swap-proof { font-size: 12px; }
+  .oil .effect-line { font-size: 11px; }
+  .fibre .fibre-path,.hepatic .hepatic-path { bottom: 32px; padding: 12px; }
+  .fibre .fibre-path strong,.hepatic .hepatic-path > span,.hepatic .hepatic-path > strong { font-size: 10px; line-height: 1.35; }
+  .fibre .fibre-path span { font-size: 9px; }
+  .risk .risk-portrait { inset-block-start: 43%!important; }
+  .risk .risk-context { bottom: 32px; }
+  .risk .risk-fixed strong,.risk .risk-context > p { font-size: 10px; }
+  .risk .risk-variable > span { font-size: 9px; }
+  .therapy .therapy-thread { font-size: 9px; bottom: 35px; }
+  .label #package-turn { font-size: 12px!important; }
+  .label .label-hero { inset: 38% 0 32px!important; }
+  .label .label-fields button { font-size: 11px; min-height: 44px; }
+  .label .label-fields button > span { font-size: 9px; }
+  .label .pack-instruction { font-size: 10px; }
+  .label .pack-kicker { font-size: 10px; }
+
+  /* The doctor's faces remain visible between the heading and question. */
+  .consultation::after {
+    background: linear-gradient(180deg,var(--cream) 0%,var(--cream) 21%,rgba(242,238,229,.25) 31%,transparent 45%);
+  }
+  .consultation .consultation-hero { inset: 24% 0 24%!important; }
+  .consultation .consultation-hero > img { object-position: 51% center; }
+  .consultation .question-paper { bottom: 32px; padding: 16px; }
+  .consultation #question-text { font-size: 24px!important; line-height: 1.18; }
+  .consultation .question-paper .small-copy { font-size: 11px; }
+  .consultation .question-number { font-size: 10px; }
+  .consultation .question-tabs button,.protein .protein-rotation button { min-width: 44px; }
+
+  /* A short, complete practice chapter: no empty spacer above the notebook. */
+  .scene.habit { height: auto!important; min-height: 0!important; padding-bottom: 46px!important; }
+  .habit::after { display: none!important; }
+  .habit .scene-lead { font-size: 13px!important; }
+  .js .habit .habit-options { display: grid!important; grid-template-columns: repeat(3,minmax(0,1fr)); gap: 12px; margin-top: 16px; }
+  .habit .habit-options button { display: block; min-height: 68px; padding: 7px 0; font-size: 11px; line-height: 1.35; }
+  .habit .habit-options button > span { display: block; font-size: 10px; margin-bottom: 5px; }
+  .habit .habit-options button i { display: none; }
+  .habit .habit-notebook { position: relative; inset: auto; width: 100%; margin: 24px 0 0; padding: 18px; box-shadow: none; }
+  .habit .notebook-kicker { font-size: 9px; }
+  .habit .habit-notebook > strong { font-size: 22px; }
+  .habit .calendar-number { font-size: 68px; }
+  .habit .calendar-number > span { font-size: 11px; }
+  .habit .calendar-days { gap: 4px 2px; margin-inline: -6px; }
+  .habit .calendar-days button { min-height: 44px; font-size: 10px; border: 0; border-bottom: 1px solid #d2d1c4; border-radius: 0; }
+  .habit .habit-notebook #practice-status { margin-top: 10px; font-size: 10px; line-height: 1.4; }
+}
+
+@media(max-width:360px) {
+  :root { --mobile-edge: 18px; }
+  .scene .scene-lead { font-size: 13px!important; }
+  .habit .habit-options button { font-size: 10px; }
+  .habit .habit-notebook { padding: 14px; }
+  .habit .habit-notebook > strong { font-size: 21px; }
+  .habit .calendar-number { font-size: 61px; }
+  .habit .calendar-days { grid-template-columns: repeat(5,minmax(0,1fr)); }
+  .consultation #question-text { font-size: 23px!important; }
+  .label .package { height: min(430px,55svh); }
+}
+
+@media(prefers-reduced-motion:reduce) { .context .context-term { opacity: .82; animation: none!important; } }

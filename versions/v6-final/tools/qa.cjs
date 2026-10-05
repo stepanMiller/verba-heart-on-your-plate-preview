@@ -156,6 +156,7 @@ async function inspect(browser, label, screenshots = true) {
     await page.emulateMedia({ reducedMotion: 'no-preference' });
   });
   await check(label + ': arrows and keyboard scene navigation', async () => {
+    await page.setViewportSize({ width: 1440, height: 936 });
     await jump(page, 's01'); await page.locator('#next-scene').click();
     await page.waitForFunction(() => document.querySelector('#scene-number').textContent === '02');
     await page.locator('#previous-scene').click();
@@ -192,10 +193,19 @@ async function inspect(browser, label, screenshots = true) {
       await page.locator('#menu-toggle').click();
       await page.locator('[data-close-dialog]').filter({visible:true}).click();
       assert.equal(await page.evaluate(()=>document.activeElement.id),'menu-toggle');
-      await jump(page,'s03'); await page.locator('[data-note="s03"]').click();
-      assert.equal(await page.locator('#note-dialog').evaluate(el=>el.scrollWidth<=el.clientWidth+1),true);
-      await page.keyboard.press('Escape');
-      assert.equal(await page.evaluate(()=>document.activeElement.dataset.note),'s03');
+      await jump(page,'s03');
+      if (await page.locator('[data-note="s03"]').isVisible()) {
+        await page.locator('[data-note="s03"]').click();
+        assert.equal(await page.locator('#note-dialog').evaluate(el=>el.scrollWidth<=el.clientWidth+1),true);
+        await page.keyboard.press('Escape');
+        assert.equal(await page.evaluate(()=>document.activeElement.dataset.note),'s03');
+      } else {
+        // Cinematic mobile exposes the same medical sources through the appendix.
+        await page.locator('#note-s03 summary').click();
+        assert.equal(await page.locator('#note-s03').evaluate(el=>el.open),true);
+        assert.ok(await page.locator('#note-s03 a').count()>=2);
+        await page.locator('#note-s03 summary').click();
+      }
     }
     await page.setViewportSize({width:1440,height:936});
   });
