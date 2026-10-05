@@ -1,0 +1,92 @@
+{
+  "foyer-film.mp4": {
+    "programs": [],
+    "stream_groups": [],
+    "streams": [
+      {
+        "codec_name": "h264",
+        "width": 1280,
+        "height": 720,
+        "r_frame_rate": "24/1",
+        "nb_frames": "624"
+      }
+    ],
+    "format": {
+      "duration": "26.000000",
+      "size": "8502902"
+    },
+    "sha256": "03698b2528c23d5c75081dd9bc03d9bc4bbe4045e9f2d3bd7401a4b96daa689d"
+  },
+  "s11-original-clean.mp4": {
+    "programs": [],
+    "stream_groups": [],
+    "streams": [
+      {
+        "codec_name": "h264",
+        "width": 910,
+        "height": 400,
+        "r_frame_rate": "30/1",
+        "nb_frames": "180"
+      }
+    ],
+    "format": {
+      "duration": "6.000000",
+      "size": "986458"
+    },
+    "sha256": "1f776ee3b00e69a0dd84e415b1a5aec679a6c9b759fc41d13511ea421b10fa86"
+  },
+  "s03-lipoprotein-smooth-loop.mp4": {
+    "programs": [],
+    "stream_groups": [],
+    "streams": [
+      {
+        "codec_name": "h264",
+        "width": 1280,
+        "height": 720,
+        "r_frame_rate": "24/1",
+        "nb_frames": "144"
+      }
+    ],
+    "format": {
+      "duration": "6.000000",
+      "size": "3308826"
+    },
+    "sha256": "993f8a04df17c123d1c8e7a9acffbfbee21cb20b300d527a3f6059ce2c160fbd"
+  },
+  "s05-viscosity-loop.mp4": {
+    "programs": [],
+    "stream_groups": [],
+    "streams": [
+      {
+        "codec_name": "h264",
+        "width": 1280,
+        "height": 720,
+        "r_frame_rate": "24/1",
+        "nb_frames": "192"
+      }
+    ],
+    "format": {
+      "duration": "8.000000",
+      "size": "1097742"
+    },
+    "sha256": "ead4b1cd8033f08a71b3a288d50ba897c1a49ccffa6ec71979f835b36fea2609"
+  },
+  "s06-hepatic-smooth-loop.mp4": {
+    "programs": [],
+    "stream_groups": [],
+    "streams": [
+      {
+        "codec_name": "h264",
+        "width": 1280,
+        "height": 720,
+        "r_frame_rate": "24/1",
+        "nb_frames": "192"
+      }
+    ],
+    "format": {
+      "duration": "8.000000",
+      "size": "2889809"
+    },
+    "sha256": "f7daa5687bba20c8852ae70efd406516e9b423bae08e5168619e3ceeb07fca1e"
+  }
+}

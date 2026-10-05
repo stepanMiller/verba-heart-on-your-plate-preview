@@ -1,0 +1,57 @@
+/* Targeted review finishing. Typography grounded in the original VERBA lecture.
+   Composition, clinical copy and original asset folders remain unchanged. */
+:root {
+  --sans: -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif;
+  --serif: 'Iowan Old Style', Baskerville, 'URW Bookman', Georgia, serif;
+  --mono: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+}
+h1, h2 { font-weight: 400; letter-spacing: -.047em; }
+h1 em, h2 em { letter-spacing: -.047em; }
+.eyebrow { font-family: var(--mono); font-weight: 600; letter-spacing: .15em; }
+.scene-lead { line-height: 1.48; }
+.scene-foot, .science-caption, .foot-meta { font-family: var(--mono); font-weight: 500; letter-spacing: .045em; }
+.context .context-term { font-size: 16px; line-height: 1.45; padding: 9px 12px; background: rgba(250,247,239,.96); color: #393b30; }
+/* One explanation at a time, not four competing panels. */
+.lipids .lipid-explainer { position: absolute; z-index: 4; right: 6%; bottom: 23%; width: 275px; padding: 16px 18px; background: rgba(250,247,239,.95); border-left: 1px solid var(--olive); }
+.lipids .lipid-explainer .science-label,
+.lipids .lipid-explainer .cargo-branch,
+.lipids .lipid-explainer .apob-beat { position: static; inset: auto; width: auto; max-width: none; min-width: 0; margin: 0; padding: 0; background: none; border: 0; box-shadow: none; opacity: 1; transform: none; }
+.lipids .lipid-explainer .science-label { font-size: 16px; line-height: 1.45; }
+.lipids .lipid-explainer .science-label i { display: none; }
+.lipids .lipid-explainer .cargo-label,
+.lipids .lipid-explainer .cargo-branch { display: none; }
+.lipids[data-beat=cargo] .lipid-explainer .carrier-label,
+.lipids[data-beat=apob] .lipid-explainer .carrier-label { display: none; }
+.lipids[data-beat=cargo] .lipid-explainer .cargo-label,
+.lipids[data-beat=cargo] .lipid-explainer .cargo-branch { display: block; }
+.lipids .lipid-explainer .cargo-branch { margin-top: 14px; padding-top: 12px; border-top: 1px solid var(--line); }
+.lipids .lipid-explainer .cargo-branch strong { font-size: 24px; line-height: 1.2; }
+.lipids .lipid-explainer .cargo-branch p { font-size: 14px; margin-top: 8px; }
+.lipids .lipid-explainer .apob-beat > span { font-size: 36px; }
+.lipids .lipid-explainer .apob-beat p { font-size: 17px; line-height: 1.45; }
+.lipids .lipid-key { margin-top: 16px; }
+@media (min-width:1101px) {
+  .scene-lead { font-size: clamp(19px,1.32vw,23px); }
+  .context .scene-lead, .lipid-copy .scene-lead { font-size: clamp(19px,1.32vw,23px); }
+  .eyebrow { font-size: clamp(13px,.82vw,15px); }
+  .context .context-caption { width: 27%; }
+}
+@media (min-width:641px) and (max-width:1100px) {
+  .lipids .lipid-explainer { position: static; order: 7; width: 100%; margin-top: 18px; }
+}
+@media (max-width:640px) {
+  .context .context-caption { gap: 7px 9px; bottom: 48px; }
+  .context .context-term, .context .context-term:nth-child(n) { font-size: 12px; line-height: 1.35; min-height: 38px; padding: 8px; background: rgba(250,247,239,.96); }
+  .lipids .lipid-explainer { right: var(--mobile-edge); left: var(--mobile-edge); bottom: 48px; width: auto; padding: 9px 12px; }
+  .lipids .lipid-explainer .science-label { font-size: 13px; line-height: 1.35; }
+  .lipids .lipid-explainer .carrier-label { display: block!important; }
+  .lipids[data-beat=cargo] .lipid-explainer .carrier-label,
+  .lipids[data-beat=apob] .lipid-explainer .carrier-label { display: none!important; }
+  .lipids[data-beat=cargo] .lipid-explainer .cargo-label { display: block!important; }
+  .lipids[data-beat=cargo] .lipid-explainer .cargo-branch { display: none!important; }
+  .lipids[data-beat=apob] .lipid-explainer .apob-beat:not([hidden]) { display: flex!important; flex-wrap: wrap; gap: 3px 10px; align-items: baseline; }
+  .lipids .lipid-explainer .apob-beat > span { font-size: 22px; }
+  .lipids .lipid-explainer .apob-beat p, .lipids .lipid-explainer .apob-beat small { font-size: 12px; margin: 0; }
+  .lipids .lipid-explainer .apob-beat br { display: none; }
+}
+html.text-enlarged .lipids .lipid-explainer { position: static; order: 7; width: 100%; margin-top: 20px; }

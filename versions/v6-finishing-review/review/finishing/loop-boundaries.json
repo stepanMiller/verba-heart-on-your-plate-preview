@@ -1,0 +1,17 @@
+{
+  "s03-lipoprotein-smooth-loop.mp4": {
+    "boundary_mean_absolute_rgb_difference": 0.6378703703703704,
+    "mean_consecutive_rgb_difference": 1.7585835923335924,
+    "frames": 144
+  },
+  "s06-hepatic-smooth-loop.mp4": {
+    "boundary_mean_absolute_rgb_difference": 0.43971643518518516,
+    "mean_consecutive_rgb_difference": 1.202026523414776,
+    "frames": 192
+  },
+  "s05-viscosity-loop.mp4": {
+    "boundary_mean_absolute_rgb_difference": 0.3490451388888889,
+    "mean_consecutive_rgb_difference": 0.07004681137289122,
+    "frames": 192
+  }
+}

@@ -1,0 +1,10 @@
+{
+  "base_commit": "31526bd24277c0913dd7d21315c5779296883132",
+  "scene_count": 14,
+  "headlines_and_leads_unchanged": true,
+  "source_detail_blocks_identical": 14,
+  "missing_local_assets": [],
+  "original_version_git_diff": "",
+  "browser_qa": "Blocked: Chromium socket() Operation not permitted; no sandbox bypass attempted",
+  "mobile_qa": "Not run"
+}
